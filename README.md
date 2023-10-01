@@ -2,7 +2,9 @@
 
 ## Information for the reviewer
 ![Build Status](https://github.com/BezukhVladimir/TINKOFF_JAVA_BACKEND/actions/workflows/build.yml/badge.svg)
+
 Домашние задания курса https://fintech.tinkoff.ru/academy/java
+
 Студент: Безух Владимир Сергеевич
 
 ## License
