@@ -42,7 +42,7 @@ public final class KaprekarsRoutine {
         }
 
         try {
-            int[] digits = getDigitsInReverseOrder(number);
+            int[] digits = getDigitsInReverseOrder(number, NUMBER_OF_DIGITS);
             Arrays.sort(digits);
             int ascending = getNumberFromDigits(digits, 0, NUMBER_OF_DIGITS - 1);
             int descending = getNumberFromDigitsInReverseOrder(digits, 0, NUMBER_OF_DIGITS - 1);

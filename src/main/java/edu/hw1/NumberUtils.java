@@ -166,6 +166,28 @@ public final class NumberUtils {
     }
 
     /**
+     * Returns the last {@code numberOfDigits} digits of the given {@code number} in reverse order.
+     *
+     * If there are fewer digits in the {@code number} than requested in the {@code numberOfDigits},
+     * the remaining elements of the array are filled with zeros
+     *
+     * @param number The input number.
+     * @param numberOfDigits The number of digits to retrieve.
+     * @return An array containing the last {@code numberOfDigits} digits of the input {@code number} in reverse order.
+     */
+    public static int[] getDigitsInReverseOrder(int number, int numberOfDigits) {
+        int value = number >= 0 ? number : -number;
+
+        int[] digits = new int[numberOfDigits];
+        for (int i = 0; i < numberOfDigits; ++i) {
+            digits[i] = value % BASE_10;
+            value /= BASE_10;
+        }
+
+        return digits;
+    }
+
+    /**
      * Forms a number using the digits within the specified range in the array.
      * All digits must be represented by positive numbers.
      *
