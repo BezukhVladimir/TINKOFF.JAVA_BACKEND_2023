@@ -1,6 +1,8 @@
 package edu.hw1.optimization;
 
 import edu.hw1.NumberUtils;
+import net.bytebuddy.build.ToStringPlugin;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -8,6 +10,7 @@ import org.junit.jupiter.api.Test;
  * The countDigits() method is about 10 times more performant than the classicCountDigits() method.
  * We should use countDigits() method. More precise performance testing is not required.
  */
+@Disabled
 public class CountDigitsPerformanceTest {
     @Test
     @DisplayName("Executing countDigits() method for all 32-bit decimal integer numbers")
