@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/ru/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/lang/ru/spec/v2.0.0.html).
 
+## [1.2.0] - 2023-10-14
+
+### Added
+
+- Solutions to all Homework2 tasks.
+- JavaDoc comments.
+- Unit tests.
+- For the Task1:
+  - Package: task1
+- For the Task2:
+  - Package: task2
+- For the Task3:
+  - Package: task3
+- For the Task4:
+  - Package: task4
+- README.md for a Homework2.
+
 ## [1.1.1] - 2023-10-07
 
 ### Fixed
