@@ -11,13 +11,16 @@ import edu.project1.hangmangame.guessresults.RepeatedGuess;
 import edu.project1.hangmangame.guessresults.SuccessfulGuess;
 import edu.project1.hangmangame.guessresults.UncorrectedGuess;
 import edu.project1.hangmangame.guessresults.WinGuess;
-import org.jetbrains.annotations.NotNull;
+import edu.project1.hangmangame.session.SessionManager;
+import edu.project1.hangmangame.settings.SettingsManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.mockito.MockitoAnnotations;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
@@ -27,15 +30,17 @@ public class HangmanGameTest {
     private static final String WRONG_GUESSES = "bcdefijklopqrstuvwxyz";
     private static final int MAX_ATTEMPTS = 5;
 
-    private ConsoleHangman testGame;
+    private SessionManager testSession;
+    @Mock
     private Dictionary dictionaryMock;
+    private SettingsManager settings;
 
     @BeforeEach
     void initNewSession() {
-        dictionaryMock = Mockito.mock(Dictionary.class);
+        MockitoAnnotations.openMocks(this);
         when(dictionaryMock.getRandomWord()).thenReturn(ANSWER);
-        testGame = new ConsoleHangman(dictionaryMock, 5);
-        testGame.initNewSession();
+        testSession = new SessionManager(dictionaryMock, MAX_ATTEMPTS);
+        settings = SettingsManager.getInstance();
     }
 
     @Test
@@ -49,14 +54,14 @@ public class HangmanGameTest {
 
         for (int i = 0; i < inputs.size() - 1; ++i) {
             // Act
-            GuessResult result = testGame.tryGuess(inputs.get(i));
+            GuessResult result = testSession.tryGuess(inputs.get(i));
 
             // Assert
             assertThat(result).isInstanceOf(SuccessfulGuess.class);
         }
 
         // Act
-        GuessResult result = testGame.tryGuess(inputs.get(inputs.size() - 1));
+        GuessResult result = testSession.tryGuess(inputs.get(inputs.size() - 1));
 
         // Assert
         assertThat(result).isInstanceOf(WinGuess.class);
@@ -74,14 +79,14 @@ public class HangmanGameTest {
 
         for (int i = 0; i < MAX_ATTEMPTS - 1; ++i) {
             // Act
-            GuessResult result = testGame.tryGuess(inputs.get(i));
+            GuessResult result = testSession.tryGuess(inputs.get(i));
 
             // Assert
             assertThat(result).isInstanceOf(FailedGuess.class);
         }
 
         // Act
-        GuessResult result = testGame.tryGuess(inputs.get(inputs.size() - 1));
+        GuessResult result = testSession.tryGuess(inputs.get(inputs.size() - 1));
 
         // Assert
         assertThat(result).isInstanceOf(DefeatGuess.class);
@@ -91,10 +96,10 @@ public class HangmanGameTest {
     @DisplayName("Test when player gives up")
     void testGiveUpCommand() {
         // Arrange
-        String input = ConsoleHangman.GIVE_UP_COMMAND;
+        String input = settings.get("GIVE_UP_COMMAND");
 
         // Act
-        GuessResult result = testGame.tryGuess(input);
+        GuessResult result = testSession.tryGuess(input);
 
         // Assert
         assertThat(result).isInstanceOf(DefeatGuess.class);
@@ -107,14 +112,14 @@ public class HangmanGameTest {
         String input = String.valueOf(ANSWER.charAt(0));
 
         // Act
-        GuessResult result = testGame.tryGuess(input);
+        GuessResult result = testSession.tryGuess(input);
 
         // Assert
         assertThat(result).isInstanceOf(SuccessfulGuess.class);
 
         for (int i = 0; i < 10; ++i) {
             // Act
-            GuessResult resultRepeat = testGame.tryGuess(input);
+            GuessResult resultRepeat = testSession.tryGuess(input);
 
             // Assert
             assertThat(resultRepeat).isInstanceOf(RepeatedGuess.class);
@@ -126,7 +131,7 @@ public class HangmanGameTest {
     @DisplayName("Test uncorrected input")
     void testUncorrectedInput(String input) {
         // Act
-        GuessResult result = testGame.tryGuess(input);
+        GuessResult result = testSession.tryGuess(input);
 
         // Assert
         assertThat(result).isInstanceOf(UncorrectedGuess.class);
