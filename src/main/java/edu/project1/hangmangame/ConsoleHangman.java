@@ -4,7 +4,7 @@ import edu.project1.dictionaries.Dictionary;
 import edu.project1.hangmangame.session.SessionManager;
 import edu.project1.hangmangame.settings.SettingsManager;
 
-@SuppressWarnings("RegexpSinglelineJava")
+@SuppressWarnings({"RegexpSinglelineJava", "MultipleStringLiterals"})
 public class ConsoleHangman {
     private final Dictionary wordDictionary;
     private final int maxAttempts;
