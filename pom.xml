@@ -20,6 +20,10 @@
     </licenses>
 
     <properties>
+        <argLine>
+            -Dnet.bytebuddy.experimental=true
+        </argLine>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -34,6 +38,7 @@
 
         <junit.version>5.10.0</junit.version>
         <assertj.version>3.24.2</assertj.version>
+        <mockito.version>5.6.0</mockito.version>
 
         <maven-checkstyle-plugin.version>3.3.0</maven-checkstyle-plugin.version>
 
@@ -62,6 +67,14 @@
                 <version>${junit.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito.version}</version>
+                <type>pom</type>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -93,6 +106,12 @@
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <version>${assertj.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
