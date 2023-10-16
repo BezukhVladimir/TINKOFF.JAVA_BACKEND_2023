@@ -32,7 +32,7 @@ public class SessionManager {
         }
     }
 
-    public GuessResult tryGuess(String input) {
+    GuessResult tryGuess(String input) {
         if (isInvalidInput(input)) {
             return session.uncorrectedGuess();
         }

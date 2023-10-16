@@ -1,9 +1,8 @@
-package edu.project1;
+package edu.project1.hangmangame.session;
 
 import edu.project1.dictionaries.Dictionary;
 import java.util.ArrayList;
 import java.util.List;
-import edu.project1.hangmangame.ConsoleHangman;
 import edu.project1.hangmangame.guessresults.DefeatGuess;
 import edu.project1.hangmangame.guessresults.FailedGuess;
 import edu.project1.hangmangame.guessresults.GuessResult;
@@ -11,13 +10,11 @@ import edu.project1.hangmangame.guessresults.RepeatedGuess;
 import edu.project1.hangmangame.guessresults.SuccessfulGuess;
 import edu.project1.hangmangame.guessresults.UncorrectedGuess;
 import edu.project1.hangmangame.guessresults.WinGuess;
-import edu.project1.hangmangame.session.SessionManager;
 import edu.project1.hangmangame.settings.SettingsManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.MockitoAnnotations;
