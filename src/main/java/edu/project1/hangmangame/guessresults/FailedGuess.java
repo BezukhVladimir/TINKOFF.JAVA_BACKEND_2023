@@ -1,5 +1,6 @@
 package edu.project1.hangmangame.guessresults;
 
+import edu.project1.hangmangame.settings.SettingsManager;
 import org.jetbrains.annotations.NotNull;
 
 public record FailedGuess(
@@ -9,6 +10,7 @@ public record FailedGuess(
 ) implements GuessResult {
     @Override
     public @NotNull String message() {
-        return String.format("Missed, mistake %d out of %d.", attempt, maxAttempts);
+        var settings = SettingsManager.getInstance();
+        return String.format(settings.get("FAILED_MESSAGE"), attempt, maxAttempts);
     }
 }

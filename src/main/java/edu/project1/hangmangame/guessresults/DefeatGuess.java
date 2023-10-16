@@ -1,5 +1,6 @@
 package edu.project1.hangmangame.guessresults;
 
+import edu.project1.hangmangame.settings.SettingsManager;
 import org.jetbrains.annotations.NotNull;
 
 public record DefeatGuess(
@@ -9,6 +10,7 @@ public record DefeatGuess(
 ) implements GuessResult {
     @Override
     public @NotNull String message() {
-        return "You lost!";
+        var settings = SettingsManager.getInstance();
+        return settings.get("DEFEAT_MESSAGE");
     }
 }

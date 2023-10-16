@@ -1,5 +1,6 @@
 package edu.project1.hangmangame.guessresults;
 
+import edu.project1.hangmangame.settings.SettingsManager;
 import org.jetbrains.annotations.NotNull;
 
 public record RepeatedGuess(
@@ -9,7 +10,7 @@ public record RepeatedGuess(
 ) implements GuessResult {
     @Override
     public @NotNull String message() {
-        return "You've already used this letter!\n"
-             + "Try another one.";
+        var settings = SettingsManager.getInstance();
+        return settings.get("REPEATED_MESSAGE");
     }
 }

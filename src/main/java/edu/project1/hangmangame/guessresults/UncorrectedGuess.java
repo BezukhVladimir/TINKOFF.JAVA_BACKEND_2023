@@ -1,5 +1,6 @@
 package edu.project1.hangmangame.guessresults;
 
+import edu.project1.hangmangame.settings.SettingsManager;
 import org.jetbrains.annotations.NotNull;
 
 public record UncorrectedGuess(
@@ -9,7 +10,7 @@ public record UncorrectedGuess(
 ) implements GuessResult {
     @Override
     public @NotNull String message() {
-        return "Uncorrected input!\n"
-             + "Try to guess a letter again.";
+        var settings = SettingsManager.getInstance();
+        return settings.get("UNCORRECTED_MESSAGE");
     }
 }

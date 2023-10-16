@@ -1,5 +1,6 @@
 package edu.project1.hangmangame.guessresults;
 
+import edu.project1.hangmangame.settings.SettingsManager;
 import org.jetbrains.annotations.NotNull;
 
 public record SuccessfulGuess(
@@ -9,6 +10,7 @@ public record SuccessfulGuess(
 ) implements GuessResult {
     @Override
     public @NotNull String message() {
-        return "Hit!";
+        var settings = SettingsManager.getInstance();
+        return settings.get("SUCCESSFUL_MESSAGE");
     }
 }
