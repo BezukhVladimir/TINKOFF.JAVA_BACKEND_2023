@@ -10,6 +10,15 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 - MINOR version after completing the Homework or the Project.
 - PATCH version after fixing the Homework or the Project after the code review.
 
+## [2.0.0] - 2023-10-16
+
+### Added
+- The TrainingModule1 is completed!
+- The Homework1: points scored 3/3.
+- The Homework2: points scored 3/3.
+- The Project1: points scored 6/6. 
+- The Test1: correct answers 13/13.
+
 ## [1.3.1] - 2023-10-16
 
 ### Added
