@@ -6,3 +6,5 @@ All commit messages SHOULD adhere to the extended [Conventional Commits specific
 
 The extension includes the following types of commit messages:
 * **docs**: Documentation only changes.
+* **refactor**: A code change that neither fixes a bug nor adds a feature.
+* **build**: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)

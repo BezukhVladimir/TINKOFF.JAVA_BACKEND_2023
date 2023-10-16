@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/ru/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/lang/ru/spec/v2.0.0.html).
 
+Given a version number MAJOR.MINOR.PATCH, increment the:
+- MAJOR version after the completion of the TrainingModule.
+- MINOR version after completing the Homework or the Project.
+- PATCH version after fixing the Homework or the Project after the code review.
+
+## [1.3.1] - 2023-10-16
+
+### Added
+
+- Added settings.json for easy customization of the game style.
+
+### Fixed
+
+- Logic of the game session is extracted from ConsoleHangman in SessionManager.
+- Using Mockito for unit tests.
+
+## [1.3.0] - 2023-10-15
+
+### Added
+
+- Solution for Project1:
+  - Package: project1
+- Unit tests.
+- README.md for a Project1.
+
 ## [1.2.0] - 2023-10-14
 
 ### Added
@@ -26,7 +51,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/lang/ru/spe
 
 ### Fixed
 
-- Added NumberUtils.getNumberFromDigitsInReverseOrder method overload for Task5 
+- Added NumberUtils.getNumberFromDigitsInReverseOrder method overload for Task5.
 
 ## [1.1.0] - 2023-10-07
 

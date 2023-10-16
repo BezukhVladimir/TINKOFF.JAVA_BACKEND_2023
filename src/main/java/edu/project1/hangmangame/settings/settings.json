@@ -1,0 +1,17 @@
+{
+    "HIDDEN_LETTER_FILLER": "*",
+    "CORRECT_INPUT_REGEX": "\\pL",
+    "GIVE_UP_COMMAND": "exit",
+    "SEPARATOR_LINE": "=================================",
+    "WIN_MESSAGE": "You won!",
+    "DEFEAT_MESSAGE": "You lost!",
+    "SUCCESSFUL_MESSAGE": "Hit!",
+    "FAILED_MESSAGE": "Missed, mistake %d out of %d.",
+    "REPEATED_MESSAGE": "You've already used this letter!\nTry another one.",
+    "UNCORRECTED_MESSAGE": "Uncorrected input!\nTry to guess a letter again.",
+    "GAME_LOGO_MESSAGE": "=================================\n┏┳┓┓┏┏┓ ┓┏┏┓┳┓┏┓┳┳┓┏┓┳┓ ┏┓┏┓┳┳┓┏┓\n ┃ ┣┫┣  ┣┫┣┫┃┃┃┓┃┃┃┣┫┃┃ ┃┓┣┫┃┃┃┣\n ┻ ┛┗┗┛ ┛┗┛┗┛┗┗┛┛ ┗┛┗┛┗ ┗┛┛┗┛ ┗┗┛\n======= CREATED BY BEZUKH =======",
+    "ATTEMPTS_MESSAGE": "You have %d attempts.%n",
+    "GIVE_UP_COMMAND_HINT_MESSAGE": "To exit the game, enter: %s%n",
+    "GUESS_PROMPT_MESSAGE": "Guess a letter: ",
+    "GAME_OVER_MESSAGE": "Thanks for playing! See you soon.\n\n        |\\      _,,,---,,_\n  ZZZzz /,`.-'`'    -.  ;-;;,_\n       |,4-  ) )-,_. ,\\ (  `'-'\n      '---''(_/--'  `-'\\\\_)"
+}
