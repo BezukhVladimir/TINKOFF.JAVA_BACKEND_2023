@@ -26,15 +26,6 @@
 
     System.out.println(res + " = " + res.evaluate());
 
-##### Решение:
-
-    Package: task1
-
-##### Тесты:
-
-    UTest: task1.ExprTest
-
-
 ## 2. Квадрат и прямоугольник
 ##### Предметная область:
 
@@ -131,14 +122,6 @@
 - подсказка 1: методы setWidth/setHeight могут что-то возвращать
 - подсказка 2: может пригодиться ключевое слово final
 
-##### Решение:
-
-    Package: task2
-
-##### Тесты:
-
-    UTest: task2.RectangleAndSquareTest
-
 ## 3. Удаленный сервер
 ##### Предметная область:
 
@@ -183,14 +166,6 @@
 
 Обратите внимание, что Connection требуется закрывать (интерфейс AutoCloseable).
 
-##### Решение:
-
-    Package: task3
-
-##### Тесты:
-
-    UTest: task3.PopularCommandExecutorTest
-
 ## 4. Кто вызвал функцию?
 ##### Постановка задачи:
 
@@ -199,11 +174,3 @@
     public record CallingInfo(String className, String methodName) {}
 
 Для получения доступа к стеку вызова используйте метод Throwable#getStackTrace.
-
-##### Решение:
-
-    Package: task4
-
-##### Тесты:
-
-    UTest: task4.CallingInfoTest
