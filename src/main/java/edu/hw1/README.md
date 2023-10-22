@@ -5,11 +5,6 @@
 Напишите функцию, которая выводит в консоль фразу "Привет, мир!"
 при помощи метода `LOGGER.info()`.
 
-##### Решение:
-
-    Method: HelloWorld.logHelloWorld
-
-
 ## 1. Длина видео
 ##### Постановка задачи:
 
@@ -27,14 +22,6 @@
 * Если строка некорректная, например, кол-во секунд больше или равно 60, то нужно вернуть -1
 * количество минут никак не ограничено, например, 999:59 является корректным входным значением.
 
-##### Решение:
-
-    Method: TimeStampUtils.minutesToSeconds
-
-##### Тесты:
-
-    UTest: timestamputils.MinutesToSecondsTest
-
 ## 2. Количество цифр
 ##### Постановка задачи:
 
@@ -47,17 +34,6 @@
     countDigits(4666) -> 4
     countDigits(544) -> 3
     countDigits(0) -> 1 
-
-##### Решение:
-
-    Method: NumberUtils.classicCountDigits
-    Method: NumberUtils.countDigits
-
-##### Тесты:
-
-    UTest: numberutils.ClassicCountDigitsTest
-    UTest: numberutils.CountDigitsTest
-    PTest: optimization.CountDigitsPerformanceTest
 
 ## 3. Вложенный массив
 ##### Постановка задачи:
@@ -76,14 +52,6 @@
     isNestable([9, 9, 8], [8, 9]) -> false
     isNestable([1, 2, 3, 4], [2, 3]) -> false 
 
-##### Решение:
-
-    Method: ArrayUtils.isNestable
-
-##### Тесты:
-
-    UTest: arrayutils.IsNestableTest
-
 ## 4. Сломанная строка
 ##### Постановка задачи:
 
@@ -100,14 +68,6 @@
     fixString("123456") ➞ "214365"
     fixString("hTsii  s aimex dpus rtni.g") ➞ "This is a mixed up string."
     fixString("badce") ➞ "abcde" 
-
-##### Решение:
-
-    Method: BrokenStringFixer.fixString
-
-##### Тесты:
-
-    UTest: brokenstringfixer.FixStringTest
 
 ## 5. Особый палиндром
 ##### Постановка задачи:
@@ -129,18 +89,6 @@
     isPalindromeDescendant(13001120) -> true // 13001120 -> 4022 ➞ 44
     isPalindromeDescendant(23336014) -> true // 23336014 -> 5665
     isPalindromeDescendant(11) -> true 
-
-##### Решение:
-
-    Method: SpecialPalindromeValidator.isSpecialPalindrome
-    Method: NumberUtils.isPalindrome
-    Method: StringUtils.isPalindrome
-
-##### Тесты:
-
-    UTest: specialpalindromevalidator.IsSpecialPalindromeTest
-    UTest: numberutils.IsPalindromeTest
-    UTest: stringutils.IsPalindromeTest
 
 ## 6. Постоянная Капрекара
 ##### Постановка задачи:
@@ -171,31 +119,6 @@
     countK(6554) -> 4
     countK(1234) -> 3 
 
-##### Решение:
-
-    Method: KaprekarsRoutine.countK
-    Method: ArrayUtils.reverse
-    Method: NumberUtils.areAllDigitsSame
-    Method: NumberUtils.getDigits
-    Method: NumberUtils.getDigitsInReverseOrder
-    Method: NumberUtils.getNumberFromDigits
-    Method: NumberUtils.getNumberFromDigitsInReverseOrder
-
-##### Тесты:
-
-    UTest: kaprekarsroutine.CountKTest
-    UTest: arrayutils.ReverseTest
-    UTest: numberutils.AreAllDigitsSameTest
-    UTest: numberutils.GetDigitsTest
-    UTest: numberutils.GetDigitsInReverseOrderTest
-    UTest: numberutils.GetNumberFromDigitsTest
-    UTest: numberutils.GetNumberFromDigitsInReverseOrderTest
-
-##### Бонус:
-
-    Class: DecimalNumber32
-    UTest: decimalnumber32.DecimalNumberInitializationTest
-
 ## 7. Циклический битовый сдвиг
 ##### Постановка задачи:
 
@@ -216,18 +139,6 @@
     rotateRight(8, 1) -> 4 // 1000 -> 0100
     rotateLeft(16, 1) -> 1 // 10000 -> 00001
     rotateLeft(17, 2) -> 6 // 10001 -> 00110 
-
-##### Решение:
-
-    Method: BitUtils.getNumberOfBits
-    Method: BitUtils.rotateLeft
-    Method: BitUtils.rotateRight
-
-##### Тесты:
-
-    UTest: bitutils.GetNumberOfBitsTest
-    UTest: bitutils.RotateLeftTest
-    UTest: bitutils.RotateRightTest
 
 ## 8. Кони на доске
 ##### Постановка задачи:
@@ -271,13 +182,3 @@
     [0, 0, 0, 0, 0, 1, 0, 0],
     [1, 0, 0, 0, 0, 0, 0, 0]
     ]) -> false
-
-##### Решение:
-
-    Method: ChessboardUtils.isValidPosition
-    Method: ChessboardUtils.areAllKnightsSafe
-
-##### Тесты:
-
-    UTest: chessboardutils.IsValidPositionTest
-    UTest: chessboardutils.AreAllKnightsSafeTest
