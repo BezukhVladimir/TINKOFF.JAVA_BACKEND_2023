@@ -3,7 +3,6 @@ package edu.hw3.task5;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import org.jetbrains.annotations.NotNull;
 
 public final class ContactParser {
     private ContactParser() {
@@ -16,11 +15,7 @@ public final class ContactParser {
     }
 
     public static List<Contact> parseContacts(String[] fullNames, ORDER order) {
-        if (fullNames == null) {
-            return List.of();
-        }
-
-        if (fullNames.length == 0) {
+        if (isArrayEmpty(fullNames)) {
             return List.of();
         }
 
@@ -30,8 +25,12 @@ public final class ContactParser {
         return contacts;
     }
 
-    private static @NotNull List<Contact> createContacts(String[] fullNames) {
-        List<Contact> contacts = new ArrayList<>();
+    private static boolean isArrayEmpty(String[] array) {
+        return array == null || array.length == 0;
+    }
+
+    private static List<Contact> createContacts(String[] fullNames) {
+        List<Contact> contacts = new ArrayList<>(fullNames.length);
 
         for (String fullName : fullNames) {
             String[] data = fullName.split(SPLIT_REGEX);
