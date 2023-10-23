@@ -10,6 +10,12 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 - MINOR version after completing the Homework or the Project.
 - PATCH version after fixing the Homework or the Project after the code review.
 
+## [2.1.1] - 2023-10-23
+
+### Fixed
+
+- Reworking all unit tests using AssertJ.
+
 ## [2.1.0] - 2023-10-22
 
 ### Added
