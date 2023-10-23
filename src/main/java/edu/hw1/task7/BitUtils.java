@@ -18,7 +18,7 @@ public final class BitUtils {
      * Performs a left circular shift (rotation) of bits in the given positive integer.
      *
      * @param number The positive integer to perform the left circular shift on.
-     * @param shift The number of bits to shift. If a number is negative, shift is reversed.
+     * @param shift  The number of bits to shift. If a number is negative, shift is reversed.
      * @return The result of the left circular shift operation. If the input {@code number} is negative, -1 is returned.
      */
     public static int rotateLeft(int number, int shift) {
@@ -45,7 +45,7 @@ public final class BitUtils {
      * Performs a right circular shift (rotation) of bits in the given positive integer.
      *
      * @param number The positive integer to perform the right circular shift on.
-     * @param shift The number of bits to shift. If a number is negative, shift is reversed.
+     * @param shift  The number of bits to shift. If a number is negative, shift is reversed.
      * @return The result of a right circular shift operation. If an input {@code number} is negative, -1 is returned.
      */
     public static int rotateRight(int number, int shift) {

@@ -13,8 +13,8 @@ public final class ChessboardUtils {
     /**
      * Checks if a given position (row, col) is valid on a chessboard of the specified size.
      *
-     * @param row The row coordinate of the position.
-     * @param col The column coordinate of the position.
+     * @param row          The row coordinate of the position.
+     * @param col          The column coordinate of the position.
      * @param numberOfRows The total number of rows on the chessboard.
      * @param numberOfCols The total number of columns on the chessboard.
      * @return true if the position is valid, otherwise false.

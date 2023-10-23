@@ -11,8 +11,8 @@ public class DefaultConnectionManager implements ConnectionManager {
     /**
      * Creates a DefaultConnectionManager with specified chances for returning faulty connections.
      *
-     * @param faultyConnectionChance The chance of returning a faulty connection.
-     *                               Must be between 0.0 and 1.0 (inclusive).
+     * @param faultyConnectionChance        The chance of returning a faulty connection.
+     *                                      Must be between 0.0 and 1.0 (inclusive).
      * @param faultyConnectionFailureChance The chance of failure in a faulty connection.
      *                                      Must be between 0.0 and 1.0 (inclusive).
      * @throws IllegalArgumentException If either of the chances is not within the valid range.

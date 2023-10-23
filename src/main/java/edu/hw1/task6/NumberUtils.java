@@ -4,7 +4,6 @@ import static edu.hw1.task2.NumberUtils.countDigits;
 import static edu.hw1.task6.ArrayUtils.reverse;
 
 public final class NumberUtils {
-
     private NumberUtils() {
     }
 
@@ -71,7 +70,7 @@ public final class NumberUtils {
      * If there are fewer digits in the {@code number} than requested in the {@code numberOfDigits},
      * the remaining elements of the array are filled with zeros
      *
-     * @param number The input number.
+     * @param number         The input number.
      * @param numberOfDigits The number of digits to retrieve.
      * @return An array containing the last {@code numberOfDigits} digits of the input {@code number} in reverse order.
      */
@@ -91,9 +90,9 @@ public final class NumberUtils {
      * Forms a number using the digits within the specified range in the array.
      * All digits must be represented by positive numbers.
      *
-     * @param digits The array of digits (positive integers).
+     * @param digits     The array of digits (positive integers).
      * @param startIndex The starting index of the range (inclusive).
-     * @param endIndex The ending index of the range (inclusive).
+     * @param endIndex   The ending index of the range (inclusive).
      * @return The number formed using the digits within the specified range in the array.
      */
     public static int getNumberFromDigits(int[] digits, int startIndex, int endIndex) {
@@ -109,9 +108,9 @@ public final class NumberUtils {
      * Forms a number using the digits within the specified range in the array in reverse order.
      * All digits must be represented by positive numbers.
      *
-     * @param digits The array of digits (positive integers).
+     * @param digits     The array of digits (positive integers).
      * @param startIndex The starting index of the range (inclusive).
-     * @param endIndex The ending index of the range (inclusive).
+     * @param endIndex   The ending index of the range (inclusive).
      * @return The number formed using the digits within the specified range in the array in reverse order.
      */
     public static int getNumberFromDigitsInReverseOrder(int[] digits, int startIndex, int endIndex) {

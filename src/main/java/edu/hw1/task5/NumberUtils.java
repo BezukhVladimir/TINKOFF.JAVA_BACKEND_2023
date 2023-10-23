@@ -1,7 +1,5 @@
 package edu.hw1.task5;
 
-import static edu.hw1.task6.ArrayUtils.reverse;
-
 public final class NumberUtils {
 
     private NumberUtils() {
