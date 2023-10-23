@@ -19,14 +19,10 @@ public final class AtbashCipherUtils {
     }
 
     private static char getMirroredChar(char c) {
-        char mirroredChar;
-
         if (Character.isUpperCase(c)) {
-            mirroredChar = (char) ('Z' - (c - 'A'));
+            return (char) ('Z' - (c - 'A'));
         } else {
-            mirroredChar = (char) ('z' - (c - 'a'));
+            return (char) ('z' - (c - 'a'));
         }
-
-        return mirroredChar;
     }
 }
