@@ -1,6 +1,5 @@
 package edu.hw2.task3;
 
-import edu.hw2.task3.connectionmanagers.ConnectionManager;
 import edu.hw2.task3.connectionmanagers.DefaultConnectionManager;
 import edu.hw2.task3.connectionmanagers.FaultyConnectionManager;
 import edu.hw2.task3.connections.FaultyConnection;
@@ -8,10 +7,9 @@ import edu.hw2.task3.connections.StableConnection;
 import edu.hw2.task3.exceptions.ConnectionException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class PopularCommandExecutorTest {
     @Test
@@ -37,7 +35,8 @@ public class PopularCommandExecutorTest {
         int maxAttempts = 10;
         var executor = new PopularCommandExecutor(connectionManager, maxAttempts);
 
-        assertThrows(ConnectionException.class, executor::updatePackages);
+        assertThatThrownBy(executor::updatePackages)
+            .isInstanceOf(ConnectionException.class);
     }
 
     @Test
@@ -50,4 +49,3 @@ public class PopularCommandExecutorTest {
         assertDoesNotThrow(executor::updatePackages);
     }
 }
-

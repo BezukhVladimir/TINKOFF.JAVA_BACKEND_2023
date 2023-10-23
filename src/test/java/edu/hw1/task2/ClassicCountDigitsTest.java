@@ -1,6 +1,5 @@
 package edu.hw1.task2;
 
-import edu.hw1.task2.NumberUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;

@@ -1,9 +1,8 @@
 package edu.hw1.task6;
 
-import edu.hw1.task6.NumberUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class GetDigitsTest {
     @Test
@@ -17,7 +16,7 @@ public class GetDigitsTest {
         int[] resultDigits = NumberUtils.getDigits(number);
 
         // Assert
-        assertArrayEquals(expectedDigits, resultDigits);
+        assertThat(resultDigits).isEqualTo(expectedDigits);
     }
 
     @Test
@@ -31,7 +30,7 @@ public class GetDigitsTest {
         int[] resultDigits = NumberUtils.getDigits(number);
 
         // Assert
-        assertArrayEquals(expectedDigits, resultDigits);
+        assertThat(resultDigits).isEqualTo(expectedDigits);
     }
 
     @Test
@@ -45,6 +44,6 @@ public class GetDigitsTest {
         int[] resultDigits = NumberUtils.getDigits(number);
 
         // Assert
-        assertArrayEquals(expectedDigits, resultDigits);
+        assertThat(resultDigits).isEqualTo(expectedDigits);
     }
 }

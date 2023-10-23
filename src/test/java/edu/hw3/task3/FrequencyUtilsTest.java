@@ -1,10 +1,11 @@
 package edu.hw3.task3;
 
-import org.junit.jupiter.api.Test;
 import java.util.List;
 import java.util.Map;
+import org.junit.jupiter.api.Test;
 import static edu.hw3.task3.FrequencyUtils.freqDict;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.entry;
 
 public class FrequencyUtilsTest {
     @Test
@@ -16,9 +17,12 @@ public class FrequencyUtilsTest {
         Map<String, Integer> wordFreq = freqDict(words);
 
         // Assert
-        assertEquals(3, wordFreq.get("код"));
-        assertEquals(1, wordFreq.get("bug"));
-        assertEquals(2, wordFreq.size());
+        assertThat(wordFreq)
+            .hasSize(2)
+            .containsOnly(
+                entry("код", 3),
+                entry("bug", 1)
+            );
     }
 
     @Test
@@ -30,8 +34,11 @@ public class FrequencyUtilsTest {
         Map<Integer, Integer> numberFreq = freqDict(numbers);
 
         // Assert
-        assertEquals(2, numberFreq.get(1));
-        assertEquals(2, numberFreq.get(2));
-        assertEquals(2, numberFreq.size());
+        assertThat(numberFreq)
+            .hasSize(2)
+            .containsOnly(
+                entry(1, 2),
+                entry(2, 2)
+            );
     }
 }

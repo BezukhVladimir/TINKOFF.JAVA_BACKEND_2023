@@ -1,9 +1,8 @@
 package edu.hw1.task6;
 
-import edu.hw1.task6.ArrayUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ReverseTest {
     @Test
@@ -11,12 +10,13 @@ public class ReverseTest {
     void testReverseEmptyArray() {
         // Arrange
         int[] array = {};
+        int[] expectedArray = new int[] {};
 
         // Act
         ArrayUtils.reverse(array);
 
         // Assert
-        assertArrayEquals(new int[]{}, array);
+        assertThat(array).isEqualTo(expectedArray);
     }
 
     @Test
@@ -24,12 +24,13 @@ public class ReverseTest {
     void testReverseArrayWithOneElement() {
         // Arrange
         int[] array = {42};
+        int[] expectedArray = new int[] {42};
 
         // Act
         ArrayUtils.reverse(array);
 
         // Assert
-        assertArrayEquals(new int[]{42}, array);
+        assertThat(array).isEqualTo(expectedArray);
     }
 
     @Test
@@ -37,12 +38,13 @@ public class ReverseTest {
     void testReverseArrayWithEvenNumberOfElements() {
         // Arrange
         int[] array = {1, 2, 3, 4, 5, 6};
+        int[] expectedArray = new int[] {6, 5, 4, 3, 2, 1};
 
         // Act
         ArrayUtils.reverse(array);
 
         // Assert
-        assertArrayEquals(new int[]{6, 5, 4, 3, 2, 1}, array);
+        assertThat(array).isEqualTo(expectedArray);
     }
 
     @Test
@@ -50,12 +52,13 @@ public class ReverseTest {
     void testReverseArrayWithOddNumberOfElements() {
         // Arrange
         int[] array = {1, 2, 3, 4, 5};
+        int[] expectedArray = new int[] {5, 4, 3, 2, 1};
 
         // Act
         ArrayUtils.reverse(array);
 
         // Assert
-        assertArrayEquals(new int[]{5, 4, 3, 2, 1}, array);
+        assertThat(array).isEqualTo(expectedArray);
     }
 
     @Test
@@ -63,11 +66,12 @@ public class ReverseTest {
     void testReverseArrayWithRepeatedElements() {
         // Arrange
         int[] array = {5, 5, 5, 5, 5, 5};
+        int[] expectedArray = new int[] {5, 5, 5, 5, 5, 5};
 
         // Act
         ArrayUtils.reverse(array);
 
         // Assert
-        assertArrayEquals(new int[]{5, 5, 5, 5, 5, 5}, array);
+        assertThat(array).isEqualTo(expectedArray);
     }
 }

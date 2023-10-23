@@ -3,47 +3,69 @@ package edu.hw3.task5;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 import static edu.hw3.task5.ContactParser.parseContacts;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ContactParserTest {
     @Test
-    void testEmpty() {
+    void testEmptyInAscendingOrder() {
         // Arrange
         String[] fullNames = {};
-        var order1 = ContactParser.ORDER.ASC;
-        var order2 = ContactParser.ORDER.DESC;
+        var order = ContactParser.ORDER.ASC;
         List<Contact> expected = List.of();
 
         // Act
-        List<Contact> contacts1 = parseContacts(fullNames, order1);
-        List<Contact> contacts2 = parseContacts(fullNames, order2);
+        List<Contact> contacts = parseContacts(fullNames, order);
 
         // Assert
-        assertEquals(expected, contacts1);
-        assertEquals(expected, contacts2);
+        assertThat(contacts).isEqualTo(expected);
     }
 
     @Test
-    void testNull() {
+    void testEmptyInDescendingOrder() {
         // Arrange
-        String[] fullNames = null;
-        var order1 = ContactParser.ORDER.ASC;
-        var order2 = ContactParser.ORDER.DESC;
+        String[] fullNames = {};
+        var order = ContactParser.ORDER.DESC;
         List<Contact> expected = List.of();
 
         // Act
-        List<Contact> contacts1 = parseContacts(fullNames, order1);
-        List<Contact> contacts2 = parseContacts(fullNames, order2);
+        List<Contact> contacts = parseContacts(fullNames, order);
 
         // Assert
-        assertEquals(expected, contacts1);
-        assertEquals(expected, contacts2);
+        assertThat(contacts).isEqualTo(expected);
+    }
+
+    @Test
+    void testNullInAscendingOrder() {
+        // Arrange
+        String[] fullNames = null;
+        var order = ContactParser.ORDER.ASC;
+        List<Contact> expected = List.of();
+
+        // Act
+        List<Contact> contacts = parseContacts(fullNames, order);
+
+        // Assert
+        assertThat(contacts).isEqualTo(expected);
+    }
+
+    @Test
+    void testNullInDescendingOrder() {
+        // Arrange
+        String[] fullNames = null;
+        var order = ContactParser.ORDER.DESC;
+        List<Contact> expected = List.of();
+
+        // Act
+        List<Contact> contacts = parseContacts(fullNames, order);
+
+        // Assert
+        assertThat(contacts).isEqualTo(expected);
     }
 
     @Test
     void testFullNamesInAscendingOrder() {
         // Arrange
-        String[] fullNames = { "Paul Erdos", "Leonhard Euler", "Carl Gauss" };
+        String[] fullNames = {"Paul Erdos", "Leonhard Euler", "Carl Gauss"};
         var order = ContactParser.ORDER.ASC;
         List<Contact> expected = List.of(
             new Contact("Paul", "Erdos"),
@@ -55,13 +77,13 @@ public class ContactParserTest {
         List<Contact> contacts = parseContacts(fullNames, order);
 
         // Assert
-        assertEquals(expected, contacts);
+        assertThat(contacts).isEqualTo(expected);
     }
 
     @Test
     void testFullNamesInDescendingOrder() {
         // Arrange
-        String[] fullNames = { "Paul Erdos", "Leonhard Euler", "Carl Gauss" };
+        String[] fullNames = {"Paul Erdos", "Leonhard Euler", "Carl Gauss"};
         var order = ContactParser.ORDER.DESC;
         List<Contact> expected = List.of(
             new Contact("Carl", "Gauss"),
@@ -73,13 +95,13 @@ public class ContactParserTest {
         List<Contact> contacts = parseContacts(fullNames, order);
 
         // Assert
-        assertEquals(expected, contacts);
+        assertThat(contacts).isEqualTo(expected);
     }
 
     @Test
     void testFirstNamesInAscendingOrder() {
         // Arrange
-        String[] fullNames = { "Paul", "Leonhard", "Carl" };
+        String[] fullNames = {"Paul", "Leonhard", "Carl"};
         var order = ContactParser.ORDER.ASC;
         List<Contact> expected = List.of(
             new Contact("Carl", null),
@@ -91,13 +113,13 @@ public class ContactParserTest {
         List<Contact> contacts = parseContacts(fullNames, order);
 
         // Assert
-        assertEquals(expected, contacts);
+        assertThat(contacts).isEqualTo(expected);
     }
 
     @Test
     void testFirstNamesInDescendingOrder() {
         // Arrange
-        String[] fullNames = { "Paul", "Leonhard", "Carl" };
+        String[] fullNames = {"Paul", "Leonhard", "Carl"};
         var order = ContactParser.ORDER.DESC;
         List<Contact> expected = List.of(
             new Contact("Paul", null),
@@ -109,6 +131,6 @@ public class ContactParserTest {
         List<Contact> contacts = parseContacts(fullNames, order);
 
         // Assert
-        assertEquals(expected, contacts);
+        assertThat(contacts).isEqualTo(expected);
     }
 }

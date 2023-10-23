@@ -1,10 +1,8 @@
 package edu.hw1.task8;
 
-import edu.hw1.task8.ChessboardUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class IsValidPositionTest {
 
@@ -21,7 +19,7 @@ public class IsValidPositionTest {
         boolean isValid = ChessboardUtils.isValidPosition(row, col, numberOfRows, numberOfCols);
 
         // Assert
-        assertTrue(isValid);
+        assertThat(isValid).isTrue();
     }
 
     @Test
@@ -37,7 +35,7 @@ public class IsValidPositionTest {
         boolean isValid = ChessboardUtils.isValidPosition(row, col, numberOfRows, numberOfCols);
 
         // Assert
-        assertFalse(isValid);
+        assertThat(isValid).isFalse();
     }
 
     @Test
@@ -53,7 +51,7 @@ public class IsValidPositionTest {
         boolean isValid = ChessboardUtils.isValidPosition(row, col, numberOfRows, numberOfCols);
 
         // Assert
-        assertFalse(isValid);
+        assertThat(isValid).isFalse();
     }
 
     @Test
@@ -69,7 +67,7 @@ public class IsValidPositionTest {
         boolean isValid = ChessboardUtils.isValidPosition(row, col, numberOfRows, numberOfCols);
 
         // Assert
-        assertFalse(isValid);
+        assertThat(isValid).isFalse();
     }
 
     @Test
@@ -85,7 +83,7 @@ public class IsValidPositionTest {
         boolean isValid = ChessboardUtils.isValidPosition(row, col, numberOfRows, numberOfCols);
 
         // Assert
-        assertFalse(isValid);
+        assertThat(isValid).isFalse();
     }
 
     @Test
@@ -101,7 +99,7 @@ public class IsValidPositionTest {
         boolean isValid = ChessboardUtils.isValidPosition(row, col, numberOfRows, numberOfCols);
 
         // Assert
-        assertTrue(isValid);
+        assertThat(isValid).isTrue();
     }
 
     @Test
@@ -117,6 +115,6 @@ public class IsValidPositionTest {
         boolean isValid = ChessboardUtils.isValidPosition(row, col, numberOfRows, numberOfCols);
 
         // Assert
-        assertTrue(isValid);
+        assertThat(isValid).isTrue();
     }
 }

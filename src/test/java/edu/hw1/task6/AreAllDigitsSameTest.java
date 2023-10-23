@@ -1,10 +1,8 @@
 package edu.hw1.task6;
 
-import edu.hw1.task6.NumberUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class AreAllDigitsSameTest {
     @Test
@@ -17,7 +15,7 @@ public class AreAllDigitsSameTest {
         boolean result = NumberUtils.areAllDigitsSame(number);
 
         // Assert
-        assertTrue(result);
+        assertThat(result).isTrue();
     }
 
     @Test
@@ -30,7 +28,7 @@ public class AreAllDigitsSameTest {
         boolean result = NumberUtils.areAllDigitsSame(number);
 
         // Assert
-        assertTrue(result);
+        assertThat(result).isTrue();
     }
 
     @Test
@@ -43,7 +41,7 @@ public class AreAllDigitsSameTest {
         boolean result = NumberUtils.areAllDigitsSame(number);
 
         // Assert
-        assertFalse(result);
+        assertThat(result).isFalse();
     }
 
     @Test
@@ -56,7 +54,7 @@ public class AreAllDigitsSameTest {
         boolean result = NumberUtils.areAllDigitsSame(number);
 
         // Assert
-        assertTrue(result);
+        assertThat(result).isTrue();
     }
 
     @Test
@@ -69,6 +67,6 @@ public class AreAllDigitsSameTest {
         boolean result = NumberUtils.areAllDigitsSame(number);
 
         // Assert
-        assertTrue(result);
+        assertThat(result).isTrue();
     }
 }

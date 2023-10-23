@@ -1,10 +1,8 @@
 package edu.hw1.task8;
 
-import edu.hw1.task8.ChessboardUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class AreAllKnightsSafeTest {
     @Test
@@ -26,7 +24,7 @@ public class AreAllKnightsSafeTest {
         boolean result = ChessboardUtils.areAllKnightsSafe(board);
 
         // Assert
-        assertTrue(result);
+        assertThat(result).isTrue();
     }
 
     @Test
@@ -48,7 +46,7 @@ public class AreAllKnightsSafeTest {
         boolean result = ChessboardUtils.areAllKnightsSafe(board);
 
         // Assert
-        assertTrue(result);
+        assertThat(result).isTrue();
     }
 
     @Test
@@ -70,7 +68,7 @@ public class AreAllKnightsSafeTest {
         boolean result = ChessboardUtils.areAllKnightsSafe(board);
 
         // Assert
-        assertFalse(result);
+        assertThat(result).isFalse();
     }
 
     @Test
@@ -92,6 +90,6 @@ public class AreAllKnightsSafeTest {
         boolean result = ChessboardUtils.areAllKnightsSafe(board);
 
         // Assert
-        assertFalse(result);
+        assertThat(result).isFalse();
     }
 }

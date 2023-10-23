@@ -1,9 +1,9 @@
 package edu.hw3.task2;
 
-import org.junit.jupiter.api.Test;
 import java.util.List;
+import org.junit.jupiter.api.Test;
 import static edu.hw3.task2.ClusterUtils.clusterize;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ClusterTest {
     @Test
@@ -16,7 +16,7 @@ public class ClusterTest {
 
         // Assert
         for (String result : results) {
-            assertEquals("()", result);
+            assertThat(result).isEqualTo("()");
         }
     }
 
@@ -29,8 +29,9 @@ public class ClusterTest {
         List<String> results = clusterize(input);
 
         // Assert
-        assertEquals("((()))", results.get(0));
-        assertEquals(1, results.size());
+        assertThat(results)
+            .hasSize(1)
+            .containsExactly("((()))");
     }
 
     @Test
@@ -42,12 +43,9 @@ public class ClusterTest {
         List<String> results = clusterize(input);
 
         // Assert
-        assertEquals("((()))", results.get(0));
-        assertEquals("(())",   results.get(1));
-        assertEquals("()",     results.get(2));
-        assertEquals("()",     results.get(3));
-        assertEquals("(()())", results.get(4));
-        assertEquals(5, results.size());
+        assertThat(results)
+            .hasSize(5)
+            .containsExactly("((()))", "(())", "()", "()", "(()())");
     }
 
     @Test
@@ -59,8 +57,8 @@ public class ClusterTest {
         List<String> results = clusterize(input);
 
         // Assert
-        assertEquals("((())())",   results.get(0));
-        assertEquals("(()(()()))", results.get(1));
-        assertEquals(2, results.size());
+        assertThat(results)
+            .hasSize(2)
+            .containsExactly("((())())", "(()(()()))");
     }
 }

@@ -1,12 +1,10 @@
 package edu.hw1.task6;
 
-import edu.hw1.task6.NumberUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class GetNumberFromDigitsInReverseOrderTest {
-
     @Test
     @DisplayName("Form a number from a range of digits")
     void testGetNumberFromDigits() {
@@ -20,7 +18,7 @@ public class GetNumberFromDigitsInReverseOrderTest {
         int resultNumber = NumberUtils.getNumberFromDigitsInReverseOrder(digits, startIndex, endIndex);
 
         // Assert
-        assertEquals(expectedNumber, resultNumber);
+        assertThat(resultNumber).isEqualTo(expectedNumber);
     }
 
     @Test
@@ -36,7 +34,7 @@ public class GetNumberFromDigitsInReverseOrderTest {
         int resultNumber = NumberUtils.getNumberFromDigitsInReverseOrder(digits, startIndex, endIndex);
 
         // Assert
-        assertEquals(expectedNumber, resultNumber);
+        assertThat(resultNumber).isEqualTo(expectedNumber);
     }
 
     @Test
@@ -52,6 +50,6 @@ public class GetNumberFromDigitsInReverseOrderTest {
         int resultNumber = NumberUtils.getNumberFromDigitsInReverseOrder(digits, startIndex, endIndex);
 
         // Assert
-        assertEquals(expectedNumber, resultNumber);
+        assertThat(resultNumber).isEqualTo(expectedNumber);
     }
 }

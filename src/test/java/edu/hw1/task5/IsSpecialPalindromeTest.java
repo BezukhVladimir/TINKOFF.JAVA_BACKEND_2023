@@ -1,9 +1,8 @@
 package edu.hw1.task5;
 
-import static org.junit.jupiter.api.Assertions.*;
-import edu.hw1.task5.SpecialPalindromeValidator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class IsSpecialPalindromeTest {
 
@@ -17,7 +16,7 @@ public class IsSpecialPalindromeTest {
         boolean result = SpecialPalindromeValidator.isSpecialPalindrome(validSpecialPalindrome);
 
         // Assert
-        assertTrue(result);
+        assertThat(result).isTrue();
     }
 
     @Test
@@ -30,7 +29,7 @@ public class IsSpecialPalindromeTest {
         boolean result = SpecialPalindromeValidator.isSpecialPalindrome(validPalindrome);
 
         // Assert
-        assertTrue(result);
+        assertThat(result).isTrue();
     }
 
     @Test
@@ -43,7 +42,7 @@ public class IsSpecialPalindromeTest {
         boolean result = SpecialPalindromeValidator.isSpecialPalindrome(nonSpecialPalindrome);
 
         // Assert
-        assertFalse(result);
+        assertThat(result).isFalse();
     }
 
     @Test
@@ -56,7 +55,7 @@ public class IsSpecialPalindromeTest {
         boolean result = SpecialPalindromeValidator.isSpecialPalindrome(numberWithOddDigits);
 
         // Assert
-        assertTrue(result);
+        assertThat(result).isTrue();
     }
 
     @Test
@@ -69,7 +68,7 @@ public class IsSpecialPalindromeTest {
         boolean result = SpecialPalindromeValidator.isSpecialPalindrome(numberWithOneDigit);
 
         // Assert
-        assertTrue(result);
+        assertThat(result).isTrue();
     }
 
     @Test
@@ -82,6 +81,6 @@ public class IsSpecialPalindromeTest {
         boolean result = SpecialPalindromeValidator.isSpecialPalindrome(numberWithOneDigit);
 
         // Assert
-        assertFalse(result);
+        assertThat(result).isFalse();
     }
 }

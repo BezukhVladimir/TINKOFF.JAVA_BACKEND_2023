@@ -1,8 +1,8 @@
 package edu.hw1.task7;
 
-import edu.hw1.task7.BitUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GetNumberOfBitsTest {
@@ -18,7 +18,7 @@ public class GetNumberOfBitsTest {
             int result = BitUtils.getNumberOfBits(number);
 
             // Assert
-            assertEquals(i + 1, result);
+            assertThat(result).isEqualTo(i + 1);
         }
     }
 
@@ -30,7 +30,7 @@ public class GetNumberOfBitsTest {
             int result = BitUtils.getNumberOfBits(i);
 
             // Assert
-            assertEquals(32, result);
+            assertEquals(result, 32);
         }
     }
 }

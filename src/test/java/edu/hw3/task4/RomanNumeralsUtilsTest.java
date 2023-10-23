@@ -6,7 +6,7 @@ import static edu.hw3.task4.RomanNumeralsUtils.ROMAN_MAX_VALUE;
 import static edu.hw3.task4.RomanNumeralsUtils.ROMAN_NEGATIVE_NUMBERS;
 import static edu.hw3.task4.RomanNumeralsUtils.ROMAN_ZERO;
 import static edu.hw3.task4.RomanNumeralsUtils.convertToRoman;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class RomanNumeralsUtilsTest {
     @Test
@@ -18,7 +18,7 @@ public class RomanNumeralsUtilsTest {
         String romanNumber = convertToRoman(number);
 
         // Assert
-        assertEquals(ROMAN_NEGATIVE_NUMBERS, romanNumber);
+        assertThat(romanNumber).isEqualTo(ROMAN_NEGATIVE_NUMBERS);
     }
 
     @Test
@@ -30,7 +30,7 @@ public class RomanNumeralsUtilsTest {
         String romanNumber = convertToRoman(number);
 
         // Assert
-        assertEquals(ROMAN_ZERO, romanNumber);
+        assertThat(romanNumber).isEqualTo(ROMAN_ZERO);
     }
 
     @Test
@@ -42,7 +42,7 @@ public class RomanNumeralsUtilsTest {
         String romanNumber = convertToRoman(number);
 
         // Assert
-        assertEquals(ROMAN_LARGE_NUMBERS, romanNumber);
+        assertThat(romanNumber).isEqualTo(ROMAN_LARGE_NUMBERS);
     }
 
     @Test
@@ -51,6 +51,6 @@ public class RomanNumeralsUtilsTest {
         String romanNumber = convertToRoman(ROMAN_MAX_VALUE);
 
         // Assert
-        assertEquals("MMMCMXCIX", romanNumber);
+        assertThat(romanNumber).isEqualTo("MMMCMXCIX");
     }
 }

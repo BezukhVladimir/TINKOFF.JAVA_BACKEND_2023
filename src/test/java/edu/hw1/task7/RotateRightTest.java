@@ -1,37 +1,28 @@
 package edu.hw1.task7;
 
-import edu.hw1.task7.BitUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class RotateRightTest {
-
-    @Test
+    @ParameterizedTest
+    @CsvSource({
+        "0, 1, 0",
+        "0, -1, 0",
+        "16, 1, 8",
+        "16, -1, 1",
+        "2147483647, 1, 2147483647",
+        "2147483647, -1, 2147483647"
+    })
     @DisplayName("Test rotating right by 1 bit")
-    void testByOneBit() {
-        // Arrange
-        int input1 = 0;
-        int input2 = Integer.MAX_VALUE;
-        int input3 = 16;
-        int shift1 = 1;
-        int shift2 = -1;
-
+    void testRotateRightByOneBit(int input, int shift, int expected) {
         // Act
-        int result11 = BitUtils.rotateRight(input1, shift1);
-        int result12 = BitUtils.rotateRight(input2, shift1);
-        int result13 = BitUtils.rotateRight(input3, shift1);
-        int result21 = BitUtils.rotateRight(input1, shift2);
-        int result22 = BitUtils.rotateRight(input2, shift2);
-        int result23 = BitUtils.rotateRight(input3, shift2);
+        int result = BitUtils.rotateRight(input, shift);
 
         // Assert
-        assertEquals(0, result11);
-        assertEquals(Integer.MAX_VALUE, result12);
-        assertEquals(8, result13);
-        assertEquals(0, result21);
-        assertEquals(Integer.MAX_VALUE, result22);
-        assertEquals(1, result23);
+        assertThat(result).isEqualTo(expected);
     }
 
     @Test
@@ -40,12 +31,13 @@ public class RotateRightTest {
         // Arrange
         int input = -1;
         int shift = 2;
+        int expected = -1;
 
         // Act
         int result = BitUtils.rotateRight(input, shift);
 
         // Assert
-        assertEquals(-1, result);
+        assertThat(result).isEqualTo(expected);
     }
 
     @Test
@@ -59,6 +51,6 @@ public class RotateRightTest {
         int result = BitUtils.rotateRight(input, shift);
 
         // Assert
-        assertEquals(input, result);
+        assertThat(result).isEqualTo(input);
     }
 }

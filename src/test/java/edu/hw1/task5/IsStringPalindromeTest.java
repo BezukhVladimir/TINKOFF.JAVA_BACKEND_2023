@@ -1,9 +1,8 @@
 package edu.hw1.task5;
 
-import edu.hw1.task5.StringUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class IsStringPalindromeTest {
 
@@ -17,7 +16,7 @@ public class IsStringPalindromeTest {
         boolean result = StringUtils.isPalindrome(palindrome);
 
         // Assert
-        assertTrue(result);
+        assertThat(result).isTrue();
     }
 
     @Test
@@ -30,7 +29,7 @@ public class IsStringPalindromeTest {
         boolean result = StringUtils.isPalindrome(palindrome);
 
         // Assert
-        assertTrue(result);
+        assertThat(result).isTrue();
     }
 
     @Test
@@ -43,7 +42,7 @@ public class IsStringPalindromeTest {
         boolean result = StringUtils.isPalindrome(nonPalindrome);
 
         // Assert
-        assertFalse(result);
+        assertThat(result).isFalse();
     }
 
     @Test
@@ -56,7 +55,7 @@ public class IsStringPalindromeTest {
         boolean result = StringUtils.isPalindrome(emptyString);
 
         // Assert
-        assertTrue(result);
+        assertThat(result).isTrue();
     }
 
     @Test
@@ -69,6 +68,6 @@ public class IsStringPalindromeTest {
         boolean result = StringUtils.isPalindrome(singleChar);
 
         // Assert
-        assertTrue(result);
+        assertThat(result).isTrue();
     }
 }

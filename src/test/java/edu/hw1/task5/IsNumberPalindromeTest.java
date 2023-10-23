@@ -1,9 +1,8 @@
 package edu.hw1.task5;
 
-import edu.hw1.task5.NumberUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class IsNumberPalindromeTest {
     @Test
@@ -16,7 +15,7 @@ public class IsNumberPalindromeTest {
         boolean result = NumberUtils.isPalindrome(number);
 
         // Assert
-        assertTrue(result);
+        assertThat(result).isTrue();
     }
 
     @Test
@@ -29,7 +28,7 @@ public class IsNumberPalindromeTest {
         boolean result = NumberUtils.isPalindrome(number);
 
         // Assert
-        assertFalse(result);
+        assertThat(result).isFalse();
     }
 
     @Test
@@ -42,7 +41,7 @@ public class IsNumberPalindromeTest {
         boolean result = NumberUtils.isPalindrome(number);
 
         // Assert
-        assertFalse(result);
+        assertThat(result).isFalse();
     }
 
     @Test
@@ -55,6 +54,6 @@ public class IsNumberPalindromeTest {
         boolean result = NumberUtils.isPalindrome(number);
 
         // Assert
-        assertTrue(result);
+        assertThat(result).isTrue();
     }
 }

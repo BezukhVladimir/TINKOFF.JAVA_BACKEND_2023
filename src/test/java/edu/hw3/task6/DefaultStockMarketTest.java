@@ -3,7 +3,7 @@ package edu.hw3.task6;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class DefaultStockMarketTest {
     DefaultStockMarket defaultStockMarket;
@@ -14,28 +14,39 @@ public class DefaultStockMarketTest {
     }
 
     @Test
+    void testEmpty() {
+        // Assert
+        assertThat(defaultStockMarket.size()).isEqualTo(0);
+    }
+
+    @Test
     void testAdd() {
         // Arrange
-        List<Stock> stocks = List.of(
-            new Stock("TCSG", 3500.0),
-            new Stock("SBER", 270.0),
-            new Stock("VTBR", 0.025)
-        );
+        Stock singleStock = new Stock("TCSG", 3500.0);
 
-        int expectedSize = 0;
-        for (Stock stock : stocks) {
-            // Act
-            defaultStockMarket.add(stock);
-            ++expectedSize;
+        // Act
+        boolean added = defaultStockMarket.add(singleStock);
 
-            // Assert
-            assertEquals(expectedSize, defaultStockMarket.size());
-        }
+        // Assert
+        assertThat(added).isTrue();
     }
 
     @Test
     void testRemove() {
         // Arrange
+        Stock singleStock = new Stock("TCSG", 3500.0);
+        defaultStockMarket.add(singleStock);
+
+        // Act
+        boolean removed = defaultStockMarket.remove(singleStock);
+
+        // Assert
+        assertThat(removed).isTrue();
+    }
+
+    @Test
+    void testRemoveDecreaseSize() {
+        // Arrange
         List<Stock> stocks = List.of(
             new Stock("TCSG", 3500.0),
             new Stock("SBER", 270.0),
@@ -46,13 +57,33 @@ public class DefaultStockMarketTest {
             defaultStockMarket.add(stock);
         }
 
-        for (int expectedSize = 2; expectedSize >= 0; --expectedSize) {
-            // Act
-            defaultStockMarket.remove(defaultStockMarket.mostValuableStock());
+        // Act
+        defaultStockMarket.remove(defaultStockMarket.mostValuableStock());
 
-            // Assert
-            assertEquals(expectedSize, defaultStockMarket.size());
-        }
+        // Assert
+        assertThat(defaultStockMarket.size()).isEqualTo(stocks.size() - 1);
+    }
+
+    @Test
+    void testRemoveLastElement() {
+        // Arrange
+        Stock singleStock = new Stock("TCSG", 3500.0);
+        defaultStockMarket.add(singleStock);
+
+        // Act
+        defaultStockMarket.remove(singleStock);
+
+        // Assert
+        assertThat(defaultStockMarket.size()).isEqualTo(0);
+    }
+
+    @Test
+    void testRemoveEmptyStockMarket() {
+        // Act
+        boolean removed = defaultStockMarket.remove(defaultStockMarket.mostValuableStock());
+
+        // Assert
+        assertThat(removed).isFalse();
     }
 
     @Test
@@ -68,10 +99,9 @@ public class DefaultStockMarketTest {
             defaultStockMarket.add(stock);
         }
 
-        for (int expectedStockId = 2; expectedStockId >= 0; --expectedStockId) {
-            // Assert
-            assertEquals(stocks.get(expectedStockId), defaultStockMarket.mostValuableStock());
-            defaultStockMarket.remove(stocks.get(expectedStockId));
-        }
+        int expectedStockId = 2;
+
+        // Assert
+        assertThat(defaultStockMarket.mostValuableStock()).isEqualTo(stocks.get(expectedStockId));
     }
 }

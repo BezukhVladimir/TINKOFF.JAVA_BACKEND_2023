@@ -1,7 +1,5 @@
 package edu.hw1.task6;
 
-import edu.hw1.task6.KaprekarsRoutine;
-import edu.hw1.task6.NumberUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;

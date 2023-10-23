@@ -1,10 +1,8 @@
 package edu.hw1.task6;
 
-import edu.hw1.task6.NumberUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class GetDigitsInReverseOrderTest {
     @Test
@@ -18,7 +16,7 @@ public class GetDigitsInReverseOrderTest {
         int[] resultDigits = NumberUtils.getDigitsInReverseOrder(number);
 
         // Assert
-        assertArrayEquals(expectedDigits, resultDigits);
+        assertThat(resultDigits).isEqualTo(expectedDigits);
     }
 
     @Test
@@ -32,7 +30,7 @@ public class GetDigitsInReverseOrderTest {
         int[] resultDigits = NumberUtils.getDigitsInReverseOrder(number);
 
         // Assert
-        assertArrayEquals(expectedDigits, resultDigits);
+        assertThat(resultDigits).isEqualTo(expectedDigits);
     }
 
     @Test
@@ -46,6 +44,6 @@ public class GetDigitsInReverseOrderTest {
         int[] resultDigits = NumberUtils.getDigitsInReverseOrder(number);
 
         // Assert
-        assertArrayEquals(expectedDigits, resultDigits);
+        assertThat(resultDigits).isEqualTo(expectedDigits);
     }
 }

@@ -1,9 +1,8 @@
 package edu.hw1.task6;
 
-import edu.hw1.task6.NumberUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class GetNumberFromDigitsTest {
 
@@ -20,7 +19,7 @@ public class GetNumberFromDigitsTest {
         int resultNumber = NumberUtils.getNumberFromDigits(digits, startIndex, endIndex);
 
         // Assert
-        assertEquals(expectedNumber, resultNumber);
+        assertThat(resultNumber).isEqualTo(expectedNumber);
     }
 
     @Test
@@ -36,7 +35,7 @@ public class GetNumberFromDigitsTest {
         int resultNumber = NumberUtils.getNumberFromDigits(digits, startIndex, endIndex);
 
         // Assert
-        assertEquals(expectedNumber, resultNumber);
+        assertThat(resultNumber).isEqualTo(expectedNumber);
     }
 
     @Test
@@ -52,6 +51,6 @@ public class GetNumberFromDigitsTest {
         int resultNumber = NumberUtils.getNumberFromDigits(digits, startIndex, endIndex);
 
         // Assert
-        assertEquals(expectedNumber, resultNumber);
+        assertThat(resultNumber).isEqualTo(expectedNumber);
     }
 }
