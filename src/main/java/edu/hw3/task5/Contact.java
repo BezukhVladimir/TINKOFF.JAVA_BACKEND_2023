@@ -12,6 +12,12 @@ public record Contact(
             return this.firstName.compareTo(other.firstName);
         }
 
-        return this.secondName.compareTo(other.secondName);
+        int secondNameComparison = this.secondName.compareTo(other.secondName);
+
+        if (secondNameComparison == 0) {
+            return this.firstName.compareTo(other.firstName);
+        }
+
+        return secondNameComparison;
     }
 }
