@@ -3,12 +3,11 @@ package edu.project1.hangmangame.session;
 import edu.project1.dictionaries.Dictionary;
 import edu.project1.hangmangame.guessresults.GuessResult;
 import edu.project1.hangmangame.settings.SettingsManager;
-import java.util.Locale;
-import java.util.Scanner;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import java.util.Locale;
+import java.util.Scanner;
 
-@SuppressWarnings({"RegexpSinglelineJava", "MultipleStringLiterals"})
 public class SessionManager {
     private final SettingsManager settings;
     private Session session;

@@ -1,8 +1,6 @@
 package edu.project1.hangmangame.session;
 
 import edu.project1.dictionaries.Dictionary;
-import java.util.ArrayList;
-import java.util.List;
 import edu.project1.hangmangame.guessresults.DefeatGuess;
 import edu.project1.hangmangame.guessresults.FailedGuess;
 import edu.project1.hangmangame.guessresults.GuessResult;
@@ -11,12 +9,14 @@ import edu.project1.hangmangame.guessresults.SuccessfulGuess;
 import edu.project1.hangmangame.guessresults.UncorrectedGuess;
 import edu.project1.hangmangame.guessresults.WinGuess;
 import edu.project1.hangmangame.settings.SettingsManager;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
@@ -124,7 +124,7 @@ public class HangmanGameTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = { "", "*", "1", "12", "aa", "AA" })
+    @ValueSource(strings = {"", "*", "1", "12", "aa", "AA"})
     @DisplayName("Test uncorrected input")
     void testUncorrectedInput(String input) {
         // Act

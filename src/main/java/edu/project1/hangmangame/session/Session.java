@@ -7,10 +7,10 @@ import edu.project1.hangmangame.guessresults.RepeatedGuess;
 import edu.project1.hangmangame.guessresults.SuccessfulGuess;
 import edu.project1.hangmangame.guessresults.UncorrectedGuess;
 import edu.project1.hangmangame.guessresults.WinGuess;
-import edu.project1.hangmangame.settings.SettingsManager;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import edu.project1.hangmangame.settings.SettingsManager;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
@@ -25,6 +25,7 @@ class Session {
     private final Set<Character> usedLetters;
     private int numberOfHiddenLetters;
     private boolean isGameFinished;
+
 
     Session(@NotNull String answer, int maxAttempts) {
         this.answer = answer;
