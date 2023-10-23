@@ -14,13 +14,13 @@ public final class DefaultStockMarket implements StockMarket {
     }
 
     @Override
-    public void add(Stock stock) {
-        stocks.add(stock);
+    public boolean add(Stock stock) {
+        return stocks.add(stock);
     }
 
     @Override
-    public void remove(Stock stock) {
-        stocks.remove(stock);
+    public boolean remove(Stock stock) {
+        return stocks.remove(stock);
     }
 
     @Override
