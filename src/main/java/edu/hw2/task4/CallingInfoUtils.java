@@ -14,5 +14,6 @@ public class CallingInfoUtils {
         return new CallingInfo(callerInfo.getClassName(), callerInfo.getMethodName());
     }
 
-    public record CallingInfo(String className, String methodName) {}
+    public record CallingInfo(String className, String methodName) {
+    }
 }

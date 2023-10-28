@@ -1,8 +1,8 @@
 package edu.hw2.task1;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ExprTest {
     @Test
@@ -15,7 +15,7 @@ public class ExprTest {
         double result = constant.evaluate();
 
         // Assert
-        assertEquals(42.0, result);
+        assertThat(result).isEqualTo(42.0);
     }
 
     @Test
@@ -29,7 +29,8 @@ public class ExprTest {
         double result = negate.evaluate();
 
         // Assert
-        assertEquals(-10.0, result);
+        assertThat(result).isEqualTo(-10.0);
+
     }
 
     @Test
@@ -43,7 +44,7 @@ public class ExprTest {
         double result = exponent.evaluate();
 
         // Assert
-        assertEquals(8.0, result);
+        assertThat(result).isEqualTo(8.0);
     }
 
     @Test
@@ -58,7 +59,7 @@ public class ExprTest {
         double result = addition.evaluate();
 
         // Assert
-        assertEquals(12.0, result);
+        assertThat(result).isEqualTo(12.0);
     }
 
     @Test
@@ -73,6 +74,6 @@ public class ExprTest {
         double result = multiplication.evaluate();
 
         // Assert
-        assertEquals(12.0, result);
+        assertThat(result).isEqualTo(12.0);
     }
 }
