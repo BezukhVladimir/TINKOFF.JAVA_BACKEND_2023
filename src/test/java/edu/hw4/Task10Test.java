@@ -1,45 +1,56 @@
 package edu.hw4;
 
+import java.util.Arrays;
 import java.util.List;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.junit.jupiter.api.DynamicTest;
+import org.junit.jupiter.api.TestFactory;
+import org.junit.jupiter.api.function.Executable;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 
 public class Task10Test {
-    @Mock
-    Animal animal1, animal2, animal3, animal4, animal5;
-
-    @BeforeEach
-    void init() {
-        MockitoAnnotations.openMocks(this);
+    @TestFactory
+    List<DynamicTest> dynamicTests() {
+        return Arrays.asList(
+            dynamicTest("1",
+                createTest(
+                    List.of(
+                        createAnimal(Animal.Type.BIRD, 2)),
+                    List.of()
+                )),
+            dynamicTest("2",
+                createTest(
+                    List.of(
+                        createAnimal(Animal.Type.CAT, 2)),
+                    List.of(
+                        createAnimal(Animal.Type.CAT, 2))
+                )),
+            dynamicTest("3",
+                createTest(
+                    List.of(
+                        createAnimal(Animal.Type.CAT, 2),
+                        createAnimal(Animal.Type.DOG, 4),
+                        createAnimal(Animal.Type.BIRD, 8)
+                    ),
+                    List.of(
+                        createAnimal(Animal.Type.CAT, 2),
+                        createAnimal(Animal.Type.BIRD, 8)
+                    )
+                ))
+        );
     }
 
-    @Test
-    void testGetAnimalsWithMismatchedAgeAndPaws() {
-        // Arrange
-        when(animal1.age()).thenReturn(0);
-        when(animal2.age()).thenReturn(2);
-        when(animal3.age()).thenReturn(4);
-        when(animal4.age()).thenReturn(6);
-        when(animal5.age()).thenReturn(8);
+    private Executable createTest(List<Animal> animals, List<Animal> expected) {
+        return () -> {
+            // Act
+            List<Animal> result = AnimalUtils.getAnimalsWithMismatchedAgeAndPaws(animals);
 
-        when(animal1.paws()).thenReturn(2); // BIRD
-        when(animal2.paws()).thenReturn(4); // CAT
-        when(animal3.paws()).thenReturn(4); // DOG
-        when(animal4.paws()).thenReturn(0); // FISH
-        when(animal5.paws()).thenReturn(8); // SPIDER
+            // Assert
+            assertThat(result).isEqualTo(expected);
+        };
+    }
 
-        List<Animal> animals = List.of(animal1, animal2, animal3, animal4, animal5);
-        List<Animal> expected = List.of(animal1, animal2, animal4);
-
-        // Act
-        List<Animal> mismatchedAnimals = AnimalUtils.getAnimalsWithMismatchedAgeAndPaws(animals);
-
-        // Assert
-        assertThat(mismatchedAnimals).isEqualTo(expected);
+    private Animal createAnimal(Animal.Type type, int age) {
+        return new Animal("", type, Animal.Sex.M, age, 1, 1, false);
     }
 }
-
