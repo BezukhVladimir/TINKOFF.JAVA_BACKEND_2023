@@ -10,6 +10,13 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 - MINOR version after completing the Homework or the Project.
 - PATCH version after fixing the Homework or the Project after the code review.
 
+## [2.2.1] - 2023-10-29
+
+### Fixed
+
+- For Task5, a one-pass search on stream() has been added. 
+- It's better not to use Mock's without real necessity. Rewrote the test for Task10 through the Factory Method pattern.
+
 ## [2.2.0] - 2023-10-27
 
 ### Added
