@@ -44,13 +44,13 @@ public final class AnimalUtils {
      *     or null if the number of males and females is equal.
      */
     static Animal.Sex getMostCommonSex(List<Animal> animals) {
-        long maleCount = animals.stream()
-            .filter(animal -> animal.sex() == Animal.Sex.M)
-            .count();
+        Map<Animal.Sex, Long> sexCountMap = animals.stream()
+            .collect(Collectors.groupingBy(
+                Animal::sex,
+                Collectors.counting()));
 
-        long femaleCount = animals.stream()
-            .filter(animal -> animal.sex() == Animal.Sex.F)
-            .count();
+        long maleCount   = sexCountMap.getOrDefault(Animal.Sex.M, 0L);
+        long femaleCount = sexCountMap.getOrDefault(Animal.Sex.F, 0L);
 
         if (maleCount == femaleCount) {
             return null;
