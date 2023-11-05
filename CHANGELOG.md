@@ -10,6 +10,14 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 - MINOR version after completing the Homework or the Project.
 - PATCH version after fixing the Homework or the Project after the code review.
 
+## [2.3.0] - 2023-11-05
+
+### Added
+
+- Solution for Project2.
+- Unit tests.
+- README.md for a Project2.
+
 ## [2.2.1] - 2023-10-29
 
 ### Fixed
