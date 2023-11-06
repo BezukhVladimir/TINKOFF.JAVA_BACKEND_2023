@@ -10,6 +10,15 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 - MINOR version after completing the Homework or the Project.
 - PATCH version after fixing the Homework or the Project after the code review.
 
+## [2.3.1] - 2023-11-06
+
+### Fixed
+
+- If the function creates an object, it's name starts with create.
+- Added more functions for specific cases (createWallCell, hasPassageColor, etc.).
+- Places where it's reasonable to use Stream API were found.
+- DFSSolver now stores path in a private field.
+
 ## [2.3.0] - 2023-11-05
 
 ### Added
