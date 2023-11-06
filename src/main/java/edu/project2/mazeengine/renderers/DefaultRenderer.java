@@ -5,6 +5,8 @@ import edu.project2.mazeengine.models.Coordinate;
 import edu.project2.mazeengine.models.Maze;
 import edu.project2.mazeengine.settings.SettingsManager;
 import java.util.List;
+import static edu.project2.mazeengine.utils.Utils.isPassage;
+import static edu.project2.mazeengine.utils.Utils.isWall;
 
 public class DefaultRenderer implements Renderer {
     private final static char WALL_SYMBOL;
@@ -52,14 +54,6 @@ public class DefaultRenderer implements Renderer {
         }
 
         return mazeRender.toString();
-    }
-
-    private boolean isWall(Cell cell) {
-        return cell.getType() == Cell.Type.WALL;
-    }
-
-    private boolean isPassage(Cell cell) {
-        return cell.getType() == Cell.Type.PASSAGE;
     }
 
     private boolean isCellBelongsToPath(Cell cell, List<Coordinate> path) {

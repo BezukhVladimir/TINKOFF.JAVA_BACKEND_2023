@@ -4,21 +4,26 @@ import edu.project2.mazeengine.models.Cell;
 import edu.project2.mazeengine.models.Coordinate;
 import edu.project2.mazeengine.models.Maze;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
+import static edu.project2.mazeengine.utils.Utils.createCoordinate;
+import static edu.project2.mazeengine.utils.Utils.createCellGrid;
+import static edu.project2.mazeengine.utils.Utils.createMaze;
+import static edu.project2.mazeengine.utils.Utils.createMazeSize;
 import static edu.project2.mazeengine.utils.Utils.expandForBorders;
 import static edu.project2.mazeengine.utils.Utils.expandForWalls;
 import static edu.project2.mazeengine.utils.Utils.getFromGrid;
 import static edu.project2.mazeengine.utils.Utils.getRandomCell;
 import static edu.project2.mazeengine.utils.Utils.getRandomCoordinate;
+import static edu.project2.mazeengine.utils.Utils.createWallCell;
 import static edu.project2.mazeengine.utils.Utils.isInsideMaze;
 import static edu.project2.mazeengine.utils.Utils.isWall;
 import static edu.project2.mazeengine.utils.Utils.removeWall;
+import static edu.project2.mazeengine.utils.Utils.setInGrid;
 
 public class PrimsGenerator implements Generator {
-    private final static List<Coordinate> DIRECTIONS = Arrays.asList(
+    private final static List<Coordinate> DIRECTIONS = List.of(
         new Coordinate(0, -2),
         new Coordinate(-2, 0),
         new Coordinate(0, 2),
@@ -30,11 +35,11 @@ public class PrimsGenerator implements Generator {
         Maze.Size size = getMazeSize(height, width);
         Cell[][] grid  = getMazeGrid(size);
 
-        return new Maze(size, grid);
+        return createMaze(size, grid);
     }
 
     private Maze.Size getMazeSize(int height, int width) {
-        Maze.Size size = new Maze.Size(height, width);
+        Maze.Size size = createMazeSize(height, width);
 
         expandForWalls(size);
         expandForBorders(size);
@@ -49,11 +54,13 @@ public class PrimsGenerator implements Generator {
     }
 
     private Cell[][] getDefaultGrid(Maze.Size size) {
-        Cell[][] grid = new Cell[size.getHeight()][size.getWidth()];
+        Cell[][] grid = createCellGrid(size);
 
         for (int row = 0; row < size.getHeight(); ++row) {
             for (int col = 0; col < size.getWidth(); ++col) {
-                grid[row][col] = new Cell(new Coordinate(row, col), Cell.Type.WALL);
+                Coordinate current = createCoordinate(row, col);
+
+                setInGrid(grid, current, createWallCell(current));
             }
         }
 
@@ -79,19 +86,11 @@ public class PrimsGenerator implements Generator {
     }
 
     private Set<Cell> getAdjacentWallCells(Cell[][] grid, Maze.Size size, Coordinate coordinate) {
-        Set<Cell> adjacentWalls = new HashSet<>(DIRECTIONS.size());
-
-        for (Coordinate direction : DIRECTIONS) {
-            Coordinate adjacent = coordinate.add(direction);
-
-            if (!isInsideMaze(size, adjacent) || !isWall(grid, adjacent)) {
-                continue;
-            }
-
-            adjacentWalls.add(getFromGrid(grid, adjacent));
-        }
-
-        return adjacentWalls;
+        return DIRECTIONS.stream()
+            .map(coordinate::add)
+            .filter(adjacent -> isInsideMaze(size, adjacent) && isWall(grid, adjacent))
+            .map(adjacent -> getFromGrid(grid, adjacent))
+            .collect(Collectors.toSet());
     }
 
     private Cell findPassage(Cell[][] grid, Maze.Size size, Coordinate coordinate) {
@@ -104,12 +103,10 @@ public class PrimsGenerator implements Generator {
 
             Coordinate adjacent = coordinate.add(direction);
 
-            if (!isInsideMaze(size, adjacent) || isWall(grid, adjacent)) {
-                continue;
+            if (isInsideMaze(size, adjacent) && !isWall(grid, adjacent)) {
+                foundPassage = getFromGrid(grid, adjacent);
+                break;
             }
-
-            foundPassage = getFromGrid(grid, adjacent);
-            break;
         }
 
         return foundPassage;

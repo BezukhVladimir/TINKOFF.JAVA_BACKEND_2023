@@ -3,27 +3,30 @@ package edu.project2.mazeengine.solvers;
 import edu.project2.mazeengine.models.Coordinate;
 import edu.project2.mazeengine.models.Maze;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import static edu.project2.mazeengine.utils.Utils.checkPath;
 import static edu.project2.mazeengine.utils.Utils.getFromGrid;
 import static edu.project2.mazeengine.utils.Utils.getRandomCoordinate;
-import static edu.project2.mazeengine.utils.Utils.getVisited;
+import static edu.project2.mazeengine.utils.Utils.createBooleanGrid;
 import static edu.project2.mazeengine.utils.Utils.isInsideMaze;
 import static edu.project2.mazeengine.utils.Utils.isWall;
 import static edu.project2.mazeengine.utils.Utils.setInGrid;
 
 public class DFSSolver implements Solver {
-    private final static List<Coordinate> DIRECTIONS = Arrays.asList(
+    private final static List<Coordinate> DIRECTIONS = List.of(
         new Coordinate(0, -1),
         new Coordinate(-1, 0),
         new Coordinate(0, 1),
         new Coordinate(1, 0)
     );
+    private List<Coordinate> path;
 
-    @Override public List<Coordinate> solve(Maze maze, Coordinate start, Coordinate end) {
+    @Override
+    public List<Coordinate> solve(Maze maze, Coordinate start, Coordinate end) {
         checkPath(maze, start, end);
-        List<Coordinate> path = getPath(maze, start, end);
+
+        path = new ArrayList<>();
+        generatePath(maze, start, end);
 
         if (!path.contains(end)) {
             throw new IllegalStateException("Maze cannot be solved!");
@@ -32,27 +35,17 @@ public class DFSSolver implements Solver {
         return path;
     }
 
-    private List<Coordinate> getPath(Maze maze, Coordinate start, Coordinate end) {
-        List<Coordinate> path = new ArrayList<>();
-
-        generatePath(maze, start, end, path);
-
-        return path;
-    }
-
-    private void generatePath(Maze maze, Coordinate start, Coordinate end, List<Coordinate> path) {
-        Boolean[][] visited = getVisited(maze.size());
-        dfs(maze, visited, start, end, path);
+    private void generatePath(Maze maze, Coordinate start, Coordinate end) {
+        Boolean[][] visited = createBooleanGrid(maze.size());
+        dfs(maze, visited, start, end);
     }
 
     private boolean dfs(
         Maze maze,
         Boolean[][] visited,
         Coordinate current,
-        Coordinate end,
-        List<Coordinate> path
+        Coordinate end
     ) {
-
         if (current.equals(end)) {
             path.add(current);
             return true;
@@ -65,7 +58,7 @@ public class DFSSolver implements Solver {
             Coordinate adjacent = getRandomCoordinate(adjacentCoordinates);
 
             if (!getFromGrid(visited, adjacent)) {
-                boolean endReached = dfs(maze, visited, adjacent, end, path);
+                boolean endReached = dfs(maze, visited, adjacent, end);
 
                 if (endReached) {
                     path.add(current);

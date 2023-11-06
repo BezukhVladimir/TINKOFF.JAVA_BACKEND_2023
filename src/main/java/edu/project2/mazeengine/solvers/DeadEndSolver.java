@@ -7,11 +7,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import static edu.project2.mazeengine.utils.Utils.checkPath;
+import static edu.project2.mazeengine.utils.Utils.createColorGrid;
+import static edu.project2.mazeengine.utils.Utils.createCoordinate;
 import static edu.project2.mazeengine.utils.Utils.getFromGrid;
+import static edu.project2.mazeengine.utils.Utils.isPassage;
+import static edu.project2.mazeengine.utils.Utils.isWall;
 import static edu.project2.mazeengine.utils.Utils.setInGrid;
 
 public class DeadEndSolver implements Solver {
-    private final static List<Coordinate> DIRECTIONS = Arrays.asList(
+    private final static List<Coordinate> DIRECTIONS = List.of(
         new Coordinate(0, -1),
         new Coordinate(-1, 0),
         new Coordinate(0, 1),
@@ -42,14 +46,14 @@ public class DeadEndSolver implements Solver {
     }
 
     private Color[][] getDefaultColorGrid(Maze maze) {
-        Color[][] colorGrid = new Color[maze.size().getHeight()][maze.size().getWidth()];
+        Color[][] colorGrid = createColorGrid(maze.size());
 
         for (Cell[] row : maze.grid()) {
             for (Cell cell : row) {
-                if (cell.getType() == Cell.Type.WALL) {
-                    setColor(colorGrid, cell.getCoordinate(), Color.WALL);
-                } else if (cell.getType() == Cell.Type.PASSAGE) {
-                    setColor(colorGrid, cell.getCoordinate(), Color.PASSAGE);
+                if (isWall(cell)) {
+                    setWallColor(colorGrid, cell.getCoordinate());
+                } else if (isPassage(cell)) {
+                    setPassageColor(colorGrid, cell.getCoordinate());
                 }
             }
         }
@@ -59,7 +63,7 @@ public class DeadEndSolver implements Solver {
 
     private void updateProtectedColor(Color[][] colorGrid, Coordinate... coordinates) {
         for (Coordinate current : coordinates) {
-            setColor(colorGrid, current, Color.PROTECTED);
+            setProtectedColor(colorGrid, current);
         }
     }
 
@@ -68,9 +72,9 @@ public class DeadEndSolver implements Solver {
 
         for (int row = 1; row < size.getHeight() - 1; ++row) {
             for (int col = 1; col < size.getWidth() - 1; ++col) {
-                Coordinate current = new Coordinate(row, col);
+                Coordinate current = createCoordinate(row, col);
 
-                if (isDeadEnd(colorGrid, current) && !hasColor(colorGrid, current, Color.PROTECTED)) {
+                if (isDeadEnd(colorGrid, current) && !hasProtectedColor(colorGrid, current)) {
                     deadEnds.add(current);
                 }
             }
@@ -84,16 +88,15 @@ public class DeadEndSolver implements Solver {
             Coordinate deadEnd = deadEnds.get(i);
 
             while (deadEnd != null && !isJunction(colorGrid, deadEnd)) {
-                if (hasColor(colorGrid, deadEnd, Color.PROTECTED)) {
+                if (hasProtectedColor(colorGrid, deadEnd)) {
                     break;
                 }
 
-                setColor(colorGrid, deadEnd, Color.DEAD_END);
+                setDeadEndColor(colorGrid, deadEnd);
 
                 deadEnd = getNextPassage(colorGrid, deadEnd);
             }
         }
-
     }
 
     private List<Coordinate> getPath(Color[][] colorGrid, Coordinate start, Coordinate end) {
@@ -102,7 +105,7 @@ public class DeadEndSolver implements Solver {
         path.add(start);
         Coordinate current = start;
         do {
-            setColor(colorGrid, current, Color.PATH);
+            setPathColor(colorGrid, current);
             current = getNextPassage(colorGrid, current);
 
             if (current == null) {
@@ -116,43 +119,27 @@ public class DeadEndSolver implements Solver {
     }
 
     private Coordinate getNextPassage(Color[][] colorGrid, Coordinate previous) {
-        Coordinate next = null;
-
-        for (Coordinate direction : DIRECTIONS) {
-            Coordinate adjacent = previous.add(direction);
-
-            if (hasColor(colorGrid, adjacent, Color.PASSAGE) || hasColor(colorGrid, adjacent, Color.PROTECTED)) {
-                next = adjacent;
-            }
-        }
-
-        return next;
+        return DIRECTIONS.stream()
+            .map(previous::add)
+            .filter(adjacent -> hasPassageColor(colorGrid, adjacent) || hasProtectedColor(colorGrid, adjacent))
+            .findFirst()
+            .orElse(null);
     }
 
     private boolean isJunction(Color[][] colorGrid, Coordinate coordinate) {
-        int counter = 0;
-
-        for (Coordinate direction : DIRECTIONS) {
-            Coordinate adjacent = coordinate.add(direction);
-
-            if (hasColor(colorGrid, adjacent, Color.PASSAGE) || hasColor(colorGrid, adjacent, Color.PROTECTED)) {
-                ++counter;
-            }
-        }
+        long counter = DIRECTIONS.stream()
+            .map(coordinate::add)
+            .filter(adjacent -> hasPassageColor(colorGrid, adjacent) || hasProtectedColor(colorGrid, adjacent))
+            .count();
 
         return counter > 1;
     }
 
     private boolean isDeadEnd(Color[][] colorGrid, Coordinate coordinate) {
-        int wallCounter = 0;
-
-        for (Coordinate direction : DIRECTIONS) {
-            Coordinate adjacent = coordinate.add(direction);
-
-            if (hasColor(colorGrid, adjacent, Color.WALL)) {
-                ++wallCounter;
-            }
-        }
+        long wallCounter = DIRECTIONS.stream()
+            .map(coordinate::add)
+            .filter(adjacent -> hasWallColor(colorGrid, adjacent))
+            .count();
 
         return wallCounter == WALLS_IN_DEAD_END;
     }
@@ -161,7 +148,39 @@ public class DeadEndSolver implements Solver {
         return getFromGrid(colorGrid, current) == color;
     }
 
+    private boolean hasWallColor(Color[][] colorGrid, Coordinate current) {
+        return hasColor(colorGrid, current, Color.WALL);
+    }
+
+    private boolean hasPassageColor(Color[][] colorGrid, Coordinate current) {
+        return hasColor(colorGrid, current, Color.PASSAGE);
+    }
+
+    private boolean hasProtectedColor(Color[][] colorGrid, Coordinate current) {
+        return hasColor(colorGrid, current, Color.PROTECTED);
+    }
+
     private void setColor(Color[][] colorGrid, Coordinate current, Color color) {
         setInGrid(colorGrid, current, color);
+    }
+
+    private void setPathColor(Color[][] colorGrid, Coordinate current) {
+        setInGrid(colorGrid, current, Color.PATH);
+    }
+
+    private void setDeadEndColor(Color[][] colorGrid, Coordinate current) {
+        setInGrid(colorGrid, current, Color.DEAD_END);
+    }
+
+    private void setProtectedColor(Color[][] colorGrid, Coordinate current) {
+        setInGrid(colorGrid, current, Color.PROTECTED);
+    }
+
+    private void setWallColor(Color[][] colorGrid, Coordinate current) {
+        setInGrid(colorGrid, current, Color.WALL);
+    }
+
+    private void setPassageColor(Color[][] colorGrid, Coordinate current) {
+        setInGrid(colorGrid, current, Color.PASSAGE);
     }
 }

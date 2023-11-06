@@ -3,22 +3,26 @@ package edu.project2.mazeengine.generators;
 import edu.project2.mazeengine.models.Cell;
 import edu.project2.mazeengine.models.Coordinate;
 import edu.project2.mazeengine.models.Maze;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import static edu.project2.mazeengine.utils.Utils.createCoordinate;
+import static edu.project2.mazeengine.utils.Utils.createMaze;
+import static edu.project2.mazeengine.utils.Utils.createMazeSize;
 import static edu.project2.mazeengine.utils.Utils.expandForBorders;
 import static edu.project2.mazeengine.utils.Utils.expandForWalls;
-import static edu.project2.mazeengine.utils.Utils.getCell;
 import static edu.project2.mazeengine.utils.Utils.getFromGrid;
+import static edu.project2.mazeengine.utils.Utils.createCellGrid;
+import static edu.project2.mazeengine.utils.Utils.createPassageCell;
 import static edu.project2.mazeengine.utils.Utils.getRandomCoordinate;
-import static edu.project2.mazeengine.utils.Utils.getVisited;
+import static edu.project2.mazeengine.utils.Utils.createBooleanGrid;
+import static edu.project2.mazeengine.utils.Utils.createWallCell;
 import static edu.project2.mazeengine.utils.Utils.isInsideMaze;
 import static edu.project2.mazeengine.utils.Utils.isMazeBorder;
 import static edu.project2.mazeengine.utils.Utils.removeWall;
 import static edu.project2.mazeengine.utils.Utils.setInGrid;
 
 public class DFSGenerator implements Generator {
-    private final static List<Coordinate> DIRECTIONS = Arrays.asList(
+    private final static List<Coordinate> DIRECTIONS = List.of(
         new Coordinate(0, -2),
         new Coordinate(-2, 0),
         new Coordinate(0, 2),
@@ -30,11 +34,11 @@ public class DFSGenerator implements Generator {
         Maze.Size size = getMazeSize(height, width);
         Cell[][] grid  = getMazeGrid(size);
 
-        return new Maze(size, grid);
+        return createMaze(size, grid);
     }
 
     private Maze.Size getMazeSize(int height, int width) {
-        Maze.Size size = new Maze.Size(height, width);
+        Maze.Size size = createMazeSize(height, width);
 
         expandForWalls(size);
         expandForBorders(size);
@@ -48,19 +52,19 @@ public class DFSGenerator implements Generator {
         return grid;
     }
 
-    public Cell[][] getDefaultGrid(Maze.Size size) {
-        Cell[][] grid = new Cell[size.getHeight()][size.getWidth()];
+    private Cell[][] getDefaultGrid(Maze.Size size) {
+        Cell[][] grid = createCellGrid(size);
 
         for (int row = 0; row < size.getHeight(); ++row) {
             for (int col = 0; col < size.getWidth(); ++col) {
-                Coordinate current = new Coordinate(row, col);
+                Coordinate current = createCoordinate(row, col);
 
                 if (isMazeBorder(size, current)) {
-                    setInGrid(grid, current, getCell(current, Cell.Type.WALL));
+                    setInGrid(grid, current, createWallCell(current));
                 } else if (isCellBorder(current)) {
-                    setInGrid(grid, current, getCell(current, Cell.Type.WALL));
+                    setInGrid(grid, current, createWallCell(current));
                 } else {
-                    setInGrid(grid, current, getCell(current, Cell.Type.PASSAGE));
+                    setInGrid(grid, current, createPassageCell(current));
                 }
             }
         }
@@ -68,12 +72,8 @@ public class DFSGenerator implements Generator {
         return grid;
     }
 
-    public boolean isCellBorder(Coordinate coordinate) {
-        return (coordinate.getRow() % 2 == 0) || (coordinate.getCol() % 2 == 0);
-    }
-
     private void generateMaze(Cell[][] grid, Maze.Size size) {
-        Boolean[][] visited = getVisited(size);
+        Boolean[][] visited = createBooleanGrid(size);
         Coordinate start = grid[1][1].getCoordinate();
         dfs(grid, size, visited, start);
     }
@@ -96,18 +96,13 @@ public class DFSGenerator implements Generator {
     }
 
     private List<Coordinate> getAdjacentCoordinates(Cell[][] grid, Maze.Size size, Coordinate coordinate) {
-        List<Coordinate> adjacentCoordinates = new ArrayList<>(DIRECTIONS.size());
+        return DIRECTIONS.stream()
+            .map(coordinate::add)
+            .filter(adjacent -> isInsideMaze(size, adjacent))
+            .collect(Collectors.toList());
+    }
 
-        for (Coordinate direction : DIRECTIONS) {
-            Coordinate currentAdjacent = coordinate.add(direction);
-
-            if (!isInsideMaze(size, currentAdjacent)) {
-                continue;
-            }
-
-            adjacentCoordinates.add(currentAdjacent);
-        }
-
-        return adjacentCoordinates;
+    private boolean isCellBorder(Coordinate coordinate) {
+        return (coordinate.getRow() % 2 == 0) || (coordinate.getCol() % 2 == 0);
     }
 }
