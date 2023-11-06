@@ -7,16 +7,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-import static edu.project2.mazeengine.utils.Utils.createCoordinate;
 import static edu.project2.mazeengine.utils.Utils.createCellGrid;
+import static edu.project2.mazeengine.utils.Utils.createCoordinate;
 import static edu.project2.mazeengine.utils.Utils.createMaze;
 import static edu.project2.mazeengine.utils.Utils.createMazeSize;
+import static edu.project2.mazeengine.utils.Utils.createWallCell;
 import static edu.project2.mazeengine.utils.Utils.expandForBorders;
 import static edu.project2.mazeengine.utils.Utils.expandForWalls;
 import static edu.project2.mazeengine.utils.Utils.getFromGrid;
 import static edu.project2.mazeengine.utils.Utils.getRandomCell;
 import static edu.project2.mazeengine.utils.Utils.getRandomCoordinate;
-import static edu.project2.mazeengine.utils.Utils.createWallCell;
 import static edu.project2.mazeengine.utils.Utils.isInsideMaze;
 import static edu.project2.mazeengine.utils.Utils.isWall;
 import static edu.project2.mazeengine.utils.Utils.removeWall;
@@ -33,7 +33,7 @@ public class PrimsGenerator implements Generator {
     @Override
     public Maze generate(int height, int width) {
         Maze.Size size = getMazeSize(height, width);
-        Cell[][] grid  = getMazeGrid(size);
+        Cell[][] grid = getMazeGrid(size);
 
         return createMaze(size, grid);
     }

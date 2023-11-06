@@ -5,17 +5,17 @@ import edu.project2.mazeengine.models.Coordinate;
 import edu.project2.mazeengine.models.Maze;
 import java.util.List;
 import java.util.stream.Collectors;
+import static edu.project2.mazeengine.utils.Utils.createBooleanGrid;
+import static edu.project2.mazeengine.utils.Utils.createCellGrid;
 import static edu.project2.mazeengine.utils.Utils.createCoordinate;
 import static edu.project2.mazeengine.utils.Utils.createMaze;
 import static edu.project2.mazeengine.utils.Utils.createMazeSize;
+import static edu.project2.mazeengine.utils.Utils.createPassageCell;
+import static edu.project2.mazeengine.utils.Utils.createWallCell;
 import static edu.project2.mazeengine.utils.Utils.expandForBorders;
 import static edu.project2.mazeengine.utils.Utils.expandForWalls;
 import static edu.project2.mazeengine.utils.Utils.getFromGrid;
-import static edu.project2.mazeengine.utils.Utils.createCellGrid;
-import static edu.project2.mazeengine.utils.Utils.createPassageCell;
 import static edu.project2.mazeengine.utils.Utils.getRandomCoordinate;
-import static edu.project2.mazeengine.utils.Utils.createBooleanGrid;
-import static edu.project2.mazeengine.utils.Utils.createWallCell;
 import static edu.project2.mazeengine.utils.Utils.isInsideMaze;
 import static edu.project2.mazeengine.utils.Utils.isMazeBorder;
 import static edu.project2.mazeengine.utils.Utils.removeWall;
@@ -32,7 +32,7 @@ public class DFSGenerator implements Generator {
     @Override
     public Maze generate(int height, int width) {
         Maze.Size size = getMazeSize(height, width);
-        Cell[][] grid  = getMazeGrid(size);
+        Cell[][] grid = getMazeGrid(size);
 
         return createMaze(size, grid);
     }

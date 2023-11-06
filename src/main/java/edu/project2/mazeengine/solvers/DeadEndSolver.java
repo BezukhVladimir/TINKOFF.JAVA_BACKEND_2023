@@ -4,7 +4,6 @@ import edu.project2.mazeengine.models.Cell;
 import edu.project2.mazeengine.models.Coordinate;
 import edu.project2.mazeengine.models.Maze;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import static edu.project2.mazeengine.utils.Utils.checkPath;
 import static edu.project2.mazeengine.utils.Utils.createColorGrid;
