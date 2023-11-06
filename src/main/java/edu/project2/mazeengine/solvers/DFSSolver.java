@@ -4,6 +4,7 @@ import edu.project2.mazeengine.models.Coordinate;
 import edu.project2.mazeengine.models.Maze;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import static edu.project2.mazeengine.utils.Utils.checkPath;
 import static edu.project2.mazeengine.utils.Utils.createBooleanGrid;
 import static edu.project2.mazeengine.utils.Utils.getFromGrid;
@@ -73,18 +74,9 @@ public class DFSSolver implements Solver {
     }
 
     private List<Coordinate> getAdjacentCoordinates(Maze maze, Coordinate coordinate) {
-        List<Coordinate> adjacentCoordinates = new ArrayList<>(DIRECTIONS.size());
-
-        for (Coordinate direction : DIRECTIONS) {
-            Coordinate adjacent = coordinate.add(direction);
-
-            if (!isInsideMaze(maze.size(), adjacent) || isWall(maze.grid(), adjacent)) {
-                continue;
-            }
-
-            adjacentCoordinates.add(adjacent);
-        }
-
-        return adjacentCoordinates;
+        return DIRECTIONS.stream()
+            .map(coordinate::add)
+            .filter(adjacent -> isInsideMaze(maze.size(), adjacent) && !isWall(maze.grid(), adjacent))
+            .collect(Collectors.toList());
     }
 }
