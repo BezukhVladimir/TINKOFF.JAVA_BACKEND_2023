@@ -33,7 +33,7 @@ public class PrimsGenerator implements Generator {
     @Override
     public Maze generate(int height, int width) {
         Maze.Size size = getMazeSize(height, width);
-        Cell[][] grid = getMazeGrid(size);
+        Cell[][] grid  = getMazeGrid(size);
 
         return createMaze(size, grid);
     }
