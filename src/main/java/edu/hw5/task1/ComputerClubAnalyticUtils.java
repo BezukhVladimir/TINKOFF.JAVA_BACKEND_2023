@@ -11,10 +11,22 @@ public final class ComputerClubAnalyticUtils {
     private ComputerClubAnalyticUtils() {
     }
 
-    private final static String DATE_TIME_PATTERN = "yyyy-MM-dd, HH:mm";
-    private final static String DATE_TIME_REGEX_PATTERN = "\\d{4}-\\d{2}-\\d{2}, \\d{2}:\\d{2}";
-    public final static String SESSION_TIME_REGEX_PATTERN
+    private static final String DATE_TIME_PATTERN = "yyyy-MM-dd, HH:mm";
+    private static final DateTimeFormatter DATE_TIME = DateTimeFormatter.ofPattern(DATE_TIME_PATTERN);
+
+    /**
+     *  Date time example:
+     *  <p>2000-02-22, 00:00
+     */
+    private static final String DATE_TIME_REGEX_PATTERN = "\\d{4}-\\d{2}-\\d{2}, \\d{2}:\\d{2}";
+
+    /**
+     *  Session time example:
+     *  <p>2000-02-22, 00:00 - 2023-11-12, 00:00
+     */
+    private static final String SESSION_TIME_REGEX_PATTERN
         = "^(" + DATE_TIME_REGEX_PATTERN + ") - (" + DATE_TIME_REGEX_PATTERN + ")$";
+    private static final Pattern SESSION_TIME = Pattern.compile(SESSION_TIME_REGEX_PATTERN);
 
     public static Duration calculateAverageDurationOfSessions(String[] sessions) {
         var totalDuration = Stream.of(sessions)
@@ -26,9 +38,7 @@ public final class ComputerClubAnalyticUtils {
     }
 
     public static Matcher createSessionMatcher(String session) {
-        var pattern = Pattern.compile(SESSION_TIME_REGEX_PATTERN);
-
-        return pattern.matcher(session);
+        return SESSION_TIME.matcher(session);
     }
 
     /**
@@ -40,11 +50,9 @@ public final class ComputerClubAnalyticUtils {
      * @return a Duration object representing the time elapsed between the start and end of the session.
      */
     public static Duration createSessionDuration(Matcher matcher) {
-        var formatter = DateTimeFormatter.ofPattern(DATE_TIME_PATTERN);
-
         if (matcher.find()) {
-            var startSessionTime = LocalDateTime.parse(matcher.group(1), formatter);
-            var endSessionTime   = LocalDateTime.parse(matcher.group(2), formatter);
+            var startSessionTime = LocalDateTime.parse(matcher.group(1), DATE_TIME);
+            var endSessionTime   = LocalDateTime.parse(matcher.group(2), DATE_TIME);
 
             return Duration.between(startSessionTime, endSessionTime);
         } else {

@@ -5,7 +5,13 @@ import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 public final class DateViaHyphenParser extends DateParser {
+    /**
+     * Local date examples:
+     * <p>2020-10-10
+     * <p>2020-12-2
+     */
     private final static String LOCAL_DATE_PATTERN = "y-M-d";
+    private final static DateTimeFormatter LOCAL_DATE = DateTimeFormatter.ofPattern(LOCAL_DATE_PATTERN);
 
     @Override
     public Optional<LocalDate> parse(String date) {
@@ -17,6 +23,6 @@ public final class DateViaHyphenParser extends DateParser {
     }
 
     private LocalDate parseDateViaHyphen(String date) {
-        return LocalDate.parse(date, DateTimeFormatter.ofPattern(LOCAL_DATE_PATTERN));
+        return LocalDate.parse(date, LOCAL_DATE);
     }
 }

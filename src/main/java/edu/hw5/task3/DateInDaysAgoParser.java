@@ -5,7 +5,14 @@ import java.util.Optional;
 import java.util.regex.Pattern;
 
 public final class DateInDaysAgoParser extends DateParser {
-    private final static String DATE_REGEX_PATTERN = "^(\\d+)\\s+day[s]?\\s+ago$";
+    /**
+     * Days ago pattern examples:
+     * <p>1 day ago
+     * <p>2 days ago
+     * <p>123 days ago
+     */
+    private static final String DATE_REGEX_PATTERN = "^(\\d+)\\s+day[s]?\\s+ago$";
+    private static final Pattern DATE = Pattern.compile(DATE_REGEX_PATTERN);
 
     @Override
     public Optional<LocalDate> parse(String date) {
@@ -23,8 +30,7 @@ public final class DateInDaysAgoParser extends DateParser {
     }
 
     private int parseDaysAgo(String date) {
-        var pattern = Pattern.compile(DATE_REGEX_PATTERN);
-        var matcher = pattern.matcher(date);
+        var matcher = DATE.matcher(date);
 
         if (matcher.find()) {
             return Integer.parseInt(matcher.group(1));

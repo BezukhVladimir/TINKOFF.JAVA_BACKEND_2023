@@ -5,7 +5,13 @@ import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 public final class DateViaSlashParser extends DateParser {
-    private final static String LOCAL_DATE_PATTERN = "d/M/y";
+    /**
+     * Local date examples:
+     * <p>1/3/1976
+     * <p>1/3/20
+     */
+    private static final String LOCAL_DATE_PATTERN = "d/M/y";
+    private static final DateTimeFormatter LOCAL_DATE = DateTimeFormatter.ofPattern(LOCAL_DATE_PATTERN);
 
     @Override
     public Optional<LocalDate> parse(String date) {
@@ -17,6 +23,6 @@ public final class DateViaSlashParser extends DateParser {
     }
 
     public LocalDate parseDateViaSlash(String date) {
-        return LocalDate.parse(date, DateTimeFormatter.ofPattern(LOCAL_DATE_PATTERN));
+        return LocalDate.parse(date, LOCAL_DATE);
     }
 }
