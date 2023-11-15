@@ -10,9 +10,25 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 - MINOR version after completing the Homework or the Project.
 - PATCH version after fixing the Homework or the Project after the code review.
 
+## [3.1.1] - 2023-11-12
+
+### Fixed
+
+- Constants for the patterns and formatters have been introduced.
+- JavaDoc comments for regex patterns.
+
+## [3.1.0] - 2023-11-09
+
+### Added
+
+- Solutions to all Homework5 tasks.
+- Unit tests.
+- README.md for a Homework5.
+
 ## [3.0.0] - 2023-11-06
 
 ### Completed
+
 - The TrainingModule2 is completed!
 - The Homework3: points scored 3/3.
 - The Homework4: points scored 3/3.
@@ -68,6 +84,7 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 ## [2.0.0] - 2023-10-16
 
 ### Completed
+
 - The TrainingModule1 is completed!
 - The Homework1: points scored 3/3.
 - The Homework2: points scored 3/3.
