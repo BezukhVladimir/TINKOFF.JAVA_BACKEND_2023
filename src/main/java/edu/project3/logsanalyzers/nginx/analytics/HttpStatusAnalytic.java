@@ -31,7 +31,7 @@ public final class HttpStatusAnalytic {
                 Collectors.counting()
             ));
 
-        Locale locale = Locale.getDefault();
+        Locale locale = Locale.forLanguageTag("ru-RU");
         DecimalFormatSymbols symbols = new DecimalFormatSymbols(locale);
         DecimalFormat df = new DecimalFormat("#.##", symbols);
 

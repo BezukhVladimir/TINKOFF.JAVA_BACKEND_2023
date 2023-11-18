@@ -27,7 +27,7 @@ public final class AverageServerResponseSizeAnalytic {
             .average()
             .orElse(0.0);
 
-        Locale locale = Locale.getDefault();
+        Locale locale = Locale.forLanguageTag("ru-RU");
         DecimalFormatSymbols symbols = new DecimalFormatSymbols(locale);
         DecimalFormat df = new DecimalFormat("#.##", symbols);
         String formattedValue = df.format(averageResponse);
