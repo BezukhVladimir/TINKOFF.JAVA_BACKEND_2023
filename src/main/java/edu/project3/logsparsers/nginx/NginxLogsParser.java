@@ -66,16 +66,16 @@ public final class NginxLogsParser {
 
             if (matcher.matches()) {
                 try {
-                    NginxLogItem logItem = new NginxLogItem(
-                        InetAddress.getByName(matcher.group("remoteAddress")),
-                        matcher.group("remoteUser"),
-                        OffsetDateTime.parse(matcher.group("timeLocal"), DATE_TIME_FORMATTER),
-                        matcher.group("request"),
-                        Integer.parseInt(matcher.group("status")),
-                        Long.parseLong(matcher.group("bodyBytesSent")),
-                        URI.create(matcher.group("httpReferer")),
-                        matcher.group("httpUserAgent")
-                    );
+                    NginxLogItem logItem = NginxLogItem.builder()
+                        .setRemoteAddress(InetAddress.getByName(matcher.group("remoteAddress")))
+                        .setRemoteUser(matcher.group("remoteUser"))
+                        .setTimeLocal(OffsetDateTime.parse(matcher.group("timeLocal"), DATE_TIME_FORMATTER))
+                        .setRequest(matcher.group("request"))
+                        .setStatus(Integer.parseInt(matcher.group("status")))
+                        .setBodyBytesSent(Long.parseLong(matcher.group("bodyBytesSent")))
+                        .setHttpReferer(URI.create(matcher.group("httpReferer")))
+                        .setHttpUserAgent(matcher.group("httpUserAgent"))
+                        .build();
 
                     logItems.add(logItem);
                 } catch (UnknownHostException ignored) {
