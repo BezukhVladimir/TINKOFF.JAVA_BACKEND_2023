@@ -2,6 +2,7 @@ package edu.hw7.task1;
 
 import edu.hw7.task1.multi.Counter;
 import org.junit.jupiter.api.Test;
+import java.util.concurrent.CountDownLatch;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class MultiThreadedVersionTest {
@@ -25,26 +26,23 @@ public class MultiThreadedVersionTest {
         int numberOfThreads = Runtime.getRuntime().availableProcessors() - 1;
         int iterationsPerThread = 1_000;
         int expected = numberOfThreads * iterationsPerThread;
+        var latch = new CountDownLatch(numberOfThreads);
 
-        Thread[] incrementors = new Thread[numberOfThreads];
+        // Act
         for (int i = 0; i < numberOfThreads; ++i) {
-            incrementors[i] = new Thread(() -> {
+            new Thread(() -> {
                 for (int j = 0; j < iterationsPerThread; ++j) {
                     count.increment();
                 }
-            });
-        }
-
-        // Act
-        for (Thread incrementor : incrementors) {
-            incrementor.start();
+                latch.countDown();
+            }).start();
         }
 
         try {
-            for (Thread incrementor : incrementors) {
-                incrementor.join();
-            }
-        } catch (InterruptedException ignored) {
+            latch.await();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new RuntimeException(e);
         }
 
         // Assert
