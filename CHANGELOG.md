@@ -10,6 +10,45 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 - MINOR version after completing the Homework or the Project.
 - PATCH version after fixing the Homework or the Project after the code review.
 
+## [4.2.0] - 2023-11-24
+
+### Added
+
+- Solutions to all Homework8 tasks.
+- Unit tests.
+- README.md for a Homework8.
+
+## [4.1.1] - 2023-11-27
+
+### Fixed
+
+- Now the threads in Task1 run simultaneously.
+
+## [4.1.0] - 2023-11-21
+
+### Added
+
+- Solutions to all Homework7 tasks.
+- Unit tests.
+- README.md for a Homework7.
+
+## [4.0.0] - 2023-11-27
+
+### Completed
+
+- The TrainingModule3 is completed!
+- The Homework5: points scored 3/3 + 1/1.
+- The Homework6: points scored 3/3.
+- The Project3: points scored 6/6 + 2/2.
+- The Test3: correct answers 11/12.
+
+## [3.3.1] - 2023-11-27
+
+### Fixed
+
+- Added Builder for NginxLogItem.
+- Added UTest for NginxLogsParser.
+
 ## [3.3.0] - 2023-11-19
 
 ### Added
