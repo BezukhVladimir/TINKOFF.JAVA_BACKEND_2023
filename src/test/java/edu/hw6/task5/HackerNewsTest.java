@@ -1,5 +1,6 @@
 package edu.hw6.task5;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import java.net.http.HttpClient;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -8,6 +9,7 @@ public class HackerNewsTest {
     private final HttpClient client = HttpClient.newHttpClient();
 
     @Test
+    @Disabled
     void testHackerNewsTopStories() {
         // Arrange
         // https://github.com/HackerNews/API#new-top-and-best-stories

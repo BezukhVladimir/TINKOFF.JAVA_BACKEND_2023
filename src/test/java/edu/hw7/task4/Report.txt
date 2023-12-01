@@ -1,0 +1,95 @@
+Comparison results for 10000 points and 2 threads (10 simulations):
+Single thread: average executing time in seconds — 0.03419725
+Multi thread: average executing time in seconds — 0.010260420000000001
+Difference: 0,02394 seconds
+Multi thread is 3,33x faster than single thread
+Single thread: average delta — 0,01045
+Multi thread: average delta — 0,01452
+
+Comparison results for 10000 points and 4 threads (10 simulations):
+Single thread: average executing time in seconds — 0.03419725
+Multi thread: average executing time in seconds — 0.005001500000000001
+Difference: 0,02920 seconds
+Multi thread is 6,84x faster than single thread
+Single thread: average delta — 0,01045
+Multi thread: average delta — 0,01672
+
+Comparison results for 10000 points and 6 threads (10 simulations):
+Single thread: average executing time in seconds — 0.03419725
+Multi thread: average executing time in seconds — 0.0048375399999999995
+Difference: 0,02936 seconds
+Multi thread is 7,07x faster than single thread
+Single thread: average delta — 0,01045
+Multi thread: average delta — 0,01284
+
+Comparison results for 100000 points and 2 threads (10 simulations):
+Single thread: average executing time in seconds — 0.14254156
+Multi thread: average executing time in seconds — 0.0725285
+Difference: 0,07001 seconds
+Multi thread is 1,97x faster than single thread
+Single thread: average delta — 0,00347
+Multi thread: average delta — 0,00455
+
+Comparison results for 100000 points and 4 threads (10 simulations):
+Single thread: average executing time in seconds — 0.14254156
+Multi thread: average executing time in seconds — 0.03974094
+Difference: 0,10280 seconds
+Multi thread is 3,59x faster than single thread
+Single thread: average delta — 0,00347
+Multi thread: average delta — 0,00369
+
+Comparison results for 100000 points and 6 threads (10 simulations):
+Single thread: average executing time in seconds — 0.14254156
+Multi thread: average executing time in seconds — 0.02814532
+Difference: 0,11440 seconds
+Multi thread is 5,06x faster than single thread
+Single thread: average delta — 0,00347
+Multi thread: average delta — 0,00560
+
+Comparison results for 1000000 points and 2 threads (10 simulations):
+Single thread: average executing time in seconds — 1.4202125600000002
+Multi thread: average executing time in seconds — 0.7362949900000001
+Difference: 0,68392 seconds
+Multi thread is 1,93x faster than single thread
+Single thread: average delta — 0,00108
+Multi thread: average delta — 0,00124
+
+Comparison results for 1000000 points and 4 threads (10 simulations):
+Single thread: average executing time in seconds — 1.4202125600000002
+Multi thread: average executing time in seconds — 0.37406599000000007
+Difference: 1,04615 seconds
+Multi thread is 3,80x faster than single thread
+Single thread: average delta — 0,00108
+Multi thread: average delta — 0,00125
+
+Comparison results for 1000000 points and 6 threads (10 simulations):
+Single thread: average executing time in seconds — 1.4202125600000002
+Multi thread: average executing time in seconds — 0.26550345000000003
+Difference: 1,15471 seconds
+Multi thread is 5,35x faster than single thread
+Single thread: average delta — 0,00108
+Multi thread: average delta — 0,00149
+
+Comparison results for 10000000 points and 2 threads (10 simulations):
+Single thread: average executing time in seconds — 14.222191559999999
+Multi thread: average executing time in seconds — 7.32953581
+Difference: 6,89266 seconds
+Multi thread is 1,94x faster than single thread
+Single thread: average delta — 0,00040
+Multi thread: average delta — 0,00056
+
+Comparison results for 10000000 points and 4 threads (10 simulations):
+Single thread: average executing time in seconds — 14.222191559999999
+Multi thread: average executing time in seconds — 3.8969489299999998
+Difference: 10,32524 seconds
+Multi thread is 3,65x faster than single thread
+Single thread: average delta — 0,00040
+Multi thread: average delta — 0,00034
+
+Comparison results for 10000000 points and 6 threads (10 simulations):
+Single thread: average executing time in seconds — 14.222191559999999
+Multi thread: average executing time in seconds — 2.82718939
+Difference: 11,39500 seconds
+Multi thread is 5,03x faster than single thread
+Single thread: average delta — 0,00040
+Multi thread: average delta — 0,00030
