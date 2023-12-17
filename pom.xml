@@ -235,7 +235,7 @@
                     <artifactId>jacoco-maven-plugin</artifactId>
                     <configuration>
                         <excludes>
-                            <exclude>src/test/java/edu/hw11/**</exclude>
+                            <exclude>edu/hw11/**</exclude>
                         </excludes>
                     </configuration>
                     <version>${jacoco-maven-plugin.version}</version>
