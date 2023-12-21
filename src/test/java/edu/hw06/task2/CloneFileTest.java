@@ -49,7 +49,7 @@ class CloneFileTest {
     }
 
     @Test
-    void testCloneFileFirstCopy() {
+    void cloneFileFirstCopy() {
         // Act
         cloneFile(testFilePath);
 
@@ -58,7 +58,7 @@ class CloneFileTest {
     }
 
     @Test
-    void testCloneFileSecondCopy() {
+    void cloneFileSecondCopy() {
         // Arrange
         cloneFile(testFilePath);
 
@@ -70,7 +70,7 @@ class CloneFileTest {
     }
 
     @Test
-    void testCloneFileCopyOfCopy() {
+    void cloneFileCopyOfCopy() {
         // Arrange
         cloneFile(testFilePath);
         cloneFile(testFilePath);

@@ -14,13 +14,13 @@ class DefaultStockMarketTest {
     }
 
     @Test
-    void testEmpty() {
+    void empty() {
         // Assert
         assertThat(defaultStockMarket.size()).isEqualTo(0);
     }
 
     @Test
-    void testAdd() {
+    void add() {
         // Arrange
         Stock singleStock = new Stock("TCSG", 3500.0);
 
@@ -32,7 +32,7 @@ class DefaultStockMarketTest {
     }
 
     @Test
-    void testRemove() {
+    void remove() {
         // Arrange
         Stock singleStock = new Stock("TCSG", 3500.0);
         defaultStockMarket.add(singleStock);
@@ -45,7 +45,7 @@ class DefaultStockMarketTest {
     }
 
     @Test
-    void testRemoveDecreaseSize() {
+    void removeDecreaseSize() {
         // Arrange
         List<Stock> stocks = List.of(
             new Stock("TCSG", 3500.0),
@@ -65,7 +65,7 @@ class DefaultStockMarketTest {
     }
 
     @Test
-    void testRemoveLastElement() {
+    void removeLastElement() {
         // Arrange
         Stock singleStock = new Stock("TCSG", 3500.0);
         defaultStockMarket.add(singleStock);
@@ -78,7 +78,7 @@ class DefaultStockMarketTest {
     }
 
     @Test
-    void testRemoveEmptyStockMarket() {
+    void removeEmptyStockMarket() {
         // Act
         boolean removed = defaultStockMarket.remove(defaultStockMarket.mostValuableStock());
 
@@ -87,7 +87,7 @@ class DefaultStockMarketTest {
     }
 
     @Test
-    void testMostValuableStock() {
+    void mostValuableStock() {
         // Arrange
         List<Stock> stocks = List.of(
             new Stock("VTBR", 0.025),

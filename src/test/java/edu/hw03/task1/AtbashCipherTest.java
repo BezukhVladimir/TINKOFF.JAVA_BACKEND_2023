@@ -6,7 +6,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class AtbashCipherTest {
     @Test
-    void testEmptyString() {
+    void emptyString() {
         // Arrange
         String input = "";
 
@@ -18,7 +18,7 @@ class AtbashCipherTest {
     }
 
     @Test
-    void testStringWithLatinCharactersOnly() {
+    void stringWithLatinCharactersOnly() {
         // Arrange
         String input = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String expected = "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA";
@@ -31,7 +31,7 @@ class AtbashCipherTest {
     }
 
     @Test
-    void testStringWithNonLatinCharactersOnly() {
+    void stringWithNonLatinCharactersOnly() {
         // Arrange
         String input = "(?!<===   ===>!?)";
 
@@ -43,7 +43,7 @@ class AtbashCipherTest {
     }
 
     @Test
-    void testExampleString() {
+    void exampleString() {
         // Arrange
         String input =
             "Any fool can write code that a computer can understand. "

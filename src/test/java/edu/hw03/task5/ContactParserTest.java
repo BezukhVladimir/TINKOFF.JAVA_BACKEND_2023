@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class ContactParserTest {
     @Test
-    void testEmptyInAscendingOrder() {
+    void emptyInAscendingOrder() {
         // Arrange
         String[] fullNames = {};
         var order = ContactParser.ORDER.ASC;
@@ -21,7 +21,7 @@ class ContactParserTest {
     }
 
     @Test
-    void testEmptyInDescendingOrder() {
+    void emptyInDescendingOrder() {
         // Arrange
         String[] fullNames = {};
         var order = ContactParser.ORDER.DESC;
@@ -35,7 +35,7 @@ class ContactParserTest {
     }
 
     @Test
-    void testNullInAscendingOrder() {
+    void nullInAscendingOrder() {
         // Arrange
         String[] fullNames = null;
         var order = ContactParser.ORDER.ASC;
@@ -49,7 +49,7 @@ class ContactParserTest {
     }
 
     @Test
-    void testNullInDescendingOrder() {
+    void nullInDescendingOrder() {
         // Arrange
         String[] fullNames = null;
         var order = ContactParser.ORDER.DESC;
@@ -63,7 +63,7 @@ class ContactParserTest {
     }
 
     @Test
-    void testFullNamesInAscendingOrder() {
+    void fullNamesInAscendingOrder() {
         // Arrange
         String[] fullNames = {"Paul Erdos", "Leonhard Euler", "Carl Gauss"};
         var order = ContactParser.ORDER.ASC;
@@ -81,7 +81,7 @@ class ContactParserTest {
     }
 
     @Test
-    void testFullNamesInDescendingOrder() {
+    void fullNamesInDescendingOrder() {
         // Arrange
         String[] fullNames = {"Paul Erdos", "Leonhard Euler", "Carl Gauss"};
         var order = ContactParser.ORDER.DESC;
@@ -99,7 +99,7 @@ class ContactParserTest {
     }
 
     @Test
-    void testFirstNamesInAscendingOrder() {
+    void firstNamesInAscendingOrder() {
         // Arrange
         String[] fullNames = {"Paul", "Leonhard", "Carl"};
         var order = ContactParser.ORDER.ASC;
@@ -117,7 +117,7 @@ class ContactParserTest {
     }
 
     @Test
-    void testFirstNamesInDescendingOrder() {
+    void firstNamesInDescendingOrder() {
         // Arrange
         String[] fullNames = {"Paul", "Leonhard", "Carl"};
         var order = ContactParser.ORDER.DESC;

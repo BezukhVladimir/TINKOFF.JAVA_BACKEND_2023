@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class GetNumberOfBitsTest {
     @Test
     @DisplayName("Test for powers of two")
-    void testPowersOfTwo() {
+    void powersOfTwo() {
         for (int i = 0; i < Integer.SIZE - 1; ++i) {
             // Arrange
             int number = (int) Math.pow(2, i);
@@ -23,7 +23,7 @@ class GetNumberOfBitsTest {
 
     @Test
     @DisplayName("Test for negative numbers")
-    void testNegativeNumbers() {
+    void negativeNumbers() {
         for (int i = Integer.MIN_VALUE; i < 0; ++i) {
             // Act
             int result = BitUtils.getNumberOfBits(i);

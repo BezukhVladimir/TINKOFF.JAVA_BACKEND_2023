@@ -17,7 +17,7 @@ class RotateLeftTest {
         "2147483647, -1, 2147483647"
     })
     @DisplayName("Test rotating right by 1 bit")
-    void testRotateLeftByOneBit(int input, int shift, int expected) {
+    void rotateLeftByOneBit(int input, int shift, int expected) {
         // Act
         int result = BitUtils.rotateLeft(input, shift);
 
@@ -27,7 +27,7 @@ class RotateLeftTest {
 
     @Test
     @DisplayName("Input number is negative")
-    void testNegativeNumber() {
+    void negativeNumber() {
         // Arrange
         int input = -1;
         int shift = 2;
@@ -42,7 +42,7 @@ class RotateLeftTest {
 
     @Test
     @DisplayName("Shift equal to number of bits")
-    void testWithShiftEqualToNumberOfBits() {
+    void withShiftEqualToNumberOfBits() {
         // Arrange
         int input = 16;
         int shift = BitUtils.getNumberOfBits(input);

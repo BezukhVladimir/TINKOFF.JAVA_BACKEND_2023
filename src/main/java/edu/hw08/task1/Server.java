@@ -11,14 +11,20 @@ public class Server extends Thread {
     private static final int MAX_CONNECTIONS = 2;
 
     private final ExecutorService executorService;
+    private ServerSocket serverSocket;
 
     public Server() {
         this.executorService = Executors.newFixedThreadPool(MAX_CONNECTIONS);
+
+        try {
+            serverSocket = new ServerSocket(PORT);
+        } catch (IOException ignored) {
+        }
     }
 
     @Override
     public void run() {
-        try (var serverSocket = new ServerSocket(PORT)) {
+        try {
             int clientCount = 0;
 
             while (clientCount < MAX_CONNECTIONS) {
@@ -33,6 +39,17 @@ public class Server extends Thread {
     }
 
     public void shutdown() {
-        executorService.shutdown();
+        try {
+            if (!executorService.isShutdown()) {
+                executorService.shutdown();
+            }
+
+            if (!serverSocket.isClosed()) {
+                serverSocket.close();
+            }
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

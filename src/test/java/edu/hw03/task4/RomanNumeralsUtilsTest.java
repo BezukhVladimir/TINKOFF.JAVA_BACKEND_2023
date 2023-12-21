@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class RomanNumeralsUtilsTest {
     @Test
-    void testNegativeNumber() {
+    void negativeNumber() {
         // Arrange
         int number = -1;
 
@@ -22,7 +22,7 @@ class RomanNumeralsUtilsTest {
     }
 
     @Test
-    void testZero() {
+    void zero() {
         // Arrange
         int number = 0;
 
@@ -34,7 +34,7 @@ class RomanNumeralsUtilsTest {
     }
 
     @Test
-    void testLargeNumber() {
+    void largeNumber() {
         // Arrange
         int number = 4000;
 
@@ -46,7 +46,7 @@ class RomanNumeralsUtilsTest {
     }
 
     @Test
-    void testMaxValue() {
+    void maxValue() {
         // Act
         String romanNumber = convertToRoman(ROMAN_MAX_VALUE);
 

@@ -56,7 +56,7 @@ class ClientServerTest {
     }
 
     @Test
-    void testSingleClientServer() throws IOException, InterruptedException {
+    void singleClientServer() throws IOException, InterruptedException {
         // Arrange
         String clientMessage = "семья" + System.lineSeparator() + "exit" + System.lineSeparator();
         String expected = "ip: 127.0.0.1, request: семья, response: Это последний заезд, мамой клянусь.";
@@ -76,7 +76,7 @@ class ClientServerTest {
     }
 
     @Test
-    void testMultiClientServer() throws IOException, InterruptedException {
+    void multiClientServer() throws IOException, InterruptedException {
         // Arrange
         String client1Message = "семья" + System.lineSeparator() + "exit" + System.lineSeparator();
         String client2Message = "интеллект" + System.lineSeparator() + "exit" + System.lineSeparator();

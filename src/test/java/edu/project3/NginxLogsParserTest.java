@@ -1,5 +1,6 @@
 package edu.project3;
 
+import edu.project3.logsparsers.nginx.NginxLogsParser;
 import edu.project3.logsparsers.nginx.format.NginxLogItem;
 import org.junit.jupiter.api.Test;
 import java.net.InetAddress;
@@ -9,7 +10,6 @@ import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Locale;
-import static edu.project3.logsparsers.nginx.NginxLogsParser.parseLogLines;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class NginxLogsParserTest {
@@ -23,7 +23,7 @@ class NginxLogsParserTest {
     );
 
     @Test
-    void testParseLogLines() throws UnknownHostException {
+    void parseLogLines() throws UnknownHostException {
         // Arrange
         List<NginxLogItem> expected = List.of(
             NginxLogItem.builder()
@@ -59,7 +59,7 @@ class NginxLogsParserTest {
         );
 
         // Act
-        List<NginxLogItem> result = parseLogLines(NGINX_LOG_LINES);
+        List<NginxLogItem> result = NginxLogsParser.parseLogLines(NGINX_LOG_LINES);
 
         // Assert
         assertThat(result).isEqualTo(expected);

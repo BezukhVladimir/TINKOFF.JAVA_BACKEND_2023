@@ -18,7 +18,7 @@ class Task13Test {
     }
 
     @Test
-    void testGetAnimalsWithNamesMoreThanTwoWords() {
+    void getAnimalsWithNamesMoreThanTwoWords() {
         // Arrange
         when(animal1.name()).thenReturn("First");
         when(animal2.name()).thenReturn("Second animal");

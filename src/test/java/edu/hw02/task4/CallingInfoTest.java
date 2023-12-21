@@ -6,9 +6,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class CallingInfoTest {
     @Test
-    void testSayMyName() {
+    void sayMyName() {
         CallingInfo result = CallingInfoUtils.callingInfo();
 
-        assertThat(result.methodName()).isEqualTo("testSayMyName");
+        assertThat(result.methodName()).isEqualTo("sayMyName");
     }
 }

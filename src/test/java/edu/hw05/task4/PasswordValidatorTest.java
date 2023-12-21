@@ -13,7 +13,7 @@ public final class PasswordValidatorTest {
     @ValueSource(chars = {
         '~', '!', '@', '#', '$', '%', '^', '&', '*', '|'
     })
-    void testValidPassword(char specialCharacter) {
+    void validPassword(char specialCharacter) {
         // Arrange
         String validPassword = INVALID_PASSWORD + specialCharacter;
 
@@ -25,7 +25,7 @@ public final class PasswordValidatorTest {
     }
 
     @Test
-    void testInvalidPassword() {
+    void invalidPassword() {
         // Act
         boolean result = containsSpecialCharacter(INVALID_PASSWORD);
 

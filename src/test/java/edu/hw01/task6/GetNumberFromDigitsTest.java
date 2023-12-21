@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class GetNumberFromDigitsTest {
     @Test
     @DisplayName("Form a number from a range of digits")
-    void testGetNumberFromDigits() {
+    void getNumberFromDigits() {
         // Arrange
         int[] digits = {1, 2, 3, 4, 5};
         int startIndex = 1;
@@ -23,7 +23,7 @@ class GetNumberFromDigitsTest {
 
     @Test
     @DisplayName("Form a number from a single digit")
-    void testGetNumberFromSingleDigit() {
+    void getNumberFromSingleDigit() {
         // Arrange
         int[] digits = {9};
         int startIndex = 0;
@@ -39,7 +39,7 @@ class GetNumberFromDigitsTest {
 
     @Test
     @DisplayName("Form a number from an empty range")
-    void testGetNumberFromEmptyRange() {
+    void getNumberFromEmptyRange() {
         // Arrange
         int[] digits = {1, 2, 3};
         int startIndex = 2;

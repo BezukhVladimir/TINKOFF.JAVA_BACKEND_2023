@@ -18,7 +18,7 @@ class Task18Test {
     }
 
     @Test
-    void testGetHeaviestFishInLists() {
+    void getHeaviestFishInLists() {
         // Arrange
         when(animal1.type()).thenReturn(Animal.Type.DOG);
         when(animal2.type()).thenReturn(Animal.Type.FISH);

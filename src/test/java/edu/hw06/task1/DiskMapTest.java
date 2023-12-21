@@ -33,7 +33,7 @@ public final class DiskMapTest {
     }
 
     @Test
-    void testPut() {
+    void put() {
         // Arrange
         String key = "hello";
         String value = "world";
@@ -48,7 +48,7 @@ public final class DiskMapTest {
     }
 
     @Test
-    void testRemove() {
+    void remove() {
         // Arrange
         String key = "hello";
         String value = "world";

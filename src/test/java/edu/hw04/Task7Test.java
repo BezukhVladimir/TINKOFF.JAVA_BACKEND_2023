@@ -18,7 +18,7 @@ class Task7Test {
     }
 
     @Test
-    void testGetKthOldestAnimal() {
+    void getKthOldestAnimal() {
         // Arrange
         when(animal1.age()).thenReturn(1);
         when(animal2.age()).thenReturn(2);

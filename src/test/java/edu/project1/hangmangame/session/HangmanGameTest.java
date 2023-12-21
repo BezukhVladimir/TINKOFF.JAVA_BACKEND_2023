@@ -42,7 +42,7 @@ class HangmanGameTest {
 
     @Test
     @DisplayName("Test when player wins")
-    void testPlayerWon() {
+    void playerWon() {
         // Arrange
         List<String> inputs = new ArrayList<>();
         for (char correctGuess : CORRECT_GUESSES.toCharArray()) {
@@ -66,7 +66,7 @@ class HangmanGameTest {
 
     @Test
     @DisplayName("Test when player is defeated")
-    void testPlayerDefeated() {
+    void playerDefeated() {
         // Arrange
         List<String> inputs = new ArrayList<>();
         for (int i = 0; i < MAX_ATTEMPTS; ++i) {
@@ -91,7 +91,7 @@ class HangmanGameTest {
 
     @Test
     @DisplayName("Test when player gives up")
-    void testGiveUpCommand() {
+    void giveUpCommand() {
         // Arrange
         String input = settings.get("GIVE_UP_COMMAND");
 
@@ -104,7 +104,7 @@ class HangmanGameTest {
 
     @Test
     @DisplayName("Test repeated input")
-    void testRepeatedInput() {
+    void repeatedInput() {
         // Arrange
         String input = String.valueOf(ANSWER.charAt(0));
 
@@ -126,7 +126,7 @@ class HangmanGameTest {
     @ParameterizedTest
     @ValueSource(strings = {"", "*", "1", "12", "aa", "AA"})
     @DisplayName("Test uncorrected input")
-    void testUncorrectedInput(String input) {
+    void uncorrectedInput(String input) {
         // Act
         GuessResult result = testSession.tryGuess(input);
 

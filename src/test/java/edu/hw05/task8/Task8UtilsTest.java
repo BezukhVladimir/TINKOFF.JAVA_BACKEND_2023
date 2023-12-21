@@ -12,7 +12,7 @@ class Task8UtilsTest {
         "000", "111",
         "00000", "10101"
     })
-    public void testIsValidStringForSubtask1(String validString) {
+    public void isValidStringForSubtask1(String validString) {
         // Act
         boolean result = Task8Utils.isStringForSubtask1(validString);
 
@@ -26,7 +26,7 @@ class Task8UtilsTest {
         "00", "11",
         "0000", "1111"
     })
-    public void testIsInvalidStringForSubtask1(String invalidString) {
+    public void isInvalidStringForSubtask1(String invalidString) {
         // Act
         boolean result = Task8Utils.isStringForSubtask1(invalidString);
 
@@ -41,7 +41,7 @@ class Task8UtilsTest {
         "000", "001", "010", "011",
         "1000"
     })
-    public void testIsValidStringForSubtask2(String validString) {
+    public void isValidStringForSubtask2(String validString) {
         // Act
         boolean result = Task8Utils.isStringForSubtask2(validString);
 
@@ -56,7 +56,7 @@ class Task8UtilsTest {
         "100", "101", "110", "111",
         "0000"
     })
-    public void testIsInvalidStringForSubtask2(String invalidString) {
+    public void isInvalidStringForSubtask2(String invalidString) {
         // Act
         boolean result = Task8Utils.isStringForSubtask2(invalidString);
 
@@ -70,7 +70,7 @@ class Task8UtilsTest {
         "000", "010101", "111000", "000111",
         "010101000"
     })
-    public void testIsValidStringForSubtask3(String validString) {
+    public void isValidStringForSubtask3(String validString) {
         // Act
         boolean result = Task8Utils.isStringForSubtask3(validString);
 
@@ -82,7 +82,7 @@ class Task8UtilsTest {
     @ValueSource(strings = {
         "0", "00", "0000", "00000"
     })
-    public void testIsInvalidStringForSubtask3(String invalidString) {
+    public void isInvalidStringForSubtask3(String invalidString) {
         // Act
         boolean result = Task8Utils.isStringForSubtask3(invalidString);
 
@@ -97,7 +97,7 @@ class Task8UtilsTest {
         "110", "011",
         "1110", "0111", "1111"
     })
-    public void testIsValidStringForSubtask4(String validString) {
+    public void isValidStringForSubtask4(String validString) {
         // Act
         boolean result = Task8Utils.isStringForSubtask4(validString);
 
@@ -109,7 +109,7 @@ class Task8UtilsTest {
     @ValueSource(strings = {
         "11", "111"
     })
-    public void testIsInvalidStringForSubtask4(String invalidString) {
+    public void isInvalidStringForSubtask4(String invalidString) {
         // Act
         boolean result = Task8Utils.isStringForSubtask4(invalidString);
 
@@ -124,7 +124,7 @@ class Task8UtilsTest {
         "101", "111",
         "1010", "1011", "1110", "1111"
     })
-    public void testIsValidStringForSubtask5(String validString) {
+    public void isValidStringForSubtask5(String validString) {
         // Act
         boolean result = Task8Utils.isStringForSubtask5(validString);
 
@@ -138,7 +138,7 @@ class Task8UtilsTest {
         "00", "01",
         "000", "001", "010", "011", "100", "110"
     })
-    public void testIsInvalidStringForSubtask5(String invalidString) {
+    public void isInvalidStringForSubtask5(String invalidString) {
         // Act
         boolean result = Task8Utils.isStringForSubtask5(invalidString);
 
@@ -152,7 +152,7 @@ class Task8UtilsTest {
         "0001", "0010",
         "000010000"
     })
-    public void testIsValidStringForSubtask6(String validString) {
+    public void isValidStringForSubtask6(String validString) {
         // Act
         boolean result = Task8Utils.isStringForSubtask6(validString);
 
@@ -164,7 +164,7 @@ class Task8UtilsTest {
     @ValueSource(strings = {
         "", "1", "00", "0011", "01"
     })
-    public void testIsInvalidStringForSubtask6(String invalidString) {
+    public void isInvalidStringForSubtask6(String invalidString) {
         // Act
         boolean result = Task8Utils.isStringForSubtask6(invalidString);
 
@@ -178,7 +178,7 @@ class Task8UtilsTest {
         "00", "01", "10",
         "000", "001", "010", "100", "101"
     })
-    public void testIsValidStringForSubtask7(String validString) {
+    public void isValidStringForSubtask7(String validString) {
         // Act
         boolean result = Task8Utils.isStringForSubtask7(validString);
 
@@ -191,7 +191,7 @@ class Task8UtilsTest {
         "11",
         "011", "110", "111"
     })
-    public void testIsInvalidStringForSubtask7(String invalidString) {
+    public void isInvalidStringForSubtask7(String invalidString) {
         // Act
         boolean result = Task8Utils.isStringForSubtask7(invalidString);
 

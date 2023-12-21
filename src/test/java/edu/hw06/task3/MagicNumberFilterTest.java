@@ -16,7 +16,7 @@ class MagicNumberFilterTest {
     private Path testDirectoryPath = Path.of(TEST_DIRECTORY);;
 
     @Test
-    void testMagicNumberFilter() throws IOException {
+    void magicNumberFilter() throws IOException {
         // Arrange
         DirectoryStream.Filter<Path> filter
             = MagicNumberFilter.magicNumber(PNG_FILE_SIGNATURE);

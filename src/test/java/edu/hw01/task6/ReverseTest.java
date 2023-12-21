@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class ReverseTest {
     @Test
     @DisplayName("Reversing an empty array")
-    void testReverseEmptyArray() {
+    void reverseEmptyArray() {
         // Arrange
         int[] array = {};
         int[] expectedArray = new int[] {};
@@ -21,7 +21,7 @@ class ReverseTest {
 
     @Test
     @DisplayName("Reversing an array with one element")
-    void testReverseArrayWithOneElement() {
+    void reverseArrayWithOneElement() {
         // Arrange
         int[] array = {42};
         int[] expectedArray = new int[] {42};
@@ -35,7 +35,7 @@ class ReverseTest {
 
     @Test
     @DisplayName("Reversing an array with even number of elements")
-    void testReverseArrayWithEvenNumberOfElements() {
+    void reverseArrayWithEvenNumberOfElements() {
         // Arrange
         int[] array = {1, 2, 3, 4, 5, 6};
         int[] expectedArray = new int[] {6, 5, 4, 3, 2, 1};
@@ -49,7 +49,7 @@ class ReverseTest {
 
     @Test
     @DisplayName("Reversing an array with odd number of elements")
-    void testReverseArrayWithOddNumberOfElements() {
+    void reverseArrayWithOddNumberOfElements() {
         // Arrange
         int[] array = {1, 2, 3, 4, 5};
         int[] expectedArray = new int[] {5, 4, 3, 2, 1};
@@ -63,7 +63,7 @@ class ReverseTest {
 
     @Test
     @DisplayName("Reversing an array with repeated elements")
-    void testReverseArrayWithRepeatedElements() {
+    void reverseArrayWithRepeatedElements() {
         // Arrange
         int[] array = {5, 5, 5, 5, 5, 5};
         int[] expectedArray = new int[] {5, 5, 5, 5, 5, 5};

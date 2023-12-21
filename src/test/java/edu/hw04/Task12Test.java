@@ -18,7 +18,7 @@ class Task12Test {
     }
 
     @Test
-    void testGetNumberOfAnimalsWithWeightGreaterThanHeight() {
+    void getNumberOfAnimalsWithWeightGreaterThanHeight() {
         // Arrange
         when(animal1.height()).thenReturn(1);
         when(animal2.height()).thenReturn(2);

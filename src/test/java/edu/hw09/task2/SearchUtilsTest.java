@@ -60,7 +60,7 @@ final class SearchUtilsTest {
     }
 
     @Test
-    void testDirectorySearch() {
+    void directorySearch() {
         // Act
         List<Path> result = findDirectories(root.resolve("test/"), 2);
 
@@ -69,7 +69,7 @@ final class SearchUtilsTest {
     }
 
     @Test
-    void testFileSearch() {
+    void fileSearch() {
         // Act
         List<Path> result = findFiles(root.resolve("test/"), 6, 6, ".txt");
 

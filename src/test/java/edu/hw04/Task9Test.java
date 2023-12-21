@@ -18,7 +18,7 @@ class Task9Test {
     }
 
     @Test
-    void testGetSumOfAllPaws() {
+    void getSumOfAllPaws() {
         // Arrange
         when(animal1.paws()).thenReturn(2); // BIRD
         when(animal2.paws()).thenReturn(4); // CAT

@@ -36,7 +36,7 @@ class MazeEngineTest {
 
 
     @Test
-    void testDefaultRenderWall() {
+    void defaultRenderWall() {
         // Arrange
         Maze maze = get1x1Maze(Cell.Type.WALL);
         String expected = WALL_SYMBOL + System.lineSeparator();
@@ -49,7 +49,7 @@ class MazeEngineTest {
     }
 
     @Test
-    void testDefaultRenderPassage() {
+    void defaultRenderPassage() {
         // Arrange
         Maze maze = get1x1Maze(Cell.Type.PASSAGE);
         String expected = PASSAGE_SYMBOL + System.lineSeparator();
@@ -61,7 +61,7 @@ class MazeEngineTest {
         assertThat(result).isEqualTo(expected);
     }
     @Test
-    void testDefaultRenderPath() {
+    void defaultRenderPath() {
         // Arrange
         Maze maze = get1x1Maze(Cell.Type.PASSAGE);
         List<Coordinate> path = new ArrayList<>(List.of(new Coordinate(0, 0)));
@@ -75,7 +75,7 @@ class MazeEngineTest {
     }
 
     @Test
-    void testDefaultRenderIncorrectPath() {
+    void defaultRenderIncorrectPath() {
         // Arrange
         Maze maze = get1x1Maze(Cell.Type.WALL);
         List<Coordinate> path = new ArrayList<>(List.of(new Coordinate(0, 0)));
@@ -90,13 +90,13 @@ class MazeEngineTest {
 
     @ParameterizedTest
     @MethodSource("generators")
-    void testGenerators(Generator generator) {
+    void generators(Generator generator) {
         // Assert
         assertThatCode(() -> generator.generate(HEIGHT, WIDTH)).doesNotThrowAnyException();
     }
 
     @Test
-    void testDFSSolver() {
+    void dFSSolver() {
         // Arrange
         Maze maze = get5x5Maze();
         Coordinate start = new Coordinate(1, 1);
@@ -117,7 +117,7 @@ class MazeEngineTest {
     }
 
     @Test
-    void testDeadEndSolver() {
+    void deadEndSolver() {
         // Arrange
         Maze maze = get5x5Maze();
         Coordinate start = new Coordinate(1, 1);
@@ -146,7 +146,7 @@ class MazeEngineTest {
     }
 
     @Test
-    void testMultiThreadedDFSSolver() {
+    void multiThreadedDFSSolver() {
         // Arrange
         Maze maze = get5x5Maze();
         Coordinate start = new Coordinate(1, 1);

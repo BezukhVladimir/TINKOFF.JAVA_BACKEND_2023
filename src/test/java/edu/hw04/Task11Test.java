@@ -18,7 +18,7 @@ class Task11Test {
     }
 
     @Test
-    void testGetBitingAnimalsWithHeightOver100() {
+    void getBitingAnimalsWithHeightOver100() {
         // Arrange
         when(animal1.bites()).thenReturn(false);
         when(animal2.bites()).thenReturn(true);

@@ -18,7 +18,7 @@ class Task1Test {
     }
 
     @Test
-    void testGetSortedAnimalsByHeightAscending() {
+    void getSortedAnimalsByHeightAscending() {
         // Arrange
         when(animal1.height()).thenReturn(30);
         when(animal2.height()).thenReturn(20);

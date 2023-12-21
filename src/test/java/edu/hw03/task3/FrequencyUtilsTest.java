@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.entry;
 
 class FrequencyUtilsTest {
     @Test
-    void testStrings() {
+    void strings() {
         // Arrange
         List<String> words = List.of("код", "код", "код", "bug");
 
@@ -26,7 +26,7 @@ class FrequencyUtilsTest {
     }
 
     @Test
-    void testIntegers() {
+    void integers() {
         // Arrange
         List<Integer> numbers = List.of(1, 1, 2, 2);
 

@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class ExprTest {
     @Test
     @DisplayName("Test Constant")
-    void testConstant() {
+    void constant() {
         // Arrange
         Expr constant = new Constant(42.0);
 
@@ -20,7 +20,7 @@ class ExprTest {
 
     @Test
     @DisplayName("Test Negate")
-    void testNegate() {
+    void negate() {
         // Arrange
         Expr innerConstant = new Constant(10.0);
         Expr negate = new Negate(innerConstant);
@@ -35,7 +35,7 @@ class ExprTest {
 
     @Test
     @DisplayName("Test Exponent")
-    void testExponent() {
+    void exponent() {
         // Arrange
         Expr base = new Constant(2.0);
         Expr exponent = new Exponent(base, 3);
@@ -49,7 +49,7 @@ class ExprTest {
 
     @Test
     @DisplayName("Test Addition")
-    void testAddition() {
+    void addition() {
         // Arrange
         Expr left = new Constant(5.0);
         Expr right = new Constant(7.0);
@@ -64,7 +64,7 @@ class ExprTest {
 
     @Test
     @DisplayName("Test Multiplication")
-    void testMultiplication() {
+    void multiplication() {
         // Arrange
         Expr left = new Constant(3.0);
         Expr right = new Constant(4.0);

@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class BackwardIteratorTest {
     @Test
-    void testBackwardlyIteration() {
+    void backwardlyIteration() {
         // Arrange
         List<Integer> iterableList = List.of(1, 2, 3);
         BackwardIterator<Integer> iterator = new BackwardIterator<>(iterableList);

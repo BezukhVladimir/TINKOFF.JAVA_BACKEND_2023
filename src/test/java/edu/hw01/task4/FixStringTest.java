@@ -7,7 +7,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 class FixStringTest {
     @Test
     @DisplayName("Fix a string with swapped character pairs")
-    void testFixString() {
+    void fixString() {
         // Arrange
         String brokenString = "hTsii  s aimex dpus rtni.g";
 
@@ -20,7 +20,7 @@ class FixStringTest {
 
     @Test
     @DisplayName("Fix an empty string")
-    void testFixEmptyString() {
+    void fixEmptyString() {
         // Arrange
         String brokenString = "";
 
@@ -33,7 +33,7 @@ class FixStringTest {
 
     @Test
     @DisplayName("Fix a string with only one character")
-    void testFixStringWithOneCharacter() {
+    void fixStringWithOneCharacter() {
         // Arrange
         String brokenString = "A";
 
@@ -46,7 +46,7 @@ class FixStringTest {
 
     @Test
     @DisplayName("Fix a string with odd length")
-    void testFixStringWithOddLength() {
+    void fixStringWithOddLength() {
         // Arrange
         String brokenString = "12345";
 
@@ -59,7 +59,7 @@ class FixStringTest {
 
     @Test
     @DisplayName("Fix a string with even length")
-    void testFixStringWithEvenLength() {
+    void fixStringWithEvenLength() {
         // Arrange
         String brokenString = "abcdef";
 

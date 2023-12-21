@@ -9,7 +9,7 @@ class PerformanceTest {
     private static final int EXPECTED = 400_000_000;
 
     @Test
-    public void testSingleThreadedIncrement() {
+    public void singleThreadedIncrement() {
         // Arrange
         var count = new edu.hw07.task1.single.Counter(0);
 
@@ -23,7 +23,7 @@ class PerformanceTest {
     }
 
     @Test
-    public void testMultiThreadedIncrement() {
+    public void multiThreadedIncrement() {
         // Arrange
         var count = new edu.hw07.task1.multi.Counter(0);
         int numberOfThreads = 4;

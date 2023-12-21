@@ -7,7 +7,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 class MinutesToSecondsTest {
     @Test
     @DisplayName("Correct conversion of a valid string")
-    void testValidTimeConversion() {
+    void validTimeConversion() {
         // Arrange
         String validTime = "02:30";
 
@@ -20,7 +20,7 @@ class MinutesToSecondsTest {
 
     @Test
     @DisplayName("Invalid string format (more than 2 segments)")
-    void testInvalidFormat() {
+    void invalidFormat() {
         // Arrange
         String invalidTime = "01:02:03";
 
@@ -33,7 +33,7 @@ class MinutesToSecondsTest {
 
     @Test
     @DisplayName("Negative values for minutes (minutes < 0)")
-    void testNegativeMinutes() {
+    void negativeMinutes() {
         // Arrange
         String negativeMinutes = "-1:30";
 
@@ -46,7 +46,7 @@ class MinutesToSecondsTest {
 
     @Test
     @DisplayName("Negative values for seconds (seconds < 0)")
-    void testNegativeSeconds() {
+    void negativeSeconds() {
         // Arrange
         String negativeSeconds = "02:-30";
 
@@ -59,7 +59,7 @@ class MinutesToSecondsTest {
 
     @Test
     @DisplayName("Invalid values for seconds (seconds >= 60)")
-    void testInvalidSeconds() {
+    void invalidSeconds() {
         // Arrange
         String invalidSeconds = "02:60";
 
@@ -72,7 +72,7 @@ class MinutesToSecondsTest {
 
     @Test
     @DisplayName("Empty string")
-    void testEmptyString() {
+    void emptyString() {
         // Arrange
         String emptyString = "";
 
@@ -85,7 +85,7 @@ class MinutesToSecondsTest {
 
     @Test
     @DisplayName("Null value")
-    void testNullValue() {
+    void nullValue() {
         // Arrange
         String nullValue = null;
 
@@ -98,7 +98,7 @@ class MinutesToSecondsTest {
 
     @Test
     @DisplayName("String with symbols")
-    void testStringWithSymbols() {
+    void stringWithSymbols() {
         // Arrange
         String stringWithLetters = "a!@:xy";
 
@@ -111,7 +111,7 @@ class MinutesToSecondsTest {
 
     @Test
     @DisplayName("Zero minutes and seconds")
-    void testZeroMinutesAndSeconds() {
+    void zeroMinutesAndSeconds() {
         // Arrange
         String zeroTime1 = "0:0";
         String zeroTime2 = "00:00";
@@ -127,7 +127,7 @@ class MinutesToSecondsTest {
 
     @Test
     @DisplayName("Maximum values for seconds")
-    void testMaximumSeconds() {
+    void maximumSeconds() {
         // Arrange
         String maxValues = "999:59";
 
@@ -140,7 +140,7 @@ class MinutesToSecondsTest {
 
     @Test
     @DisplayName("Strings with spaces before or after the delimiter")
-    void testSpacesAroundDelimiter() {
+    void spacesAroundDelimiter() {
         // Arrange
         String withSpacesBefore = "01 : 30";
         String withSpacesAfter = "01: 30 ";
@@ -154,7 +154,7 @@ class MinutesToSecondsTest {
 
     @Test
     @DisplayName("String without delimiter")
-    void testStringWithoutDelimiter() {
+    void stringWithoutDelimiter() {
         // Arrange
         String noDelimiter = "0130";
 

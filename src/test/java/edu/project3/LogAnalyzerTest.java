@@ -15,7 +15,7 @@ class LogAnalyzerTest {
     private static final String CORRECT_ADOC_REPORT = "src/test/java/edu/project3/reports/correctAdocReport.adoc";
 
     @Test
-    void testMarkdownReport() {
+    void markdownReport() {
         // Arrange
         String[] args = {
             "--path", "logs/test*"
@@ -36,7 +36,7 @@ class LogAnalyzerTest {
     }
 
     @Test
-    void testAdocReport() {
+    void adocReport() {
         // Arrange
         String[] args = {
             "--path", "logs/test*",

@@ -7,7 +7,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 class CountKTest {
     @Test
     @DisplayName("Tests for numbers in range 1000 to 9999")
-    void testInRange1000To9999() {
+    void inRange1000To9999() {
         // Arrange
         int startNumber = 1000;
         int endNumber = 9999;

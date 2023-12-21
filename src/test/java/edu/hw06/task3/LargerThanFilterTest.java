@@ -46,7 +46,7 @@ class LargerThanFilterTest {
     }
 
     @Test
-    void testLargerThanFilter() throws IOException {
+    void largerThanFilter() throws IOException {
         // Arrange
         long size = 0L;
         DirectoryStream.Filter<Path> filter

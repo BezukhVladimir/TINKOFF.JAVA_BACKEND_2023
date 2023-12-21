@@ -19,7 +19,7 @@ class Task15Test {
     }
 
     @Test
-    void testGetSumWeightByTypeInAgeRange() {
+    void getSumWeightByTypeInAgeRange() {
         // Arrange
         when(animal1.type()).thenReturn(Animal.Type.CAT);
         when(animal2.type()).thenReturn(Animal.Type.CAT);

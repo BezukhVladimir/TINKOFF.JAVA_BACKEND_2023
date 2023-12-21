@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThatCode;
 @Disabled
 class PortScannerTest {
     @Test
-    void testScanPorts() {
+    void scanPorts() {
         assertThatCode(PortScanner::scanPorts).doesNotThrowAnyException();
     }
 }

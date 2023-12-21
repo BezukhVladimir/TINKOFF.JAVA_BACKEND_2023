@@ -19,7 +19,7 @@ class Task8Test {
     }
 
     @Test
-    void testGetHeaviestAnimalBelowHeight() {
+    void getHeaviestAnimalBelowHeight() {
         // Arrange
         when(animal1.height()).thenReturn(1);
         when(animal2.height()).thenReturn(2);

@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class IsNumberPalindromeTest {
     @Test
     @DisplayName("Palindrome number")
-    void testPositivePalindrome() {
+    void positivePalindrome() {
         // Arrange
         int number = 12321;
 
@@ -20,7 +20,7 @@ class IsNumberPalindromeTest {
 
     @Test
     @DisplayName("Negative number is a non-palindrome")
-    void testNegativeNonPalindrome() {
+    void negativeNonPalindrome() {
         // Arrange
         int number = -1221;
 
@@ -33,7 +33,7 @@ class IsNumberPalindromeTest {
 
     @Test
     @DisplayName("Asymmetric number is a non-palindrome")
-    void testAsymmetricNonPalindrome() {
+    void asymmetricNonPalindrome() {
         // Arrange
         int number = 12345;
 
@@ -46,7 +46,7 @@ class IsNumberPalindromeTest {
 
     @Test
     @DisplayName("Single-digit is a palindrome")
-    void testSingleDigitIsPalindrome() {
+    void singleDigitIsPalindrome() {
         // Arrange
         int number = 7;
 

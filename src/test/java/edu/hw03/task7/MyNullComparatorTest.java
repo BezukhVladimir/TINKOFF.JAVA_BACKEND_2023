@@ -6,7 +6,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class MyNullComparatorTest {
     @Test
-    public void testNull() {
+    public void isNull() {
         // Arrange
         TreeMap<String, String> tree = new TreeMap<>(
             new MyNullComparator<String>()

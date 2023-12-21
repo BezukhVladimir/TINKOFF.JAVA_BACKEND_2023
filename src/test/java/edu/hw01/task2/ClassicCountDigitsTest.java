@@ -7,7 +7,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 class ClassicCountDigitsTest {
     @Test
     @DisplayName("Count digits in a positive number")
-    void testCountPositiveNumber() {
+    void countPositiveNumber() {
         // Arrange
         int number = 12345;
 
@@ -20,7 +20,7 @@ class ClassicCountDigitsTest {
 
     @Test
     @DisplayName("Count digits in a negative number")
-    void testCountNegativeNumber() {
+    void countNegativeNumber() {
         // Arrange
         int number = -9876;
 
@@ -33,7 +33,7 @@ class ClassicCountDigitsTest {
 
     @Test
     @DisplayName("Count digits in zero")
-    void testCountZero() {
+    void countZero() {
         // Arrange
         int number = 0;
 
@@ -46,7 +46,7 @@ class ClassicCountDigitsTest {
 
     @Test
     @DisplayName("Count digits in a large positive number")
-    void testCountLargePositiveNumber() {
+    void countLargePositiveNumber() {
         // Arrange
         int number = 1234567890;
 
@@ -59,7 +59,7 @@ class ClassicCountDigitsTest {
 
     @Test
     @DisplayName("Count digits in a large negative number")
-    void testCountLargeNegativeNumber() {
+    void countLargeNegativeNumber() {
         // Arrange
         int number = -987654321;
 

@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 class PopularCommandExecutorTest {
     @Test
     @DisplayName("Test default connection manager with stable connection")
-    void testDefaultConnectionManagerWithStableConnection() {
+    void defaultConnectionManagerWithStableConnection() {
         var alwaysSuccessfully = new DefaultConnectionManager(0.0, 0.0);
 
         assertThat(alwaysSuccessfully.getConnection()).isInstanceOf(StableConnection.class);
@@ -22,7 +22,7 @@ class PopularCommandExecutorTest {
 
     @Test
     @DisplayName("Test default connection manager with faulty connection")
-    void testDefaultConnectionManagerWithFaultyConnection() {
+    void defaultConnectionManagerWithFaultyConnection() {
         var alwaysFailure = new DefaultConnectionManager(1.0, 0.0);
 
         assertThat(alwaysFailure.getConnection()).isInstanceOf(FaultyConnection.class);
@@ -30,7 +30,7 @@ class PopularCommandExecutorTest {
 
     @Test
     @DisplayName("Always a faulty connection")
-    void testAlwaysFaultyConnection() {
+    void alwaysFaultyConnection() {
         var connectionManager = new FaultyConnectionManager(1.0);
         int maxAttempts = 10;
         var executor = new PopularCommandExecutor(connectionManager, maxAttempts);
@@ -41,7 +41,7 @@ class PopularCommandExecutorTest {
 
     @Test
     @DisplayName("Always a stable connection")
-    void testAlwaysStableConnection() {
+    void alwaysStableConnection() {
         var connectionManager = new DefaultConnectionManager(0.0, 0.0);
         int maxAttempts = 10;
         var executor = new PopularCommandExecutor(connectionManager, maxAttempts);

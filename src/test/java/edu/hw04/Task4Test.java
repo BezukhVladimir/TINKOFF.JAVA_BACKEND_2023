@@ -18,7 +18,7 @@ class Task4Test {
     }
 
     @Test
-    void testAnimalWithLongestName() {
+    void animalWithLongestName() {
         // Arrange
         when(animal1.name()).thenReturn("name1");
         when(animal2.name()).thenReturn("name2");

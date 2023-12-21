@@ -18,7 +18,7 @@ class Task5Test {
     }
 
     @Test
-    void testAnimalWithLongestName() {
+    void animalWithLongestName() {
         // Arrange
         when(animal1.sex()).thenReturn(Animal.Sex.M);
         when(animal2.sex()).thenReturn(Animal.Sex.M);

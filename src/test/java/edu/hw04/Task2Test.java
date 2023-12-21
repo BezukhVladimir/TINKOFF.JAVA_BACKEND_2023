@@ -18,7 +18,7 @@ class Task2Test {
     }
 
     @Test
-    void testGetTopKAnimalsByWeight() {
+    void getTopKAnimalsByWeight() {
         // Arrange
         when(animal1.weight()).thenReturn(10);
         when(animal2.weight()).thenReturn(20);

@@ -19,7 +19,7 @@ class Task6Test {
     }
 
     @Test
-    void testGetHeaviestAnimalPerType() {
+    void getHeaviestAnimalPerType() {
         // Arrange
         when(animal1.type()).thenReturn(Animal.Type.CAT);
         when(animal2.type()).thenReturn(Animal.Type.CAT);

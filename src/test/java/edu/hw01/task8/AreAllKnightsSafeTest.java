@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class AreAllKnightsSafeTest {
     @Test
     @DisplayName("Knights are safe on the board")
-    void testKnightsAreSafe1() {
+    void knightsAreSafe1() {
         // Arrange
         int[][] board = {
             {0, 0, 0, 1, 0, 0, 0, 0},
@@ -29,7 +29,7 @@ class AreAllKnightsSafeTest {
 
     @Test
     @DisplayName("Knights are safe on the board")
-    void testKnightsAreSafe2() {
+    void knightsAreSafe2() {
         // Arrange
         int[][] board = {
             {1, 1, 0, 0, 0, 0, 1, 1},
@@ -51,7 +51,7 @@ class AreAllKnightsSafeTest {
 
     @Test
     @DisplayName("Knights are not safe on the board")
-    void testKnightsAreNotSafe1() {
+    void knightsAreNotSafe1() {
         // Arrange
         int[][] board = {
             {1, 0, 1, 0, 1, 0, 1, 0},
@@ -73,7 +73,7 @@ class AreAllKnightsSafeTest {
 
     @Test
     @DisplayName("Knights are not safe on the board")
-    void testKnightsAreNotSafe2() {
+    void knightsAreNotSafe2() {
         // Arrange
         int[][] board = {
             {0, 0, 0, 0, 1, 0, 0, 0},

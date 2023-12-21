@@ -33,7 +33,7 @@ class FixedThreadPoolTest {
     }
 
     @Test
-    void testFibonacciParallel() {
+    void fibonacciParallel() {
         // Arrange
         int n = 92;
         results = new long[n + 1];

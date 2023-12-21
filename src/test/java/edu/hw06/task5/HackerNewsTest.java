@@ -10,7 +10,7 @@ class HackerNewsTest {
 
     @Test
     @Disabled
-    void testHackerNewsTopStories() {
+    void hackerNewsTopStories() {
         // Arrange
         // https://github.com/HackerNews/API#new-top-and-best-stories
         int top500 = 500;
@@ -24,7 +24,7 @@ class HackerNewsTest {
     }
 
     @Test
-    void testNews() {
+    void news() {
         // Arrange
         // https://github.com/HackerNews/API#items
         int exampleStoryId = 8863;

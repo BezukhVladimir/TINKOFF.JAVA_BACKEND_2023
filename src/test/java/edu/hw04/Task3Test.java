@@ -19,7 +19,7 @@ class Task3Test {
     }
 
     @Test
-    void testCountAnimalsByType() {
+    void countAnimalsByType() {
         // Arrange
         when(animal1.type()).thenReturn(Animal.Type.CAT);
         when(animal2.type()).thenReturn(Animal.Type.CAT);

@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class IsSpecialPalindromeTest {
     @Test
     @DisplayName("Valid special palindrome")
-    void testValidSpecialPalindrome() {
+    void validSpecialPalindrome() {
         // Arrange
         int validSpecialPalindrome = 11211230;
 
@@ -20,7 +20,7 @@ class IsSpecialPalindromeTest {
 
     @Test
     @DisplayName("Valid palindrome")
-    void testValidPalindrome() {
+    void validPalindrome() {
         // Arrange
         int validPalindrome = 121;
 
@@ -33,7 +33,7 @@ class IsSpecialPalindromeTest {
 
     @Test
     @DisplayName("Non-special palindrome")
-    void testNonSpecialPalindrome() {
+    void nonSpecialPalindrome() {
         // Arrange
         int nonSpecialPalindrome = 45;
 
@@ -46,7 +46,7 @@ class IsSpecialPalindromeTest {
 
     @Test
     @DisplayName("Number with odd digits")
-    void testNumberWithOddDigits() {
+    void numberWithOddDigits() {
         // Arrange
         int numberWithOddDigits = 14725;
 
@@ -59,7 +59,7 @@ class IsSpecialPalindromeTest {
 
     @Test
     @DisplayName("Number with only one digit")
-    void testNumberWithOneDigit() {
+    void numberWithOneDigit() {
         // Arrange
         int numberWithOneDigit = 5;
 
@@ -72,7 +72,7 @@ class IsSpecialPalindromeTest {
 
     @Test
     @DisplayName("Negative number is a non-palindrome")
-    void testNegativeNumber() {
+    void negativeNumber() {
         // Arrange
         int numberWithOneDigit = -1;
 

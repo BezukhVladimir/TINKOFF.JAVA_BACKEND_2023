@@ -20,7 +20,7 @@ class Task20Test {
     }
 
     @Test
-    void testGetValidationErrorMessages() {
+    void getValidationErrorMessages() {
         // Arrange
         when(animal1.name()).thenReturn("name");
         when(animal1.age()).thenReturn(1);

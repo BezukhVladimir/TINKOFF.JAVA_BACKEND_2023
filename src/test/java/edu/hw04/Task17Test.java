@@ -18,7 +18,7 @@ class Task17Test {
     }
 
     @Test
-    void testDoSpidersBiteMoreThanDogs() {
+    void doSpidersBiteMoreThanDogs() {
         // Arrange
         when(animal1.type()).thenReturn(Animal.Type.DOG);
         when(animal2.type()).thenReturn(Animal.Type.DOG);

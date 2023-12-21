@@ -7,7 +7,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 class IsNestableTest {
     @Test
     @DisplayName("First array can be nested inside the second array")
-    void testNestableArrays() {
+    void nestableArrays() {
         // Arrange
         int[] arr1 = {-5, 0, 3, 7};
         int[] arr2 = {-10, 10};
@@ -21,7 +21,7 @@ class IsNestableTest {
 
     @Test
     @DisplayName("Arrays cannot be nested (min1 == min2)")
-    void testNonNestableMin1() {
+    void nonNestableMin1() {
         // Arrange
         int[] arr1 = {1, 2, 3};
         int[] arr2 = {1, 10};
@@ -35,7 +35,7 @@ class IsNestableTest {
 
     @Test
     @DisplayName("Arrays cannot be nested (min1 < min2)")
-    void testNonNestableMin2() {
+    void nonNestableMin2() {
         // Arrange
         int[] arr1 = {0, 2, 3};
         int[] arr2 = {1, 10};
@@ -49,7 +49,7 @@ class IsNestableTest {
 
     @Test
     @DisplayName("Arrays cannot be nested (max1 == max2)")
-    void testNonNestableMax1() {
+    void nonNestableMax1() {
         // Arrange
         int[] arr1 = {1, 2, 3, 10};
         int[] arr2 = {0, 10};
@@ -63,7 +63,7 @@ class IsNestableTest {
 
     @Test
     @DisplayName("Arrays cannot be nested (max1 > max2)")
-    void testNonNestableMax2() {
+    void nonNestableMax2() {
         // Arrange
         int[] arr1 = {1, 2, 3, 11};
         int[] arr2 = {0, 10};
@@ -77,7 +77,7 @@ class IsNestableTest {
 
     @Test
     @DisplayName("Empty array cannot be nested")
-    void testNonNestableWithEmptyFirstArray() {
+    void nonNestableWithEmptyFirstArray() {
         // Arrange
         int[] arr1 = {};
         int[] arr2 = {1, 2, 3};
@@ -91,7 +91,7 @@ class IsNestableTest {
 
     @Test
     @DisplayName("First array cannot be nested inside an empty second array")
-    void testNonNestableWithEmptySecondArray() {
+    void nonNestableWithEmptySecondArray() {
         // Arrange
         int[] arr1 = {1, 2, 3};
         int[] arr2 = {};

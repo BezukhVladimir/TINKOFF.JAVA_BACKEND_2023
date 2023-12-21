@@ -9,7 +9,6 @@ import java.nio.file.Paths;
 import static edu.hw06.FilesUtils.createFile;
 import static edu.hw06.FilesUtils.deleteFile;
 import static edu.hw06.FilesUtils.getFirstLineFromFile;
-import static edu.hw06.task4.OutputStreamCompositionManager.write;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class OutputStreamCompositionManagerTest {
@@ -30,12 +29,12 @@ class OutputStreamCompositionManagerTest {
     }
 
     @Test
-    void testWrite() throws IOException {
+    void write() throws IOException {
         // Arrange
         String expected = "Programming is learned by writing programs. ― Brian Kernighan";
 
         // Act
-        write(testFilePath.toString(), expected);
+        OutputStreamCompositionManager.write(testFilePath.toString(), expected);
         String result = getFirstLineFromFile(testFilePath);
 
         // Assert

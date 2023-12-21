@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class MultiThreadedVersionTest {
     @Test
-    public void testIncrement() {
+    public void increment() {
         // Arrange
         var count = new Counter(0);
         int expected = 1;
@@ -21,7 +21,7 @@ class MultiThreadedVersionTest {
     }
 
     @Test
-    public void testMultiThreadedIncrement() throws InterruptedException {
+    public void multiThreadedIncrement() throws InterruptedException {
         // Arrange
         var count = new Counter(0);
         int numberOfThreads = Runtime.getRuntime().availableProcessors() - 1;

@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class ClusterTest {
     @Test
-    void testSingleClusters() {
+    void singleClusters() {
         // Arrange
         String input = "()()()";
 
@@ -21,7 +21,7 @@ class ClusterTest {
     }
 
     @Test
-    void testBigCluster() {
+    void bigCluster() {
         // Arrange
         String input = "((()))";
 
@@ -35,7 +35,7 @@ class ClusterTest {
     }
 
     @Test
-    void testExampleString1() {
+    void exampleString1() {
         // Arrange
         String input = "((()))(())()()(()())";
 
@@ -49,7 +49,7 @@ class ClusterTest {
     }
 
     @Test
-    void testExampleString2() {
+    void exampleString2() {
         // Arrange
         String input = "((())())(()(()()))";
 

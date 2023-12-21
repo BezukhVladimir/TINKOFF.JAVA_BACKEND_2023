@@ -32,7 +32,7 @@ public final class DateParserTest {
         "1 day ago",
         "2234 days ago"
     })
-    void testSuccessfulParse(String date) {
+    void successfulParse(String date) {
         // Act
         Optional<LocalDate> result = dateParser.parse(date);
 
@@ -41,7 +41,7 @@ public final class DateParserTest {
     }
 
     @Test
-    void testUnsuccessfulParse() {
+    void unsuccessfulParse() {
         // Arrange
         String unknownDateFormat = "54 years ago";
 

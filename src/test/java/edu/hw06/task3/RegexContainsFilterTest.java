@@ -44,7 +44,7 @@ class RegexContainsFilterTest {
     }
 
     @Test
-    void testRegexContainsFilter() throws IOException {
+    void regexContainsFilter() throws IOException {
         // Arrange
         DirectoryStream.Filter<Path> filter
             = RegexContainsFilter.regexContains(REGEX_PATTERN);

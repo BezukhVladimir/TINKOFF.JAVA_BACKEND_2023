@@ -48,7 +48,7 @@ class GlobMatchesFilterTest {
     }
 
     @Test
-    void testGlobMatchesFilter() throws IOException {
+    void globMatchesFilter() throws IOException {
         // Arrange
         DirectoryStream.Filter<Path> filter
             = GlobMatchesFilter.globMatches(TXT_PATTERN);

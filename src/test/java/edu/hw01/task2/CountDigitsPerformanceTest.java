@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 class CountDigitsPerformanceTest {
     @Test
     @DisplayName("Executing countDigits() method for all 32-bit decimal integer numbers")
-    void testCountDigits() {
+    void countDigits() {
         // Arrange
         int startNumber = Integer.MIN_VALUE;
         int endNumber = Integer.MAX_VALUE;
@@ -29,7 +29,7 @@ class CountDigitsPerformanceTest {
 
     @Test
     @DisplayName("Executing classicCountDigits() method for all 32-bit decimal integer numbers")
-    void testClassicCountDigits() {
+    void classicCountDigits() {
         // Arrange
         int startNumber = Integer.MIN_VALUE;
         int endNumber = Integer.MAX_VALUE;

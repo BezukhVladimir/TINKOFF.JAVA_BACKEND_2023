@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class IsStringPalindromeTest {
     @Test
     @DisplayName("Palindrome string with even length")
-    void testEvenLengthPalindrome() {
+    void evenLengthPalindrome() {
         // Arrange
         String palindrome = "abccba";
 
@@ -20,7 +20,7 @@ class IsStringPalindromeTest {
 
     @Test
     @DisplayName("Palindrome string with odd length")
-    void testOddLengthPalindrome() {
+    void oddLengthPalindrome() {
         // Arrange
         String palindrome = "abxba";
 
@@ -33,7 +33,7 @@ class IsStringPalindromeTest {
 
     @Test
     @DisplayName("Non-palindrome string")
-    void testNonPalindrome() {
+    void nonPalindrome() {
         // Arrange
         String nonPalindrome = "palindrome";
 
@@ -46,7 +46,7 @@ class IsStringPalindromeTest {
 
     @Test
     @DisplayName("Empty string is a palindrome")
-    void testEmptyStringIsPalindrome() {
+    void emptyStringIsPalindrome() {
         // Arrange
         String emptyString = "";
 
@@ -59,7 +59,7 @@ class IsStringPalindromeTest {
 
     @Test
     @DisplayName("Single-character string is a palindrome")
-    void testSingleCharacterIsPalindrome() {
+    void singleCharacterIsPalindrome() {
         // Arrange
         String singleChar = "x";
 

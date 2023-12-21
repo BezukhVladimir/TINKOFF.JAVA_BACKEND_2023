@@ -22,7 +22,7 @@ final class StatsCollectorTest {
     }
 
     @Test
-    void testOneMetric() throws InterruptedException {
+    void oneMetric() throws InterruptedException {
         // Arrange
         String metricName = "name";
         double[] values = new double[] { 0.1, 0.05, 1.4, 5.1, 0.3 };
@@ -48,7 +48,7 @@ final class StatsCollectorTest {
     }
 
     @Test
-    void testSeveralMetrics() throws InterruptedException {
+    void severalMetrics() throws InterruptedException {
         // Arrange
         Map<String, double[]> stats = Map.of(
             "name1", new double[] { 0.0, 1.0, 2.0, 3.0, 4.0 },

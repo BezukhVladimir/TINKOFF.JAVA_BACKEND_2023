@@ -13,7 +13,7 @@ class CacheServiceTest {
     }
 
     @Test
-    void testFindByName() {
+    void findByName() {
         // Arrange
         var person = new Person(1, "name", "address", "phone");
         cacheService.add(person);
@@ -26,7 +26,7 @@ class CacheServiceTest {
     }
 
     @Test
-    void testFindByAddress() {
+    void findByAddress() {
         // Arrange
         var person = new Person(1, "name", "address", "phone");
         cacheService.add(person);
@@ -39,7 +39,7 @@ class CacheServiceTest {
     }
 
     @Test
-    void testFindByPhone() {
+    void findByPhone() {
         // Arrange
         var person = new Person(1, "name", "address", "phone");
         cacheService.add(person);
@@ -52,7 +52,7 @@ class CacheServiceTest {
     }
 
     @Test
-    void testAddPerson() {
+    void addPerson() {
         // Arrange
         var person = new Person(1, "name", "address", "phone");
 
@@ -66,7 +66,7 @@ class CacheServiceTest {
     }
 
     @Test
-    void testDeletePerson() {
+    void deletePerson() {
         // Arrange
         var person = new Person(1, "name", "address", "phone");
         cacheService.add(person);

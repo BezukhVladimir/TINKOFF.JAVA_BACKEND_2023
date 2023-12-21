@@ -18,7 +18,7 @@ class Task16Test {
     }
 
     @Test
-    void testGetSortedAnimalsByTypeSexNameAscending() {
+    void getSortedAnimalsByTypeSexNameAscending() {
         // Arrange
         when(animal1.type()).thenReturn(Animal.Type.FISH);
         when(animal2.type()).thenReturn(Animal.Type.DOG);

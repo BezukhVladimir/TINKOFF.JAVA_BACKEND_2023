@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class AreAllDigitsSameTest {
     @Test
     @DisplayName("Check if all digits are the same (positive number)")
-    void testPositive() {
+    void positive() {
         // Arrange
         int number = 11111;
 
@@ -20,7 +20,7 @@ class AreAllDigitsSameTest {
 
     @Test
     @DisplayName("Check if all digits are the same (negative number)")
-    void testNegative() {
+    void negative() {
         // Arrange
         int number = -777;
 
@@ -33,7 +33,7 @@ class AreAllDigitsSameTest {
 
     @Test
     @DisplayName("Check if all digits are not the same")
-    void testAreAllDigitsNotSame() {
+    void areAllDigitsNotSame() {
         // Arrange
         int number = 12345;
 
@@ -46,7 +46,7 @@ class AreAllDigitsSameTest {
 
     @Test
     @DisplayName("Check if all digits are the same (single-digit number)")
-    void testSingleDigit() {
+    void singleDigit() {
         // Arrange
         int number = 7;
 
@@ -59,7 +59,7 @@ class AreAllDigitsSameTest {
 
     @Test
     @DisplayName("Check if all digits are the same (zero)")
-    void testZero() {
+    void zero() {
         // Arrange
         int number = 0;
 

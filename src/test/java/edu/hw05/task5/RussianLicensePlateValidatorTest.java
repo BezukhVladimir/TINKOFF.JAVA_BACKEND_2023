@@ -11,7 +11,7 @@ public final class RussianLicensePlateValidatorTest {
         "А123ВЕ777",
         "О777ОО177"
     })
-    void testValidRussianPersonalTransportLicensePlate(String validLicensePlate) {
+    void validRussianPersonalTransportLicensePlate(String validLicensePlate) {
         // Act
         boolean result = isValidRussianPersonalTransportLicensePlate(validLicensePlate);
 
@@ -25,7 +25,7 @@ public final class RussianLicensePlateValidatorTest {
         "А123ВГ77",
         "А123ВЕ7777"
     })
-    void testInvalidRussianPersonalTransportLicensePlate(String invalidLicensePlate) {
+    void invalidRussianPersonalTransportLicensePlate(String invalidLicensePlate) {
         // Act
         boolean result = isValidRussianPersonalTransportLicensePlate(invalidLicensePlate);
 
