@@ -7,7 +7,7 @@ public final class HelloWorld {
     private HelloWorld() {
     }
 
-    private final static Logger LOGGER = LogManager.getLogger();
+    private static final Logger LOGGER = LogManager.getLogger();
 
     /**
      * Outputs the phrase "Привет, мир!" to the console using the LOGGER.info() method.

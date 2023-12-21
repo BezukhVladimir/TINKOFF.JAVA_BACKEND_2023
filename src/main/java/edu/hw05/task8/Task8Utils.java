@@ -15,13 +15,13 @@ public final class Task8Utils {
     private Task8Utils() {
     }
 
-    private final static String SUBTASK_1_REGEX_PATTERN = "(?:[01]{2})*[01]";
-    private final static String SUBTASK_2_REGEX_PATTERN = "0(?:[01]{2})*|1[01](?:[01]{2})*";
-    private final static String SUBTASK_3_REGEX_PATTERN = "(?:(?:1*0){3})*1*";
-    private final static String SUBTASK_4_REGEX_PATTERN = "(?!11$|111$)[01]*";
-    private final static String SUBTASK_5_REGEX_PATTERN = "(?:1[01])*1?";
-    private final static String SUBTASK_6_REGEX_PATTERN = "(?=(?:1*01*){2,})(?=(?:0*10*)?$)[01]*";
-    private final static String SUBTASK_7_REGEX_PATTERN = "(?!0*11)[01]*";
+    private static final String SUBTASK_1_REGEX_PATTERN = "(?:[01]{2})*[01]";
+    private static final String SUBTASK_2_REGEX_PATTERN = "0(?:[01]{2})*|1[01](?:[01]{2})*";
+    private static final String SUBTASK_3_REGEX_PATTERN = "(?:(?:1*0){3})*1*";
+    private static final String SUBTASK_4_REGEX_PATTERN = "(?!11$|111$)[01]*";
+    private static final String SUBTASK_5_REGEX_PATTERN = "(?:1[01])*1?";
+    private static final String SUBTASK_6_REGEX_PATTERN = "(?=(?:1*01*){2,})(?=(?:0*10*)?$)[01]*";
+    private static final String SUBTASK_7_REGEX_PATTERN = "(?!0*11)[01]*";
 
     public static boolean isStringForSubtask1(String string) {
         return string.matches(SUBTASK_1_REGEX_PATTERN);

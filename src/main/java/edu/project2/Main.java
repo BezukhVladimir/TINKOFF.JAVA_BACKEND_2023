@@ -10,14 +10,14 @@ import edu.project2.mazeengine.solvers.DeadEndSolver;
 import edu.project2.mazeengine.solvers.MultiThreadedDFSSolver;
 
 public final class Main {
-    private final static int HEIGHT = 5;
-    private final static int WIDTH = 5;
-    private final static DefaultRenderer DEFAULT_RENDERER = new DefaultRenderer();
-    private final static DFSGenerator DFS_GENERATOR = new DFSGenerator();
-    private final static PrimsGenerator PRIMS_GENERATOR = new PrimsGenerator();
-    private final static DFSSolver DFS_SOLVER = new DFSSolver();
-    private final static DeadEndSolver DEAD_END_SOLVER = new DeadEndSolver();
-    private final static MultiThreadedDFSSolver MULTI_THREADED_DFS_SOLVER = new MultiThreadedDFSSolver();
+    private static final int HEIGHT = 5;
+    private static final int WIDTH = 5;
+    private static final DefaultRenderer DEFAULT_RENDERER = new DefaultRenderer();
+    private static final DFSGenerator DFS_GENERATOR = new DFSGenerator();
+    private static final PrimsGenerator PRIMS_GENERATOR = new PrimsGenerator();
+    private static final DFSSolver DFS_SOLVER = new DFSSolver();
+    private static final DeadEndSolver DEAD_END_SOLVER = new DeadEndSolver();
+    private static final MultiThreadedDFSSolver MULTI_THREADED_DFS_SOLVER = new MultiThreadedDFSSolver();
 
     private Main() {
     }

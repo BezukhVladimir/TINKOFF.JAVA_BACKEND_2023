@@ -11,7 +11,7 @@ import java.util.Random;
 import java.util.Set;
 
 public final class Utils {
-    private final static Random RANDOMIZER = new Random();
+    private static final Random RANDOMIZER = new Random();
 
     private Utils() {
     }

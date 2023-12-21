@@ -11,9 +11,9 @@ public final class Task7Utils {
     private Task7Utils() {
     }
 
-    private final static String SUBTASK_1_REGEX_PATTERN = "[01]{2}0[01]*";
-    private final static String SUBTASK_2_REGEX_PATTERN = "(0|1).*\\1";
-    private final static String SUBTASK_3_REGEX_PATTERN = "[01]{1,3}";
+    private static final String SUBTASK_1_REGEX_PATTERN = "[01]{2}0[01]*";
+    private static final String SUBTASK_2_REGEX_PATTERN = "(0|1).*\\1";
+    private static final String SUBTASK_3_REGEX_PATTERN = "[01]{1,3}";
 
     public static boolean isStringForSubtask1(String string) {
         return string.matches(SUBTASK_1_REGEX_PATTERN);

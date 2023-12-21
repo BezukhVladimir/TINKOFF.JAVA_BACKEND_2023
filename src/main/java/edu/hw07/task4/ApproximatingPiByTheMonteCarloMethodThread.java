@@ -3,8 +3,8 @@ package edu.hw07.task4;
 import java.security.SecureRandom;
 
 public final class ApproximatingPiByTheMonteCarloMethodThread extends Thread {
-    private final static Square SQUARE = new Square(1.0);
-    private final static Circle INSCRIBED_CIRCLE = new Circle(
+    private static final Square SQUARE = new Square(1.0);
+    private static final Circle INSCRIBED_CIRCLE = new Circle(
         new Point2D(0.5, 0.5), SQUARE.side() / 2.0
     );
 

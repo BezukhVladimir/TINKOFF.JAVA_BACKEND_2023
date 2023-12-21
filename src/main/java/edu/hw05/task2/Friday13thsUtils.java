@@ -12,7 +12,7 @@ public final class Friday13thsUtils {
     private Friday13thsUtils() {
     }
 
-    private final static int DAY_13TH = 13;
+    private static final int DAY_13TH = 13;
 
     public static List<LocalDate> findAllFriday13thsInYear(int year) {
         List<LocalDate> friday13ths = new ArrayList<>();

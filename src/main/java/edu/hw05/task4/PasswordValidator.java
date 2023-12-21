@@ -6,7 +6,7 @@ public final class PasswordValidator {
     private PasswordValidator() {
     }
 
-    private final static String SPECIAL_CHARACTERS = "~!@#$%^&*|";
+    private static final String SPECIAL_CHARACTERS = "~!@#$%^&*|";
     public static final Pattern SPECIAL_CHARACTER_CLASS = Pattern.compile("[" + SPECIAL_CHARACTERS + "]");
 
     public static boolean containsSpecialCharacter(String password) {

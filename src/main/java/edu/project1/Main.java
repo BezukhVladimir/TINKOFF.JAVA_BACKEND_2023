@@ -4,7 +4,7 @@ import edu.project1.dictionaries.DemoDictionary;
 import edu.project1.hangmangame.ConsoleHangman;
 
 public final class Main {
-    private final static int MAX_ATTEMPTS = 5;
+    private static final int MAX_ATTEMPTS = 5;
 
     private Main() {
     }

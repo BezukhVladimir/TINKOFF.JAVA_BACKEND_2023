@@ -14,7 +14,7 @@ public final class RussianLicensePlateValidator {
      * <p>А123ВГ77
      * <p>А123ВЕ7777
      */
-    private final static String
+    private static final String
         RUSSIAN_PERSONAL_TRANSPORT_LICENSE_PLATE_REGEX_PATTERN
         = "[АВЕКМНОРСТУХ]\\d{3}(?<!000)[АВЕКМНОРСТУХ]{2}\\d{2,3}";
 

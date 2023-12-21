@@ -18,7 +18,7 @@ import static edu.hw06.FilesUtils.createFile;
 import static edu.hw06.FilesUtils.writeStringToEndOfFile;
 
 public class DiskMap implements Map<String, String> {
-    private final static String SPLITTER = ":";
+    private static final String SPLITTER = ":";
 
     private final Path directoryPath;
     private final Path filePath;

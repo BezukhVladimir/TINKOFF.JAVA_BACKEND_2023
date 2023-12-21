@@ -4,9 +4,9 @@ import java.time.LocalDate;
 import java.util.Optional;
 
 public final class DateInNaturalLanguageParser extends DateParser {
-    private final static String YESTERDAY = "yesterday";
-    private final static String TODAY = "today";
-    private final static String TOMORROW = "tomorrow";
+    private static final String YESTERDAY = "yesterday";
+    private static final String TODAY = "today";
+    private static final String TOMORROW = "tomorrow";
 
     @Override
     public Optional<LocalDate> parse(String date) {

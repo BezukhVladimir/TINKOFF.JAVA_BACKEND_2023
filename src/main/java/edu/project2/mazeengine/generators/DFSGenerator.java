@@ -22,7 +22,7 @@ import static edu.project2.mazeengine.utils.Utils.removeWall;
 import static edu.project2.mazeengine.utils.Utils.setInGrid;
 
 public class DFSGenerator implements Generator {
-    private final static List<Coordinate> DIRECTIONS = List.of(
+    private static final List<Coordinate> DIRECTIONS = List.of(
         new Coordinate(0, -2),
         new Coordinate(-2, 0),
         new Coordinate(0, 2),

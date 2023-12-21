@@ -6,11 +6,11 @@ public final class ApproximatingPiByTheMonteCarloMethod {
     private ApproximatingPiByTheMonteCarloMethod() {
     }
 
-    private final static Square SQUARE = new Square(1.0);
-    private final static Circle INSCRIBED_CIRCLE = new Circle(
+    private static final Square SQUARE = new Square(1.0);
+    private static final Circle INSCRIBED_CIRCLE = new Circle(
         new Point2D(0.5, 0.5), SQUARE.side() / 2.0
     );
-    private final static double CONVERSION_MULTIPLIER = 4.0;
+    private static final double CONVERSION_MULTIPLIER = 4.0;
 
     public static double singleThreadApproximate(long totalPointsNumber) {
         var random = new SecureRandom();

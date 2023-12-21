@@ -14,13 +14,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class Main {
-    private final static int WIDTH = 1920;
-    private final static int HEIGHT = 1080;
-    private final static Rect WORLD = new Rect(-1.5, -1.5, 3.0, 3.0);
-    private final static int SAMPLES = 100_000;
-    private final static int ITER_PER_SAMPLE = 200;
-    private final static int SYMMETRY = 9;
-    private final static double GAMMA = 0.5;
+    private static final int WIDTH = 1920;
+    private static final int HEIGHT = 1080;
+    private static final Rect WORLD = new Rect(-1.5, -1.5, 3.0, 3.0);
+    private static final int SAMPLES = 100_000;
+    private static final int ITER_PER_SAMPLE = 200;
+    private static final int SYMMETRY = 9;
+    private static final double GAMMA = 0.5;
     public static final Path IMAGES_FOLDER = Path.of("src/main/java/edu/project4/images/");
 
     private Main() {

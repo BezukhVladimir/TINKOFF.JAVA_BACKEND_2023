@@ -9,15 +9,15 @@ public final class PortScanner {
     private PortScanner() {
     }
 
-    private final static String FORMAT = "%-9s %-5d %-16s %-35s" + System.lineSeparator();
-    private final static String HEADER = "Protocol  Port  Status  Service";
+    private static final String FORMAT = "%-9s %-5d %-16s %-35s" + System.lineSeparator();
+    private static final String HEADER = "Protocol  Port  Status  Service";
     private static final String ANSI_RESET = "\u001B[0m";
     private static final String ANSI_RED = "\u001B[31m";
     private static final String ANSI_GREEN = "\u001B[32m";
     private static final String ANSI_BLUE = "\u001B[34m";
-    private final static int MIN_PORT = 0;
-    private final static int MAX_PORT = 49151;
-    private final static Map<Integer, String> PORTS = Map.of(
+    private static final int MIN_PORT = 0;
+    private static final int MAX_PORT = 49151;
+    private static final Map<Integer, String> PORTS = Map.of(
         135, "EPMAP",
         137, "Служба имен NetBIOS",
         139, "Служба сеансов NetBIOS",

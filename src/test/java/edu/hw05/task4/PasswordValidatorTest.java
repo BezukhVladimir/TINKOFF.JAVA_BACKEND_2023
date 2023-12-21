@@ -7,7 +7,7 @@ import static edu.hw05.task4.PasswordValidator.containsSpecialCharacter;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public final class PasswordValidatorTest {
-    private final static String INVALID_PASSWORD = "don't_peek";
+    private static final String INVALID_PASSWORD = "don't_peek";
 
     @ParameterizedTest
     @ValueSource(chars = {

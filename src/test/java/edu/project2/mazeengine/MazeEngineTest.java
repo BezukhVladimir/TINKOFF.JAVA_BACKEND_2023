@@ -23,16 +23,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatCode;
 
 public class MazeEngineTest {
-    private final static char WALL_SYMBOL;
-    private final static char PASSAGE_SYMBOL;
-    private final static char PATH_SYMBOL;
-    private final static char INCORRECT_PATH_SYMBOL;
-    private final static int HEIGHT = 5;
-    private final static int WIDTH = 5;
-    private final static Renderer DEFAULT_RENDERER = new DefaultRenderer();
-    private final static Solver DFS_SOLVER = new DFSSolver();
-    private final static Solver DEAD_END_SOLVER = new DeadEndSolver();
-    private final static MultiThreadedDFSSolver MULTI_THREADED_DFS_SOLVER = new MultiThreadedDFSSolver();
+    private static final char WALL_SYMBOL;
+    private static final char PASSAGE_SYMBOL;
+    private static final char PATH_SYMBOL;
+    private static final char INCORRECT_PATH_SYMBOL;
+    private static final int HEIGHT = 5;
+    private static final int WIDTH = 5;
+    private static final Renderer DEFAULT_RENDERER = new DefaultRenderer();
+    private static final Solver DFS_SOLVER = new DFSSolver();
+    private static final Solver DEAD_END_SOLVER = new DeadEndSolver();
+    private static final MultiThreadedDFSSolver MULTI_THREADED_DFS_SOLVER = new MultiThreadedDFSSolver();
 
 
     @Test

@@ -9,10 +9,10 @@ import static edu.project2.mazeengine.utils.Utils.isPassage;
 import static edu.project2.mazeengine.utils.Utils.isWall;
 
 public class DefaultRenderer implements Renderer {
-    private final static char WALL_SYMBOL;
-    private final static char PASSAGE_SYMBOL;
-    private final static char PATH_SYMBOL;
-    private final static char INCORRECT_PATH_SYMBOL;
+    private static final char WALL_SYMBOL;
+    private static final char PASSAGE_SYMBOL;
+    private static final char PATH_SYMBOL;
+    private static final char INCORRECT_PATH_SYMBOL;
 
     @Override
     public String render(Maze maze) {

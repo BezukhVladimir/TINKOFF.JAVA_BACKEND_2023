@@ -8,7 +8,7 @@ public final class ContactParser {
     private ContactParser() {
     }
 
-    private final static String SPLIT_REGEX = " ";
+    private static final String SPLIT_REGEX = " ";
 
     public enum ORDER {
         ASC, DESC

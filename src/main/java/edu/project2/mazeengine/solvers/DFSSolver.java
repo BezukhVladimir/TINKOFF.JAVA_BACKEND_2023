@@ -14,7 +14,7 @@ import static edu.project2.mazeengine.utils.Utils.isWall;
 import static edu.project2.mazeengine.utils.Utils.setInGrid;
 
 public class DFSSolver implements Solver {
-    private final static List<Coordinate> DIRECTIONS = List.of(
+    private static final List<Coordinate> DIRECTIONS = List.of(
         new Coordinate(0, -1),
         new Coordinate(-1, 0),
         new Coordinate(0, 1),
