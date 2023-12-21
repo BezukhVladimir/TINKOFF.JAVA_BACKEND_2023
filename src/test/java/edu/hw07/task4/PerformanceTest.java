@@ -24,7 +24,7 @@ class PerformanceTest {
         1_000_000L,
         10_000_000L
     })
-    public void performanceTests(long totalPointsNumber) {
+    void performanceTests(long totalPointsNumber) {
         Result singleThread = singleThreadVersion(totalPointsNumber);
 
         for (int threadsNumber = START_THREADS_NUMBER;

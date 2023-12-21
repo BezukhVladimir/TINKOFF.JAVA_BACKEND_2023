@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class Task2Test {
     @Test
-    public void redefineMethod() throws Exception {
+    void redefineMethod() throws Exception {
         ByteBuddyAgent.install();
         var normalBehavior = new ArithmeticUtils();
 

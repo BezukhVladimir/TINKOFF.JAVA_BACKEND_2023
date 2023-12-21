@@ -6,7 +6,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class SingleThreadedVersionTest {
     @Test
-    public void increment() {
+    void increment() {
         // Arrange
         var count = new Counter(0);
         int expected = 1;

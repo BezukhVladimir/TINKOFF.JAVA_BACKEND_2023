@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Disabled
 class PerformanceTest {
     @Test
-    public void singleThreadedFactorial() {
+    void singleThreadedFactorial() {
         // Arrange
         int n = 20;
         long expected = 2432902008176640000L;
@@ -21,7 +21,7 @@ class PerformanceTest {
     }
 
     @Test
-    public void multiThreadedIncrement() {
+    void multiThreadedIncrement() {
         // Arrange
         int n = 20;
         long expected = 2432902008176640000L;

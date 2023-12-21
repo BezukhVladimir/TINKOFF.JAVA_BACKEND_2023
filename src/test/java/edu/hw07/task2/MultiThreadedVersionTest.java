@@ -6,7 +6,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class MultiThreadedVersionTest {
     @Test
-    public void factorial() {
+    void factorial() {
         // Arrange
         int n = 20;
         long expected = 2432902008176640000L;

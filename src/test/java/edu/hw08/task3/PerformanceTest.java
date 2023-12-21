@@ -19,7 +19,7 @@ class PerformanceTest {
     private static final int THREADS_NUMBER_SHIFT = 2;
 
     @Test
-    public void performanceTests() {
+    void performanceTests() {
         double singleThread = singleThreadVersion();
 
         for (int threadsNumber = START_THREADS_NUMBER;

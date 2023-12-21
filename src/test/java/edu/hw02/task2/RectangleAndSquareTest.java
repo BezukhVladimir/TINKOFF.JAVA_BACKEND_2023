@@ -17,7 +17,7 @@ class RectangleAndSquareTest {
     @ParameterizedTest
     @MethodSource("rectangles")
     @DisplayName("Test rectangle area calculation")
-    public void rectangleArea(Rectangle rectangle) {
+    void rectangleArea(Rectangle rectangle) {
         Rectangle result = rectangle
             .createWithWidth(20.0)
             .createWithHeight(10.0);
