@@ -1,6 +1,5 @@
 package edu.hw09.task1;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -22,7 +21,7 @@ public class StatsCollector {
     }
 
     public List<Metric> stats() {
-        return new ArrayList<>(metrics);
+        return List.copyOf(metrics);
     }
 
     private Runnable putMetric(String name, double[] values) {

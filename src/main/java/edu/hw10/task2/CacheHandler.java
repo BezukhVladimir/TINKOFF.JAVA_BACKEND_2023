@@ -73,15 +73,13 @@ public final class CacheHandler implements InvocationHandler {
 
     private void load() {
         try {
-            if (Files.exists(cacheFile)) {
-                try (ObjectInputStream ois = new ObjectInputStream(Files.newInputStream(cacheFile))) {
-                    Object obj = ois.readObject();
-                    if (obj instanceof Map) {
-                        runtimeCache = (Map<String, HashMap<List<Object>, Object>>) obj;
-                    }
-                } catch (ClassNotFoundException e) {
-                    throw new RuntimeException(e);
+            try (ObjectInputStream ois = new ObjectInputStream(Files.newInputStream(cacheFile))) {
+                Object obj = ois.readObject();
+                if (obj instanceof Map) {
+                    runtimeCache = (Map<String, HashMap<List<Object>, Object>>) obj;
                 }
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
             }
         } catch (IOException ignored) {
         }
