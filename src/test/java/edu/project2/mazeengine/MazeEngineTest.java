@@ -11,6 +11,7 @@ import edu.project2.mazeengine.renderers.Renderer;
 import edu.project2.mazeengine.settings.SettingsManager;
 import edu.project2.mazeengine.solvers.DFSSolver;
 import edu.project2.mazeengine.solvers.DeadEndSolver;
+import edu.project2.mazeengine.solvers.MultiThreadedDFSSolver;
 import edu.project2.mazeengine.solvers.Solver;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -31,6 +32,8 @@ public class MazeEngineTest {
     private final static Renderer DEFAULT_RENDERER = new DefaultRenderer();
     private final static Solver DFS_SOLVER = new DFSSolver();
     private final static Solver DEAD_END_SOLVER = new DeadEndSolver();
+    private final static MultiThreadedDFSSolver MULTI_THREADED_DFS_SOLVER = new MultiThreadedDFSSolver();
+
 
     @Test
     void testDefaultRenderWall() {
@@ -140,6 +143,27 @@ public class MazeEngineTest {
             new Cell[][]{{
                 getCell(0, 0, type)
             }});
+    }
+
+    @Test
+    void testMultiThreadedDFSSolver() {
+        // Arrange
+        Maze maze = get5x5Maze();
+        Coordinate start = new Coordinate(1, 1);
+        Coordinate end   = new Coordinate(3, 1);
+        List<Coordinate> expected = new ArrayList<>(List.of(
+            end,
+            new Coordinate(3, 2),
+            new Coordinate(2, 2),
+            new Coordinate(1, 2),
+            start
+        ));
+
+        // Act
+        List<Coordinate> result = MULTI_THREADED_DFS_SOLVER.solve(maze, start, end);
+
+        // Assert
+        assertThat(result).isEqualTo(expected);
     }
 
     private static Maze get5x5Maze() {

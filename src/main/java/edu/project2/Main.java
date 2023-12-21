@@ -7,6 +7,7 @@ import edu.project2.mazeengine.models.Maze;
 import edu.project2.mazeengine.renderers.DefaultRenderer;
 import edu.project2.mazeengine.solvers.DFSSolver;
 import edu.project2.mazeengine.solvers.DeadEndSolver;
+import edu.project2.mazeengine.solvers.MultiThreadedDFSSolver;
 
 public final class Main {
     private final static int HEIGHT = 5;
@@ -16,6 +17,7 @@ public final class Main {
     private final static PrimsGenerator PRIMS_GENERATOR = new PrimsGenerator();
     private final static DFSSolver DFS_SOLVER = new DFSSolver();
     private final static DeadEndSolver DEAD_END_SOLVER = new DeadEndSolver();
+    private final static MultiThreadedDFSSolver MULTI_THREADED_DFS_SOLVER = new MultiThreadedDFSSolver();
 
     private Main() {
     }
@@ -36,5 +38,6 @@ public final class Main {
         System.out.println(DEFAULT_RENDERER.render(maze));
         System.out.println(DEFAULT_RENDERER.render(maze, DFS_SOLVER.solve(maze, start, end)));
         System.out.println(DEFAULT_RENDERER.render(maze, DEAD_END_SOLVER.solve(maze, start, end)));
+        System.out.println(DEFAULT_RENDERER.render(maze, MULTI_THREADED_DFS_SOLVER.solve(maze, start, end)));
     }
 }
