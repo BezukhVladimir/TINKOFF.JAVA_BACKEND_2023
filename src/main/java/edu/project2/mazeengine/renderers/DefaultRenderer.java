@@ -28,7 +28,7 @@ public class DefaultRenderer implements Renderer {
                 }
             }
 
-            mazeRender.append("\n");
+            mazeRender.append(System.lineSeparator());
         }
 
         return mazeRender.toString();
@@ -50,7 +50,7 @@ public class DefaultRenderer implements Renderer {
                 }
             }
 
-            mazeRender.append("\n");
+            mazeRender.append(System.lineSeparator());
         }
 
         return mazeRender.toString();

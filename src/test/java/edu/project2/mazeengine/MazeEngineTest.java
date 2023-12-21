@@ -39,7 +39,7 @@ public class MazeEngineTest {
     void testDefaultRenderWall() {
         // Arrange
         Maze maze = get1x1Maze(Cell.Type.WALL);
-        String expected = WALL_SYMBOL + "\n";
+        String expected = WALL_SYMBOL + System.lineSeparator();
 
         // Act
         String result = DEFAULT_RENDERER.render(maze);
@@ -52,7 +52,7 @@ public class MazeEngineTest {
     void testDefaultRenderPassage() {
         // Arrange
         Maze maze = get1x1Maze(Cell.Type.PASSAGE);
-        String expected = PASSAGE_SYMBOL + "\n";
+        String expected = PASSAGE_SYMBOL + System.lineSeparator();
 
         // Act
         String result = DEFAULT_RENDERER.render(maze);
@@ -65,7 +65,7 @@ public class MazeEngineTest {
         // Arrange
         Maze maze = get1x1Maze(Cell.Type.PASSAGE);
         List<Coordinate> path = new ArrayList<>(List.of(new Coordinate(0, 0)));
-        String expected = PATH_SYMBOL + "\n";
+        String expected = PATH_SYMBOL + System.lineSeparator();
 
         // Act
         String result = DEFAULT_RENDERER.render(maze, path);
@@ -79,7 +79,7 @@ public class MazeEngineTest {
         // Arrange
         Maze maze = get1x1Maze(Cell.Type.WALL);
         List<Coordinate> path = new ArrayList<>(List.of(new Coordinate(0, 0)));
-        String expected = INCORRECT_PATH_SYMBOL + "\n";
+        String expected = INCORRECT_PATH_SYMBOL + System.lineSeparator();
 
         // Act
         String result = DEFAULT_RENDERER.render(maze, path);

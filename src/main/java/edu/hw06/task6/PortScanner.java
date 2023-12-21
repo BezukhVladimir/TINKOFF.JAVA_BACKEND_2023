@@ -9,7 +9,7 @@ public final class PortScanner {
     private PortScanner() {
     }
 
-    private final static String FORMAT = "%-9s %-5d %-16s %-35s\n";
+    private final static String FORMAT = "%-9s %-5d %-16s %-35s" + System.lineSeparator();
     private final static String HEADER = "Protocol  Port  Status  Service";
     private static final String ANSI_RESET = "\u001B[0m";
     private static final String ANSI_RED = "\u001B[31m";
