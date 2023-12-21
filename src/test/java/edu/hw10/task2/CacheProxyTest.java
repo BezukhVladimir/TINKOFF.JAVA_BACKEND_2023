@@ -6,7 +6,7 @@ import edu.hw10.task2.fibonacci.RecursiveFibonacciCalculator;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import static edu.hw6.FilesUtils.deleteFile;
+import static edu.hw06.FilesUtils.deleteFile;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.reset;
