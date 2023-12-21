@@ -12,7 +12,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.reset;
 import static org.mockito.Mockito.when;
 
-public class CacheProxyTest {
+class CacheProxyTest {
     private Path cacheDirectory = Path.of("src/test/java/edu/hw10/task2/");
 
     private static final long[] FIBONACCI_NUMBERS = {

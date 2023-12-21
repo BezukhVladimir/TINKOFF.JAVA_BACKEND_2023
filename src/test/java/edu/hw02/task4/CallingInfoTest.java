@@ -4,7 +4,7 @@ import edu.hw02.task4.CallingInfoUtils.CallingInfo;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class CallingInfoTest {
+class CallingInfoTest {
     @Test
     void testSayMyName() {
         CallingInfo result = CallingInfoUtils.callingInfo();

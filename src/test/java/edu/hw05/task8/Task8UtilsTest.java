@@ -5,7 +5,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class Task8UtilsTest {
+class Task8UtilsTest {
     @ParameterizedTest
     @ValueSource(strings = {
         "0", "1",

@@ -5,7 +5,7 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class BackwardIteratorTest {
+class BackwardIteratorTest {
     @Test
     void testBackwardlyIteration() {
         // Arrange

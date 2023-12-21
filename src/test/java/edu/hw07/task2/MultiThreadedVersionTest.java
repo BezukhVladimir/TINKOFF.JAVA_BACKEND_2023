@@ -4,7 +4,7 @@ import edu.hw07.task2.multi.FactorialUtils;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class MultiThreadedVersionTest {
+class MultiThreadedVersionTest {
     @Test
     public void testFactorial() {
         // Arrange

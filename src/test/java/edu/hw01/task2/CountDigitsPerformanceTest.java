@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
  * We should use countDigits() method. More precise performance testing is not required.
  */
 @Disabled
-public class CountDigitsPerformanceTest {
+class CountDigitsPerformanceTest {
     @Test
     @DisplayName("Executing countDigits() method for all 32-bit decimal integer numbers")
     void testCountDigits() {

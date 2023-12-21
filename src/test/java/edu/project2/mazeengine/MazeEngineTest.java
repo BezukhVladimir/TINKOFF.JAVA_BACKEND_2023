@@ -22,7 +22,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatCode;
 
-public class MazeEngineTest {
+class MazeEngineTest {
     private static final char WALL_SYMBOL;
     private static final char PASSAGE_SYMBOL;
     private static final char PATH_SYMBOL;

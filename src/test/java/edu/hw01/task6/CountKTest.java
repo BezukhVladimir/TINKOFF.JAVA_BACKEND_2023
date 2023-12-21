@@ -4,7 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class CountKTest {
+class CountKTest {
     @Test
     @DisplayName("Tests for numbers in range 1000 to 9999")
     void testInRange1000To9999() {

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static edu.hw03.task2.ClusterUtils.clusterize;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class ClusterTest {
+class ClusterTest {
     @Test
     void testSingleClusters() {
         // Arrange

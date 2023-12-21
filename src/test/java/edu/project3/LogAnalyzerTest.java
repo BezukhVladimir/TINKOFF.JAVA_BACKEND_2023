@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 import static edu.project3.logstypemanager.LogsTypeManager.getNginxLogsAnalyzer;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class LogAnalyzerTest {
+class LogAnalyzerTest {
 
     private static final String CORRECT_MARKDOWN_REPORT = "src/test/java/edu/project3/reports/correctMarkdownReport.md";
     private static final String CORRECT_ADOC_REPORT = "src/test/java/edu/project3/reports/correctAdocReport.adoc";

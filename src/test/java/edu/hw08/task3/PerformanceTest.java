@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.concurrent.Executors;
 
 @Disabled
-public class PerformanceTest {
+class PerformanceTest {
     private static final Map<String, String> MD5HASH_LOGIN_DATABASE = Map.of(
         "81dc9bdb52d04dc20036dbd8313ed055", "1234",
         "d077f244def8a70e5ea758bd8352fcd8", "cat",

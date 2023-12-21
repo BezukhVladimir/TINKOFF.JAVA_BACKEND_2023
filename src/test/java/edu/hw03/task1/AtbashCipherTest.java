@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import static edu.hw03.task1.AtbashCipherUtils.atbash;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class AtbashCipherTest {
+class AtbashCipherTest {
     @Test
     void testEmptyString() {
         // Arrange

@@ -7,7 +7,7 @@ import net.bytebuddy.matcher.ElementMatchers;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class Task1Test {
+class Task1Test {
     @Test
     void helloByteBuddy() throws Exception {
         String string = "Hello, ByteBuddy!";

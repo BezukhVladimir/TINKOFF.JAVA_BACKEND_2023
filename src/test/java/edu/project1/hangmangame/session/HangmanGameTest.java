@@ -21,7 +21,7 @@ import org.mockito.MockitoAnnotations;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
-public class HangmanGameTest {
+class HangmanGameTest {
     private static final String ANSWER = "hangman";
     private static final String CORRECT_GUESSES = "aghmn";
     private static final String WRONG_GUESSES = "bcdefijklopqrstuvwxyz";

@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
 import static java.util.Map.entry;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class PasswordMinerTest {
+class PasswordMinerTest {
     private static final Map<String, String> MD5HASH_LOGIN_DATABASE = Map.of(
         "81dc9bdb52d04dc20036dbd8313ed055", "1234",
         "d077f244def8a70e5ea758bd8352fcd8", "cat",

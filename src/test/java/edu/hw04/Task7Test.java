@@ -8,7 +8,7 @@ import org.mockito.MockitoAnnotations;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
-public class Task7Test {
+class Task7Test {
     @Mock
     Animal animal1, animal2, animal3;
 

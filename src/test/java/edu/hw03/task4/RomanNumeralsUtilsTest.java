@@ -8,7 +8,7 @@ import static edu.hw03.task4.RomanNumeralsUtils.ROMAN_ZERO;
 import static edu.hw03.task4.RomanNumeralsUtils.convertToRoman;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class RomanNumeralsUtilsTest {
+class RomanNumeralsUtilsTest {
     @Test
     void testNegativeNumber() {
         // Arrange

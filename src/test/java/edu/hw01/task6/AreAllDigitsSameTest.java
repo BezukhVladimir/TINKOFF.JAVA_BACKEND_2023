@@ -4,7 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class AreAllDigitsSameTest {
+class AreAllDigitsSameTest {
     @Test
     @DisplayName("Check if all digits are the same (positive number)")
     void testPositive() {

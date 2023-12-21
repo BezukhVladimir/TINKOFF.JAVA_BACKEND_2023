@@ -4,7 +4,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import static org.assertj.core.api.Assertions.*;
 
-public class Task7UtilsTest {
+class Task7UtilsTest {
 
     @ParameterizedTest
     @ValueSource(strings = {

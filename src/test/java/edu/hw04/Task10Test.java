@@ -8,7 +8,7 @@ import org.junit.jupiter.api.function.Executable;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 
-public class Task10Test {
+class Task10Test {
     @TestFactory
     List<DynamicTest> dynamicTests() {
         return Arrays.asList(

@@ -16,7 +16,7 @@ import static edu.hw06.FilesUtils.deleteDirectory;
 import static edu.hw06.FilesUtils.deleteFile;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class LargerThanFilterTest {
+class LargerThanFilterTest {
     private static final String TEST_DIRECTORY = "src/test/java/edu/hw06/task3/test";
     private static final String TEST_EMPTY_FILE = "emptyFile.txt";
     private static final String TEST_SMALL_FILE = "smallFile.txt";

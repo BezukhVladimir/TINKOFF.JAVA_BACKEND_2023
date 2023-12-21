@@ -6,7 +6,7 @@ import java.util.concurrent.CountDownLatch;
 import static java.lang.Thread.sleep;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class MultiThreadedVersionTest {
+class MultiThreadedVersionTest {
     @Test
     public void testIncrement() {
         // Arrange

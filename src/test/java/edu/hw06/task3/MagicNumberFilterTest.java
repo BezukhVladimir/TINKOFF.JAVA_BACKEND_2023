@@ -8,7 +8,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class MagicNumberFilterTest {
+class MagicNumberFilterTest {
     private static final String TEST_DIRECTORY = "src/test/java/edu/hw06/task3";
     private static final String TEST_PNG_FILE = "cat.png";
     private static final byte[] PNG_FILE_SIGNATURE = {(byte) 0x89, 0x50, 0x4E, 0x47};

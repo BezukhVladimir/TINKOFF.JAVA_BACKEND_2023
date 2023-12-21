@@ -4,8 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class IsSpecialPalindromeTest {
-
+class IsSpecialPalindromeTest {
     @Test
     @DisplayName("Valid special palindrome")
     void testValidSpecialPalindrome() {

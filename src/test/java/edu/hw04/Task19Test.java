@@ -14,7 +14,7 @@ import org.mockito.MockitoAnnotations;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
-public class Task19Test {
+class Task19Test {
     @Mock
     Animal animal1, animal2;
 

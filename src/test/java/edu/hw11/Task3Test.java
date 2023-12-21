@@ -12,7 +12,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import java.lang.reflect.Modifier;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class Task3Test {
+class Task3Test {
     private static final long[] FIBONACCI_NUMBERS = {
         0L, 1L, 1L, 2L, 3L, 5L, 8L, 13L, 21L, 34L
     };

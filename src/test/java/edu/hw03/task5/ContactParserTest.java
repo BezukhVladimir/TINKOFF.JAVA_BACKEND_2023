@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static edu.hw03.task5.ContactParser.parseContacts;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class ContactParserTest {
+class ContactParserTest {
     @Test
     void testEmptyInAscendingOrder() {
         // Arrange

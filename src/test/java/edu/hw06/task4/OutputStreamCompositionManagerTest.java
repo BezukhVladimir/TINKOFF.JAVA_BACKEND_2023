@@ -12,7 +12,7 @@ import static edu.hw06.FilesUtils.getFirstLineFromFile;
 import static edu.hw06.task4.OutputStreamCompositionManager.write;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class OutputStreamCompositionManagerTest {
+class OutputStreamCompositionManagerTest {
     private static final String TEST_DIRECTORY = "src/test/java/edu/hw06/task4";
     private static final String TEST_FILE = "testFile.txt";
 

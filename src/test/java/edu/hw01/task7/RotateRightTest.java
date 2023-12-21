@@ -6,7 +6,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class RotateRightTest {
+class RotateRightTest {
     @ParameterizedTest
     @CsvSource({
         "0, 1, 0",

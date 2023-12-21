@@ -4,8 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class IsNestableTest {
-
+class IsNestableTest {
     @Test
     @DisplayName("First array can be nested inside the second array")
     void testNestableArrays() {

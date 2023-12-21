@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
-public class Task2Test {
+class Task2Test {
     @Test
     public void redefineMethod() throws Exception {
         ByteBuddyAgent.install();

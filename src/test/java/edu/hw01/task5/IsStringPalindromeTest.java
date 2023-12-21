@@ -4,8 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class IsStringPalindromeTest {
-
+class IsStringPalindromeTest {
     @Test
     @DisplayName("Palindrome string with even length")
     void testEvenLengthPalindrome() {

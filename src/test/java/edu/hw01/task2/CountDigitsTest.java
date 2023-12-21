@@ -5,7 +5,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class CountDigitsTest {
+class CountDigitsTest {
     @ParameterizedTest
     @ValueSource(ints = {0, 9, 0, -9})
     @DisplayName("Counting digits in a single-digit number")

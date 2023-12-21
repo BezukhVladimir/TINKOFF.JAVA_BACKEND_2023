@@ -5,7 +5,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 @Disabled
-public class PerformanceTest {
+class PerformanceTest {
     private record Result(
        double averageExecutionTimeInSeconds,
        double averageDelta

@@ -15,7 +15,7 @@ import static edu.hw06.FilesUtils.deleteDirectory;
 import static edu.hw06.FilesUtils.deleteFile;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class RegexContainsFilterTest {
+class RegexContainsFilterTest {
     private static final String TEST_DIRECTORY = "src/test/java/edu/hw06/task3/test";
     private static final String TEST_FILE1 = "file1.txt";
     private static final String TEST_FILE2 = "file2.txt";

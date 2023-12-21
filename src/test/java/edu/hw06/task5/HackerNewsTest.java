@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.net.http.HttpClient;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class HackerNewsTest {
+class HackerNewsTest {
     private final HttpClient client = HttpClient.newHttpClient();
 
     @Test

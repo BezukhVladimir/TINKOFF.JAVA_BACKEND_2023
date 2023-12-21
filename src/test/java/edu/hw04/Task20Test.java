@@ -10,7 +10,7 @@ import org.mockito.MockitoAnnotations;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
-public class Task20Test {
+class Task20Test {
     @Mock
     Animal animal1, animal2;
 

@@ -4,8 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class GetNumberFromDigitsTest {
-
+class GetNumberFromDigitsTest {
     @Test
     @DisplayName("Form a number from a range of digits")
     void testGetNumberFromDigits() {

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Disabled
-public class PerformanceTest {
+class PerformanceTest {
     @Test
     public void testSingleThreadedFactorial() {
         // Arrange

@@ -6,7 +6,7 @@ import java.lang.reflect.InvocationTargetException;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class RandomObjectGeneratorTest {
+class RandomObjectGeneratorTest {
     private final RandomObjectGenerator rog = new RandomObjectGenerator();
 
     @Test

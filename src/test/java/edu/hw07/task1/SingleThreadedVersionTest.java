@@ -4,7 +4,7 @@ import edu.hw07.task1.single.Counter;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class SingleThreadedVersionTest {
+class SingleThreadedVersionTest {
     @Test
     public void testIncrement() {
         // Arrange

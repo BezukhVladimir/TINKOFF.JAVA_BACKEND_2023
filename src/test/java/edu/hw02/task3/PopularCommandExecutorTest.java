@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
-public class PopularCommandExecutorTest {
+class PopularCommandExecutorTest {
     @Test
     @DisplayName("Test default connection manager with stable connection")
     void testDefaultConnectionManagerWithStableConnection() {

@@ -7,7 +7,7 @@ import static edu.hw03.task3.FrequencyUtils.freqDict;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.entry;
 
-public class FrequencyUtilsTest {
+class FrequencyUtilsTest {
     @Test
     void testStrings() {
         // Arrange

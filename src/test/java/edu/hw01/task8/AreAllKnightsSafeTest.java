@@ -4,7 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class AreAllKnightsSafeTest {
+class AreAllKnightsSafeTest {
     @Test
     @DisplayName("Knights are safe on the board")
     void testKnightsAreSafe1() {

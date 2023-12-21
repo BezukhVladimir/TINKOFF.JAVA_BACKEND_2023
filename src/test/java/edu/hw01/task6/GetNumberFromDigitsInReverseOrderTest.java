@@ -4,7 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class GetNumberFromDigitsInReverseOrderTest {
+class GetNumberFromDigitsInReverseOrderTest {
     @Test
     @DisplayName("Form a number from a range of digits")
     void testGetNumberFromDigits() {
