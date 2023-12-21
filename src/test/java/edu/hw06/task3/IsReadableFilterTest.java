@@ -9,7 +9,7 @@ import static edu.hw06.FilesUtils.createFile;
 import static edu.hw06.FilesUtils.deleteFile;
 
 public class IsReadableFilterTest {
-    private static final String TEST_DIRECTORY = "src/test/java/edu/hw6/task3/test";
+    private static final String TEST_DIRECTORY = "src/test/java/edu/hw06/task3/test";
     private static final String TEST_READABLE_FILE = "testReadableFile.txt";
     private static final String TEST_UNREADABLE_FILE = "testUnreadableFile.txt";
 

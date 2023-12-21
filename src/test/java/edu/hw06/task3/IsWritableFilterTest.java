@@ -10,7 +10,7 @@ import static edu.hw06.FilesUtils.deleteDirectory;
 import static edu.hw06.FilesUtils.deleteFile;
 
 public class IsWritableFilterTest {
-    private static final String TEST_DIRECTORY = "src/test/java/edu/hw6/task3/test";
+    private static final String TEST_DIRECTORY = "src/test/java/edu/hw06/task3/test";
     private static final String TEST_WRITABLE_FILE = "testWritableFile.txt";
     private static final String TEST_UNWRITABLE_FILE = "testUnwritableFile.txt";
 

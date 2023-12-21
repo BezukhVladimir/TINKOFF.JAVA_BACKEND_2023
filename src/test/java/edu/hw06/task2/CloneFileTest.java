@@ -14,7 +14,7 @@ import static edu.hw06.FilesUtils.fileExists;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CloneFileTest {
-    private static final String TEST_DIRECTORY = "src/test/java/edu/hw6/task2/test";
+    private static final String TEST_DIRECTORY = "src/test/java/edu/hw06/task2/test";
     private static final String TEST_FILE = "testFile.txt";
     private static final String TEST_FILE_FIRST_COPY = "testFile — копия.txt";
     private static final String TEST_FILE_SECOND_COPY = "testFile — копия (2).txt";

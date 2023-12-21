@@ -18,7 +18,7 @@ import static java.lang.Thread.sleep;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class ClientServerTest {
-    private static final Path LOG = Path.of("src/main/java/edu/hw8/task1/log.txt");
+    private static final Path LOG = Path.of("src/main/java/edu/hw08/task1/log.txt");
 
     private Server server;
     private PipedOutputStream serverOut;

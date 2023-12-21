@@ -15,7 +15,7 @@ import static edu.hw06.FilesUtils.deleteFile;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class GlobMatchesFilterTest {
-    private static final String TEST_DIRECTORY = "src/test/java/edu/hw6/task3/test";
+    private static final String TEST_DIRECTORY = "src/test/java/edu/hw06/task3/test";
     private static final String TEST_FILE1 = "testFile1.txt";
     private static final String TEST_FILE2 = "testFile2.xtt";
     private static final String TEST_FILE3 = "testFile3.md";

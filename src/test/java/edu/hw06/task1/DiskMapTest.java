@@ -11,7 +11,7 @@ import static edu.hw06.FilesUtils.getFirstLineFromFile;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public final class DiskMapTest {
-    private static final String TEST_DIRECTORY = "src/test/java/edu/hw6/task1/test";
+    private static final String TEST_DIRECTORY = "src/test/java/edu/hw06/task1/test";
     private static final String TEST_FILE = "testFile.txt";
     private static final String SPLITTER = ":";
 

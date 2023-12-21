@@ -16,7 +16,7 @@ import static edu.hw09.task2.SearchUtils.findFiles;
 import static org.assertj.core.api.Assertions.assertThat;
 
 final class SearchUtilsTest {
-    private static final Path root = Paths.get("src/test/java/edu/hw9/task2/");
+    private static final Path root = Paths.get("src/test/java/edu/hw09/task2/");
 
     @BeforeAll
     static void createContent() {

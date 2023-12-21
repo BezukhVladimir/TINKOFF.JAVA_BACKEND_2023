@@ -9,7 +9,7 @@ public final class Main {
     private Main() {
     }
 
-    private final static String TOP_SECRET_DIRECTORY = "src/main/java/edu/hw6/task2";
+    private final static String TOP_SECRET_DIRECTORY = "src/main/java/edu/hw06/task2";
     private final static String TOP_SECRET_FILE = "Tinkoff Bank Biggest Secret.txt";
 
     public static void main(String[] args) {

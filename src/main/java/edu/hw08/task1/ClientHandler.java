@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class ClientHandler implements Runnable {
     private static final int BUFFER_SIZE = 1024;
-    private static final Path LOG = Path.of("src/main/java/edu/hw8/task1/log.txt");
+    private static final Path LOG = Path.of("src/main/java/edu/hw08/task1/log.txt");
     private static final Map<String, String> EXCUSES = Map.of(
         "личности", "Не переходи на личности там, где их нет.",
         "оскорбления", "Если твои противники перешли на личные оскорбления, будь уверен — твоя победа не за горами.",

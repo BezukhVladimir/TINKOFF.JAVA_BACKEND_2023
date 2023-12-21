@@ -16,7 +16,7 @@ public final class Main {
 
     public static void main(String[] args) throws IOException {
         final byte[] PNG_FILE_SIGNATURE = {(byte) 0x89, 0x50, 0x4E, 0x47};
-        final String DIRECTORY = "src/test/java/edu/hw6/task3";
+        final String DIRECTORY = "src/test/java/edu/hw06/task3";
 
         final AbstractFilter regularFile = Files::isRegularFile;
         final AbstractFilter readable = Files::isReadable;
