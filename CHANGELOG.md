@@ -10,6 +10,71 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 - MINOR version after completing the Homework or the Project.
 - PATCH version after fixing the Homework or the Project after the code review.
 
+## [7.0.0] - 2023-12-21
+
+### Completed
+
+- The TrainingModule6 is completed!
+- The FinalTest: correct answers 33/34.
+
+### Added
+- Test questions and answers.
+- Lecture presentations and notes.
+- Entrance examinations and their results.
+
+## [6.0.0] - 2023-12-21
+
+### Completed
+
+- The TrainingModule5 is completed!
+- The Homework10: points scored 4/4.
+- The Homework11: points scored 4/4
+- The Project5: points scored 6/6.
+- The Test5: correct answers 10/10.
+
+## [5.3.0] - 2023-12-17
+
+### Added
+
+- Solutions to all Homework11 tasks.
+- Unit tests.
+- README.md for a Homework11.
+
+## [5.2.0] - 2023-12-15
+
+### Added
+
+- Solution for Project5.
+- Unit tests.
+- README.md for a Project5.
+
+## [5.1.0] - 2023-12-13
+
+### Added
+
+- Solutions to all Homework10 tasks.
+- Unit tests.
+- README.md for a Homework10.
+
+## [5.0.0] - 2023-12-10
+
+### Completed
+
+- The TrainingModule4 is completed!
+- The Homework7: points scored 3/3.
+- The Homework8: points scored 3/3 + 1/1.
+- The Homework9: points scored 4/4.
+- The Project4: points scored 8/8 + 4/4.
+- The Test4: correct answers 19/20.
+
+## [4.4.0] - 2023-12-10
+
+### Added
+
+- Solution for Project4.
+- Unit tests.
+- README.md for a Project4.
+
 ## [4.3.0] - 2023-12-01
 
 ### Added
