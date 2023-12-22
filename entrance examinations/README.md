@@ -1,6 +1,6 @@
 # Backend-разработка на Java. Осень 2023
 
-![Статистика отбора](info.jpg)
+<img src="info.jpg" width="400">
 
 Результаты отбора: <br>
 https://t.me/tinkoff_fintech/1627
