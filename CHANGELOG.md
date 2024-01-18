@@ -10,12 +10,24 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 - MINOR version after completing the Homework or the Project.
 - PATCH version after fixing the Homework or the Project after the code review.
 
+## [7.0.0] - 2024-01-16
+
+### Summing up the results
+
+- The FirstSemester of the course is completed!
+- A separate repository will be created for the SecondSemester.
+- Homeworks: points scored 36/36 + 2/2.
+- Projects: points scored 34/34 + 10/10.
+- Tests: 64/67 (10/10 after normalization).
+- Exam: 33/34 (20/20 after normalization).
+- Final result: 112/112.
+
 ## [7.0.0] - 2023-12-21
 
 ### Completed
 
 - The TrainingModule6 is completed!
-- The FinalTest: correct answers 33/34.
+- The Exam: correct answers 33/34.
 
 ### Added
 - Test questions and answers.
